@@ -11,9 +11,14 @@ class Add extends Model
 
     protected $fillable = [
         'title',
-        'slug',
         'place',
         'price',
-        'description'
+        'description',
+        'user_id',
     ];
+
+    public function user(){
+        return $this->balongsTo(User::class);
+    }
 }
+
