@@ -9,10 +9,14 @@
     @livewireStyles
 </head>
 <body>
-    {{-- <x-navbar /> --}}
+    <x-navbar />
     <x-header title="{{$title}}" />
-    {{$slot}}
-    {{-- <x-footer /> --}}
+    <div class="min-vh-100">
+        
+        {{$slot}}
+
+    </div>
+    <x-footer />
     @livewireScripts
 </body>
 </html>
