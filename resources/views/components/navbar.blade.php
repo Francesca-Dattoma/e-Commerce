@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-transparent ">
     <div class="container-fluid">
+      <a src="./public/media/Logo_per_favicon-removebg-preview.ico"></a>
       <a class="navbar-brand" href="{{route('homepage')}}">YOeS</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
