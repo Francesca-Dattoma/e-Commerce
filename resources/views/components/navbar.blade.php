@@ -16,12 +16,13 @@
           <li class="nav-item dropdown">
             @auth
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ciao: {{Auth::user()->name}}
+              {{Auth::user()->username}}
             </a>
             <ul class="dropdown-menu">
+              <li class="text-center my-2"><a href="{{route('add.create')}}" class="btn btn-dark w-50">Inserisci Annuncio</a></li>
               {{-- <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li> --}}
               {{-- <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li> --}}
-              <li class="text-center"><a class="btn btn-danger w-50" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
+              <li class="text-center mb-2"><a class="btn btn-danger w-50" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
                 <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
               </li>
             @else

@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('title');
             $table->string('place');
-            $table->float('price');
+            $table->decimal('price',9,2);
             $table->text('description');
             
             $table->timestamps();

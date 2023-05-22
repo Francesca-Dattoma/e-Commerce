@@ -8,7 +8,7 @@ class AnnouncementController extends Controller
 {
     public function announcement_create(){
 
-       return view('announcements.create'); 
+       return view('addAnnounce'); 
 
     }
 }
