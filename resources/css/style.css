@@ -1,0 +1,39 @@
+:root{
+    --primary: #FFFD00;
+    --secondary: #FF8900;
+    --accent: #F8F2CB;
+    --blackCustom: #000000;
+    --whiteCustom: #FFFFFF;
+}
+
+.bg-prim{
+    background-color: var(--primary);
+}
+
+.bg-second{
+    background-color: var(--secondary);
+}
+
+.bg-accent{
+    /* background-color: var(--accent); */
+    background-image: linear-gradient(to right top, #fffd00, #ffe000, #ffc300, #ffa600, #ff8900);
+}
+
+.text-font{
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.title-font{
+    font-family: 'Anton', sans-serif;
+}
+
+.title-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-family: 'Monoton', cursive;
+    font-size: 200px;
+}
