@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">Titolo Annuncio</label>
-            <input wire:model.lazy="title" type="text" class="form-control @error('title') is-invalid @enderror">
+            <input id="title" wire:model.lazy="title" type="text" class="form-control @error('title') is-invalid @enderror">
             @error('title')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
@@ -22,7 +22,7 @@
 
         <div class="mb-3">
             <label for="place" class="form-label">Città</label>
-            <input wire:model.lazy="place" type="text" class="form-control @error('place') is-invalid @enderror">
+            <input id="place" wire:model.lazy="place" type="text" class="form-control @error('place') is-invalid @enderror">
             @error('place')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
@@ -30,7 +30,7 @@
 
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input wire:model.lazy="price" type="number" class=" @error('price') is-invalid @enderror">
+            <input id="price" wire:model.lazy="price" type="number" class=" @error('price') is-invalid @enderror">
             @error('price')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
@@ -38,7 +38,7 @@
 
         <hr>
             <div class="mb-3">
-                <label for="category" class="form-label">Categoria:</label><br>
+                <label for="category" class="form-label">Categoria</label><br>
                 
                 <select wire:model.defer='category' id="category" class="form-select">
                     <option selected value="">Categoria dell'annuncio</option>
@@ -57,7 +57,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-lg btn-dark">Inserisci annuncio</button><br>
+        <button type="submit" class="btn btn-lg btn-dark mb-3">Inserisci annuncio</button><br>
 
     </form>
 

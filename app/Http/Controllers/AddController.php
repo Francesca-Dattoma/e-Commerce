@@ -13,7 +13,8 @@ class AddController extends Controller
      */
     public function index()
     {
-        //
+        $adds = Add::all();
+        return view('add.index', compact('adds')); 
     }
 
     /**
