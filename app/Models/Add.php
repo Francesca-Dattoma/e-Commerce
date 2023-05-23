@@ -17,7 +17,13 @@ class Add extends Model
         'description',
         'user_id',
         'category_id',
-        'photo'
+        'mainPhoto',
+        'photo2',
+        'photo3',
+        'photo4',
+        'photo5',
+        'photo6'
+
     ];
 
     public function user(){

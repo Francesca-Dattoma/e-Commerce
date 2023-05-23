@@ -2,19 +2,30 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Add;
 use Auth;
+use App\Models\Add;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
+use Livewire\WithFileUploads;
+
 
 class CreateAdd extends Component
 {
+    use WithFileUploads;
+    
     public $title;
     public $place;
     public $price;
     public $description;
     public $sortedCategories;
+    public $mainPhoto;
+    public $photo2;
+    public $photo3;
+    public $photo4;
+    public $photo5;
+    public $photo6;
+
 
     public $category;
     protected $rules =[
@@ -22,13 +33,21 @@ class CreateAdd extends Component
         'place'=>'required|min:3',
         'price'=>'required|numeric',
         'description'=>'required|min:10',
-        'category'=>'required'
+        'category'=>'required', 
+        'mainPhoto'=>'required|image', 
+        'photo2'=>'image', 
+        'photo3'=>'image',
+        'photo4'=>'image',
+        'photo5'=>'image',
+        'photo6'=>'image',
+
     ];
 
     protected $messages =[
         'required'=>'Il campo :attribute è obbligatorio',
         'min'=>'Il campo :attribute è troppo corto',
         'numeric'=>'Il campo :attribute richiede un numero',
+        'image'=>'Il campo :attribute deve esssere un\'immagine', 
     ];
 
     public function updated($propertyName){
@@ -42,9 +61,17 @@ class CreateAdd extends Component
             'place'=>$this->place,
             'price'=>$this->price,
             'description'=>$this->description,
+            'mainPhoto'=>$this->mainPhoto->store('public/photos'),
+            'photo2'=>$this->photo2->store('public/photos'),
+            'photo3'=>$this->photo3->store('public/photos'),
+            'photo4'=>$this->photo4->store('public/photos'),
+            'photo5'=>$this->photo5->store('public/photos'),
+            'photo6'=>$this->photo6->store('public/photos'),
+
+            
 
         ]);
-        Auth::user()->adds()->save($add);
+        Illuminate\Support\Facades\Auth::user()->adds()->save($add);
         session()->flash('message', 'Annuncio correttamente inserito.');
         $this->cleanForm();
 
