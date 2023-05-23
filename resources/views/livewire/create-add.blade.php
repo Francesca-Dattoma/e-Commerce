@@ -40,12 +40,15 @@
             <div class="mb-3">
                 <label for="category" class="form-label">Categoria</label><br>
                 
-                <select wire:model.defer='category' id="category" class="form-select">
-                    <option selected value="">Categoria dell'annuncio</option>
+                <select wire:model.defer='category' id="category" class="form-select @error('category') is-invalid @enderror">
+                    <option selected value="Placeholder" hidden>Categoria dell'annuncio</option>
                     @foreach($sortedCategories as $sortedCategory)
                         <option value="{{$sortedCategory->id}}">{{$sortedCategory->name}}</option>
                     @endforeach
                 </select>
+                @error('category')
+                    <p class="text-danger fst-italic">{{$message}}</p>
+                @enderror
             </div>
         <hr>
 

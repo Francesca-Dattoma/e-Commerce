@@ -11,7 +11,7 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('add.index')}}">Categoria esempio</a>
+            <a class="nav-link" href="{{route('add.index')}}">Annunci</a>
           </li>
           <li class="nav-item dropdown">
             @auth

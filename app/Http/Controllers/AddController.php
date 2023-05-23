@@ -12,9 +12,10 @@ class AddController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $adds = Add::all();
-        return view('add.index', compact('adds')); 
+    {   
+        $adds=Add::all();
+        $sortedCategories = Category::orderBy('name')->get();
+        return view('add.index', compact('adds','sortedCategories')); 
     }
 
     /**
