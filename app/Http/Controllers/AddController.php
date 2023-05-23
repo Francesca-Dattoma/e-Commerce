@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Add;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AddController extends Controller
@@ -19,8 +20,11 @@ class AddController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        //
+        
+    {   $sortedCategories = Category::orderBy('name')->get();
+        
+        return view('addAnnounce', compact('sortedCategories'));
+           
     }
 
     /**
@@ -28,7 +32,7 @@ class AddController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
