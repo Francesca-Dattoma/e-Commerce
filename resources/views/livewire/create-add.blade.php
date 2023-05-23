@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">Titolo Annuncio</label>
-            <input wire:model="title" type="text" class="form-control @error('title') is-invalid @enderror">
+            <input wire:model.lazy="title" type="text" class="form-control @error('title') is-invalid @enderror">
             @error('title')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
@@ -22,7 +22,7 @@
 
         <div class="mb-3">
             <label for="place" class="form-label">Città</label>
-            <input wire:model="place" type="text" class="form-control @error('place') is-invalid @enderror">
+            <input wire:model.lazy="place" type="text" class="form-control @error('place') is-invalid @enderror">
             @error('place')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
@@ -30,7 +30,7 @@
 
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input wire:model="price" type="text" class="form-control @error('price') is-invalid @enderror">
+            <input wire:model.lazy="price" type="text" class="form-control @error('price') is-invalid @enderror">
             @error('price')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
@@ -50,7 +50,7 @@
 
         <div class="mb-3">
             <label for="description"  class="form-label">Descrizione</label>
-            <textarea class="form-control" wire:model="description" id="description" cols="30" rows="7"></textarea>
+            <textarea class="form-control" wire:model.lazy="description" id="description" cols="30" rows="7"></textarea>
             @error('description')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
