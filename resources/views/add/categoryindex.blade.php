@@ -11,6 +11,7 @@
                       <p class="card-text">{{$add->price}}</p>
                       <p class="card-text">{{$add->description}}</p>
                     </div>
+                    <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a>
                 </div>
             </div>
 

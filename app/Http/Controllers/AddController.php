@@ -52,7 +52,7 @@ class AddController extends Controller
      */
     public function show(Add $add)
     {
-        //
+        return view('add.show', compact('add'));
     }
 
     /**

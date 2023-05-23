@@ -21,3 +21,4 @@ Route::get('/add/create', [AddController::class, 'create'])->middleware('auth')-
 
 Route::get('/add/index', [AddController::class, 'index'])->name('add.index');
 Route::get('/add/index/{sortedCategory}',[AddController::class,'categoryIndex'])->name('adds.category');
+Route::get('/add/show/{add}',[AddController::class,'show'])->name('add.show');
