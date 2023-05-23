@@ -16,7 +16,8 @@ class Add extends Model
         'price',
         'description',
         'user_id',
-        'category_id'
+        'category_id',
+        'photo'
     ];
 
     public function user(){
