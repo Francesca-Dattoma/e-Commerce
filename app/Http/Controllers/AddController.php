@@ -18,6 +18,16 @@ class AddController extends Controller
         return view('add.index', compact('adds','sortedCategories')); 
     }
 
+    public function categoryIndex(Category $sortedCategory){
+        
+        $adds=Add::where('category_id',$sortedCategory->id)->orderBy('created_at', 'DESC')->get();
+        // $count=$adds->count();
+        // if($count)
+
+        return view('add.categoryindex', compact('adds','sortedCategory'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */

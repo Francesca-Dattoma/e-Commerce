@@ -20,3 +20,4 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/add/create', [AddController::class, 'create'])->middleware('auth')->name('add.create');
 
 Route::get('/add/index', [AddController::class, 'index'])->name('add.index');
+Route::get('/add/index/{sortedCategory}',[AddController::class,'categoryIndex'])->name('adds.category');

@@ -19,7 +19,7 @@
                         <div id='categoriesList' class="prova">
                             <hr>
                             @foreach($sortedCategories as $sortedCategory)
-                                <a class="btn d-flex" href="{{route('adds.category')}}">{{$sortedCategory->name}}</a>
+                                <a class="btn d-flex" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a>
                             @endforeach
                         </div>
                         <hr>
