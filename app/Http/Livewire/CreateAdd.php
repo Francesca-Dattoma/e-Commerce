@@ -60,18 +60,10 @@ class CreateAdd extends Component
             'title'=>$this->title,
             'place'=>$this->place,
             'price'=>$this->price,
-            'description'=>$this->description,
-            'mainPhoto'=>$this->mainPhoto->store('public/photos'),
-            'photo2'=>$this->photo2->store('public/photos'),
-            'photo3'=>$this->photo3->store('public/photos'),
-            'photo4'=>$this->photo4->store('public/photos'),
-            'photo5'=>$this->photo5->store('public/photos'),
-            'photo6'=>$this->photo6->store('public/photos'),
-
-            
+            'description'=>$this->description,       
 
         ]);
-        Illuminate\Support\Facades\Auth::user()->adds()->save($add);
+        Auth::user()->adds()->save($add);
         session()->flash('message', 'Annuncio correttamente inserito.');
         $this->cleanForm();
 

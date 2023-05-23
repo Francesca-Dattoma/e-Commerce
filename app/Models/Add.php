@@ -17,12 +17,6 @@ class Add extends Model
         'description',
         'user_id',
         'category_id',
-        'mainPhoto',
-        'photo2',
-        'photo3',
-        'photo4',
-        'photo5',
-        'photo6'
 
     ];
 

@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 // Route::get('/insert-add', [PublicController::class, 'insert_add'])->middleware('auth')->name('insert_add');
 Route::get('/add/create', [AddController::class, 'create'])->middleware('auth')->name('add.create');
+
+Route::get('/add/index', [AddController::class, 'index'])->name('add.index');
