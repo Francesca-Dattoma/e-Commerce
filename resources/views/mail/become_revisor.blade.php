@@ -12,7 +12,7 @@
     </h1>
     <p>L'utente {{$user->name}}, con username {{$user->username}} ed email {{$user->email}} richiede di diventare revisore.</p>
     <hr>
-    <a href="{{route('make.revisor')}}">Rendi l'utente Revisore</a>
+    <a href="{{route('make.revisor',compact('user'))}}">Rendi l'utente un Revisore</a>
     
 </body>
 </html>

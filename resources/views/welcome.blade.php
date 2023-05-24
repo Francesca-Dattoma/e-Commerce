@@ -4,6 +4,11 @@
         {{session('access.denied')}}
     </div>
     @endif
+    @if (session()->has('message'))
+        <div class="alert alert-success my-3">
+            {{session('message')}}
+        </div>
+    @endif
     
     
     <div class="container">

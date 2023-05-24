@@ -37,5 +37,10 @@ class Add extends Model
         $this->save();
         return true; 
     }
+    public function setNull(){
+        $this->is_accepted = null;
+        $this->save();
+        return true; 
+    }
 }
 

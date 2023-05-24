@@ -1,4 +1,14 @@
 <x-layout title="Annunci da revisionare">
+    @if (session()->has('message'))
+        <div class="alert alert-success my-3">
+            {{session('message')}}
+        </div>
+    @endif
+    @if (session()->has('warning'))
+        <div class="alert alert-warning my-3">
+            {{session('warning')}}
+        </div>
+    @endif
     
     <h2 class="display-2 text-center">
         {{$add_to_check ? "Ecco l'annuncio da revisionare" : "Non ci sono annunci da revisionare"}}
@@ -27,8 +37,8 @@
             </div>
         </div>
 
-        <div class="row my-3">
-            <div class="col-12 col-md-6">
+        <div class="row my-3 justify-content-center">
+            <div class="col-12 col-md-3">
                 <form action="{{route('revisor.addAccepted', ['add'=>$add_to_check])}}" method="POST">
                 
                     @csrf
@@ -38,7 +48,17 @@
 
                 </form>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-3">
+                <form action="{{route('revisor.addBack')}}" method="POST">
+                
+                    @csrf
+                    @method('PATCH')
+
+                    <button type="submit" class="btn btn-secondary shadow text-white">Annulla ultima revisione</button>
+
+                </form>
+            </div>
+            <div class="col-12 col-md-3">
                 <form action="{{route('revisor.addRefused', ['add'=>$add_to_check])}}" method="POST">
                 
                     @csrf
