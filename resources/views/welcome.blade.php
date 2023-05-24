@@ -11,9 +11,10 @@
                     <div class="card-body">
                       <h5 class="card-title">{{$add->title}}</h5>
                       <p class="card-text">{{$add->place}}</p>
-                      <p class="card-text">{{$add->price}}</p>
+                      <p class="card-text">{{$add->price}} €</p>
                       <p class="card-text">{{$add->description}}</p>
                     </div>
+                    <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a>
                 </div>
             </div>
 

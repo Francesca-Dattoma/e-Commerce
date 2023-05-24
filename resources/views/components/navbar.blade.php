@@ -10,14 +10,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link text-dark fw-bold" aria-current="page" href="{{route('homepage')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('add.index')}}">Annunci</a>
+            <a class="nav-link text-dark fw-bold" href="{{route('add.index')}}">Annunci</a>
           </li>
           <li class="nav-item dropdown">
             @auth
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{Auth::user()->username}}
             </a>
             <ul class="dropdown-menu">
@@ -29,12 +29,12 @@
                 <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
               </li>
             @else
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ciao
+            <a class="nav-link dropdown-toggle fw-bold text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Registrati/Login
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
-              <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+              <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
+              <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
             </ul>
             @endauth
           </li>

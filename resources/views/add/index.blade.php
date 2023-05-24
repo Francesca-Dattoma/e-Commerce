@@ -19,7 +19,7 @@
                         <div id='categoriesList' class="prova">
                             <hr>
                             @foreach($sortedCategories as $sortedCategory)
-                                <a class="btn d-flex" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a>
+                                <a class="btn d-flex justify-content-start text-start" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a>
                             @endforeach
                         </div>
                         <hr>
@@ -29,12 +29,12 @@
             </div>
             @forelse ($adds as $add)
             <div class="col-12 col-md-4 mt-2">
-                <div class="card">
+                <div class="card shadow">
                     <img src="/media/logo_img.png" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$add->title}}</h5>
                       <p class="card-text">{{$add->place}}</p>
-                      <p class="card-text">{{$add->price}}</p>
+                      <p class="card-text">{{$add->price}} €</p>
                       <p class="card-text">{{$add->description}}</p>
                     </div>
                     <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a>

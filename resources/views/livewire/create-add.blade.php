@@ -29,8 +29,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Prezzo</label>
-            <input id="price" wire:model.lazy="price" type="number" class="form-control @error('price') is-invalid @enderror w-25">
+            <label for="price" class="form-label">Prezzo (€)</label>
+            <input id="price" wire:model.lazy="price" type="text" class="form-control @error('price') is-invalid @enderror w-25">
             @error('price')
                 <p class="text-danger fst-italic">{{$message}}</p>
             @enderror
