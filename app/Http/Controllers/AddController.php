@@ -12,9 +12,20 @@ class AddController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $adds = Add::all();
-        return view('add.index', compact('adds')); 
+    {   
+        $adds=Add::all();
+        $sortedCategories = Category::orderBy('name')->get();
+        return view('add.index', compact('adds','sortedCategories')); 
+    }
+
+    public function categoryIndex(Category $sortedCategory){
+        
+        $adds=Add::where('category_id',$sortedCategory->id)->orderBy('created_at', 'DESC')->get();
+        // $count=$adds->count();
+        // if($count)
+
+        return view('add.categoryindex', compact('adds','sortedCategory'));
+
     }
 
     /**
@@ -41,7 +52,7 @@ class AddController extends Controller
      */
     public function show(Add $add)
     {
-        //
+        return view('add.show', compact('add'));
     }
 
     /**

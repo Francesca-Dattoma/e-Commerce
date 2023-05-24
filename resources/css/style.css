@@ -5,6 +5,9 @@
     --blackCustom: #000000;
     --whiteCustom: #FFFFFF;
 }
+*{
+    margin:0;
+}
 
 .bg-prim{
     background-color: var(--primary);
@@ -28,12 +31,35 @@
 }
 
 .title-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+    
+    height: 50vh;
 }
 
 .title{
     font-family: 'Monoton', cursive;
-    font-size: 200px;
+    font-size: 60px;
+}
+.prova{
+    display: none;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* body{
+    background-image: url(/public/media/imgSfondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.navCustom{
+
+    background-image: url(/public/media/imgTitolo.jpg);
+    background-position: center;
+   
 }

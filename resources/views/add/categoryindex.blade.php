@@ -1,10 +1,7 @@
-<x-layout title="YOeS">
-
-    
+<x-layout title="{{$sortedCategory->name}}">
     <div class="container">
-        <div class="row">
-
-            @forelse ($adds as $add)
+        <div class="row w-100">
+                @forelse ($adds as $add)
             <div class="col-12 col-md-4 mt-2">
                 <div class="card">
                     <img src="/media/logo_img.png" class="card-img-top" alt="...">
@@ -14,6 +11,7 @@
                       <p class="card-text">{{$add->price}}</p>
                       <p class="card-text">{{$add->description}}</p>
                     </div>
+                    <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a>
                 </div>
             </div>
 
@@ -27,10 +25,7 @@
             </div>
 
             @endforelse
-
         </div>
     </div>
-
-
-
+    
 </x-layout>

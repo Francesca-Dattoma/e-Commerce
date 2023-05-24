@@ -19,12 +19,7 @@ class CreateAdd extends Component
     public $price;
     public $description;
     public $sortedCategories;
-    public $mainPhoto;
-    public $photo2;
-    public $photo3;
-    public $photo4;
-    public $photo5;
-    public $photo6;
+    
 
 
     public $category;
@@ -33,27 +28,22 @@ class CreateAdd extends Component
         'place'=>'required|min:3',
         'price'=>'required|numeric',
         'description'=>'required|min:10',
-        'category'=>'required', 
-        'mainPhoto'=>'required|image', 
-        'photo2'=>'image', 
-        'photo3'=>'image',
-        'photo4'=>'image',
-        'photo5'=>'image',
-        'photo6'=>'image',
-
+        'category'=>'required|different:Placeholder', 
+        
     ];
 
     protected $messages =[
         'required'=>'Il campo :attribute è obbligatorio',
         'min'=>'Il campo :attribute è troppo corto',
         'numeric'=>'Il campo :attribute richiede un numero',
-        'image'=>'Il campo :attribute deve esssere un\'immagine', 
+         
     ];
 
     public function updated($propertyName){
         $this->validateOnly($propertyName);
     }
     public function store(){
+        $this->validate();
         $category= Category::find($this->category);
         $add=$category->adds()->create([
 
