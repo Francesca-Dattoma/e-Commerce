@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg  navCustom ">
     <div class="container-fluid">
       <a src="./public/media/Logo_per_favicon-removebg-preview.ico"></a>
-      <a class="navbar-brand" href="{{route('homepage')}}">YOeS</a>
+      <a class="navbar-brand" href="{{route('homepage')}}">
+      <img src="/media/logo_img.png" alt="logo yoes" class="" height="90">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,11 +21,11 @@
               {{Auth::user()->username}}
             </a>
             <ul class="dropdown-menu">
-              <li class="text-center my-2"><a href="{{route('add.create')}}" class="btn btn-dark w-50">Inserisci Annuncio</a></li>
+              <li class="text-center my-2"><a href="{{route('add.create')}}" class="btn btn-dark w-75">Inserisci Annuncio</a></li>
               {{-- <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li> --}}
               {{-- <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li> --}}
               <li class="text-center mb-2">
-                <a class="btn btn-danger w-50" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
+                <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
                 <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
               </li>
             @else
