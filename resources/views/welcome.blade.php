@@ -1,5 +1,10 @@
 <x-layout title="YOeS">
-
+    @if(session('access.denied'))
+    <div class="alert alert-danger text-center">
+        {{session('access.denied')}}
+    </div>
+    @endif
+    
     
     <div class="container">
         <div class="row">

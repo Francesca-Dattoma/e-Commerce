@@ -28,32 +28,38 @@
               {{-- <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li> --}}
               
               @if(Auth::user()->is_revisor)
-    
-                <li class="text-center my-2">
-                  <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark w-75 position-relative">Revisione Annunci
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
-                      <span class="visually-hidden">Messaggi non letti</span>
-                    </span>
-                  </a>
-                </li>
+              
+              <li class="text-center my-2">
+                <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark w-75 position-relative">Revisione Annunci
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
+                    <span class="visually-hidden">Messaggi non letti</span>
+                  </span>
+                </a>
+              </li>
               @endif
-
+              
               <li class="text-center mb-2">
                 <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
                 <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
               </li>
-
-            @else
-            <a class="nav-link dropdown-toggle fw-bold text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Registrati/Login
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
-              <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
+              
+              @else
+              <a class="nav-link dropdown-toggle fw-bold text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Registrati/Login
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
+                <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
+              </ul>
+              @endauth
+              </li>
             </ul>
-            @endauth
-          </li>
-        </ul>
+            <li class="nav-item">
+              <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
+            </li>
+          </ul>
+        </div>
+        
+        
       </div>
-    </div>
-  </nav>
+    </nav>
