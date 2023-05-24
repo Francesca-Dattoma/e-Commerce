@@ -28,7 +28,7 @@ class Add extends Model
         return $this->belongsTo(Category::class);
     }
     
-    public function toBeRevisionedCount(){
+    public static function toBeRevisionedCount(){
         return Add::where('is_accepted', null)->count();
     }
 
