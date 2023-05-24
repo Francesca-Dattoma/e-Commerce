@@ -22,3 +22,8 @@ Route::get('/add/create', [AddController::class, 'create'])->middleware('auth')-
 Route::get('/add/index', [AddController::class, 'index'])->name('add.index');
 Route::get('/add/index/{sortedCategory}',[AddController::class,'categoryIndex'])->name('adds.category');
 Route::get('/add/show/{add}',[AddController::class,'show'])->name('add.show');
+
+Route::get('/revisor/home', [RevisorController::class,'index'])->name('revisor.index');
+
+Route::patch('/accept/add/{add}', [RevisorController::class,'AcceptAdd'])->name('revisor.addAccepted');
+Route::patch('/refuse/add/{add}', [RevisorController::class,'RefuseAdd'])->name('revisor.addRefused');
