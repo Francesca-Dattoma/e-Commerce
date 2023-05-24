@@ -31,5 +31,11 @@ class Add extends Model
     public function toBeRevisionedCount(){
         return Add::where('is_accepted', null)->count();
     }
+
+    public function setAccepted($value){
+        $this->is_accepted = $value;
+        $this->save();
+        return true; 
+    }
 }
 

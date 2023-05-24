@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddController;
 use App\Http\Controllers\PublicController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Add;
 use Illuminate\Http\Request;
 
 class RevisorController extends Controller

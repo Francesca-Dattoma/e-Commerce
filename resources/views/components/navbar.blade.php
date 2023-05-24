@@ -15,6 +15,18 @@
           <li class="nav-item">
             <a class="nav-link text-dark fw-bold" href="{{route('add.index')}}">Annunci</a>
           </li>
+
+          @if(Auth::user()->is_revisor)
+
+            <li class="text-center my-2">
+              <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark w-75 position-relative">Revisione Annunci
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
+                  <span class="visually-hidden">Messaggi non letti</span>
+                </span>
+              </a>
+            </li>
+          @endif
+          
           <li class="nav-item dropdown">
             @auth
             <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,16 +37,6 @@
               {{-- <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li> --}}
               {{-- <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li> --}}
 
-              @if(Auth::user()->is_revisor)
-
-              <li class="text-center my-2">
-                <a href="{{route('revisor.index')}}" class="btn btn-dark w-75 position-relative">Revisione Annunci
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
-                    <span class="visually-hidden">Messaggi non letti</span>
-                  </span>
-                </a>
-              </li>
-              @endif
 
               <li class="text-center mb-2">
                 <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
