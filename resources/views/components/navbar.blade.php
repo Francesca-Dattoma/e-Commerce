@@ -73,9 +73,13 @@
     <div class="navbar">
       <div class="d-flex justify-content-center mt-3">
         <a class="navbar-brand" href="{{route('homepage')}}">
-            <img src="/media/logo_img.png" alt="logo yoes" class="" height="70">
-          </a>
-        </div>
+          <img src="/media/logo_img.png" alt="logo yoes" class="" height="70">
+        </a>
+        <form action="{{route('adds.search')}}" method="GET" class="d-flex">
+          <input name="searched" class="form-control me-2" type="search" placeholder="Ricerca" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
         <nav class="navbar navbar-expand-md  navCustom ">
           <div class="container">
     
@@ -141,11 +145,8 @@
           </ul>
           @endauth
         </li>
-        <form action="{{route('adds.search')}}" method="GET" class="d-flex" role="search">
-          <input name="searched" class="form-control me-2" type="search" placeholder="Ricerca" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
       </ul>
+      
     </div>
       
       

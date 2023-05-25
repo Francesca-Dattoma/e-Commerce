@@ -10,6 +10,7 @@ use Laravel\Scout\Searchable;
 class Add extends Model
 {
     use HasFactory, Searchable;
+    public $asYouType = true;
 
     protected $fillable = [
         'title',
@@ -21,7 +22,13 @@ class Add extends Model
 
     ];
 
-    @return array
+     /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+
+    
 
     public function toSearchableArray(){
 
