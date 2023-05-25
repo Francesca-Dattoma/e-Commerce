@@ -39,7 +39,37 @@
 .title{
     font-family: 'Monoton', cursive;
     font-size: 60px;
+    text-shadow: 10px 10px 200px rgb(65, 23, 23);
+    /* animation: scorri 3s 2ms infinite; */
 }
+/* @keyframes scorri {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 20px 20px 26px red;
+    }
+    25% {
+        transform: translateY(50px);
+        
+    }
+    50% {
+        transform: translateY(75px);
+        
+    }
+    75% {
+        transform: translateY(50px);
+        
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 20px 20px 26px red;
+    } */
+    
+    
+    
+    
+    
+    
+/* } */
 .prova{
     display: none;
 }
@@ -51,17 +81,21 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* body{
-    background-image: url(/public/media/imgSfondo.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 .navCustom{
 
-    background-image: url(/public/media/imgTitolo.jpg);
+    background-image: radial-gradient(rgba(245, 234, 234, 0), rgb(243, 227, 227)), url(/public/media/imgTitolo.jpg);
     background-position: center;
     background-size: cover;
+   width: 100%;
+    
     
     
 }
+.navbar{
+    display: flex;
+    flex-direction: column;
+}
+.card:hover{
+    box-shadow: 10px 10px 15px rgba(128, 128, 128, 0.351);
+}
+

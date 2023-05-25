@@ -1,4 +1,4 @@
-<x-layout title="inserisci annuncio">
+<x-layout title="Inserisci annuncio">
 
         <div class="container">
             <div class="row">

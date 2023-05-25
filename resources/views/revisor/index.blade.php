@@ -1,4 +1,4 @@
-<x-layout title="Annunci da revisionare">
+<x-layout title="Revisiona">
     @if (session()->has('message'))
         <div class="alert alert-success my-3">
             {{session('message')}}

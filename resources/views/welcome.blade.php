@@ -15,16 +15,20 @@
         <div class="row">
 
             @forelse ($adds as $add)
-            <div class="col-12 col-md-4 mt-2">
-                <div class="card">
-                    <img src="/media/logo_img.png" class="card-img-top" alt="...">
+            <div class="col-12 col-md-4">
+                <div class="card mb-4">
+                    <img src="/media/logo_img.png" class="card-img-top p-5" alt="{{$add->name}}">
                     <div class="card-body">
-                      <h5 class="card-title">{{$add->title}}</h5>
+                      <h5 class="card-title text-center">{{$add->title}}</h5>
+                      <hr>
                       <p class="card-text">{{$add->place}}</p>
                       <p class="card-text">{{$add->price}} €</p>
                       <p class="card-text">{{$add->description}}</p>
                     </div>
-                    <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a>
+                    <div class="d-flex justify-content-center pb-2">
+                        <a href="{{route('add.show', compact('add'))}}" class="btn btn-dark w-50 m-0">Dettaglio articolo</a>
+                    </div>
+                    
                 </div>
             </div>
 
