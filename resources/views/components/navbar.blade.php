@@ -1,157 +1,124 @@
-{{-- <nav class="navbar navbar-expand-lg  navCustom ">
-    <div class="container-fluid">
-      <a src="./public/media/Logo_per_favicon-removebg-preview.ico"></a>
-      <a class="navbar-brand" href="{{route('homepage')}}">
-        <img src="/media/logo_img.png" alt="logo yoes" class="" height="90">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" aria-current="page" href="{{route('homepage')}}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="{{route('add.index')}}">Annunci</a>
-          </li>
-          @guest
-          <li class="nav-item">
-            <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
-          </li>
-          @else 
-            @if(!Auth::user()->is_revisor)
-            <li class="nav-item">
-              <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
-            </li>
-            @endif
-          @endguest
-          
-          <li class="nav-item dropdown">
-            @auth
-              <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{Auth::user()->username}}
-              </a>
-            <ul class="dropdown-menu">
-              <li class="text-center my-2"><a href="{{route('add.create')}}" class="btn btn-dark w-75">Inserisci Annuncio</a></li>
-              
-              
-              @if(Auth::user()->is_revisor)
-              
-                <li class="text-center my-2">
-                  <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark w-75 position-relative">Revisione Annunci
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
-                      <span class="visually-hidden">Messaggi non letti</span>
-                    </span>
-                  </a>
-                </li>
-              @endif
-              
-              <li class="text-center mb-2">
-                <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
-                <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
-              </li>
-              
-              @else
-              <a class="nav-link dropdown-toggle fw-bold text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Registrati/Login
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
-                <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
-              </ul>
-            </ul>
-            @endauth
-          </li>
-        </ul>
-      </div>
-        
-        
-      </div>
-    </nav> --}}
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bgNavbar w-100 w-md-75 container mt-md-4 badge">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
 
-    <div class="navbar">
-      <div class="d-flex justify-content-center mt-3">
-        <a class="navbar-brand" href="{{route('homepage')}}">
-          <img src="/media/logo_img.png" alt="logo yoes" class="" height="70">
-        </a>
-        <form action="{{route('adds.search')}}" method="GET" class="d-flex">
-          <input name="searched" class="form-control me-2" type="search" placeholder="Ricerca" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-      </div>
-        <nav class="navbar navbar-expand-md  navCustom ">
-          <div class="container">
-    
-    <div class="d-flex justify-content-end">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Navbar brand -->
+    <a class="navbar-brand monoton-font" href="{{route('homepage')}}">YOeS</a>
 
-    </div>
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <!-- Link -->
         <li class="nav-item">
-          <a class="nav-link text-dark fw-bold" aria-current="page" href="{{route('homepage')}}">Home</a>
+          <a class="nav-link" href="{{route('add.index')}}">Annunci</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark fw-bold" href="{{route('add.index')}}">Annunci</a>
-        </li>
-        @guest
-        <li class="nav-item">
-          <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
-        </li>
-        @else 
-          @if(!Auth::user()->is_revisor)
-          <li class="nav-item">
-            <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
-          </li>
-          @endif
-        @endguest
-        
+
+        <!-- Dropdown -->
         <li class="nav-item dropdown">
-          @auth
-            <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{Auth::user()->username}}
-            </a>
-          <ul class="dropdown-menu">
-            <li class="text-center my-2"><a href="{{route('add.create')}}" class="btn btn-dark w-75">Inserisci Annuncio</a></li>
-            
-            
-            @if(Auth::user()->is_revisor)
-            
-              <li class="text-center my-2">
-                <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark w-75 position-relative">Revisione Annunci
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
-                    <span class="visually-hidden">Messaggi non letti</span>
-                  </span>
-                </a>
-              </li>
-            @endif
-            
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @auth {{Auth::user()->username}} @else Utente @endauth
+          </a>
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            @auth
+            @endauth
+            @auth
+            <li>
+              <a class="dropdown-item" href="{{route('add.create')}}">Inserisci Annuncio</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
             <li class="text-center mb-2">
               <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
               <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
             </li>
+            @endauth
+            @guest
+            <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
+            <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
+            @endguest
             
-            @else
-            <a class="nav-link dropdown-toggle fw-bold text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Registrati/Login
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
-              <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
-            </ul>
           </ul>
-          @endauth
         </li>
+        
+      </ul> 
+  
+
+      <!-- Search -->
+      <div class="input-group d-flex justify-content-center">
+        <form action="{{route('adds.search')}}" method="GET" class="w-auto" id="search">
+          <input name="searched" type="search" class="bg-white form-control border-0 searchCustom" placeholder="Ricerca" aria-label="Search">
+        </form>
+        <button class="btn bg-white btnCustom" type="submit" onclick="event.preventDefault();document.querySelector('#search').submit();" >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+      </div>
+
+      {{-- bottoni diventa revisore o annunci da revisionare --}}
+      @guest
+      <li class="nav-item list-unstyled">
+        <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
+      </li>
+      @else 
+        @if(!Auth::user()->is_revisor)
+        <li class="nav-item">
+          <a href="{{route('become.revisor')}}" class="btn btn-dark text-white nav-link">Diventa Revisore</a>
+        </li>
+        @endif
+      @endguest
+     
+      @auth
+      @if(Auth::user()->is_revisor)
+      
+      <li class="text-center my-2 nav-item text-decoration-none list-unstyled">
+        <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark position-relative">Revisione Annunci
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
+            <span class="visually-hidden">Messaggi non letti</span>
+          </span>
+        </a>
+      </li>
+      @endif
+      @endauth
+    </div>
+    <li class="nav-item dropdown list-unstyled ms-4">
+      <a class="nav-link dropdown-toggle color-prim" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Area personale">
+        @auth <i class="fa-solid fa-user color-prim"></i> {{Auth::user()->username}} @else <i class="fa-solid fa-user color-prim fa-2x"></i> @endauth
+      </a>
+      <!-- Dropdown menu -->
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @auth
+        @endauth
+        @auth
+        <li>
+          <a class="dropdown-item" href="{{route('add.create')}}">Inserisci Annuncio</a>
+        </li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li class="text-center mb-2">
+          <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
+          <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
+        </li>
+        @endauth
+        @guest
+        <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
+        <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
+        @endguest
+        
       </ul>
-      
-    </div>
-      
-      
-    </div>
-  </nav>
-    </div>
+    </li>
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
       
 

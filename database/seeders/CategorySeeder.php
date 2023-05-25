@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert([
             [  
                 'name' => 'Auto, moto e altri veicoli',
-                'slug' => 'Auto-moto-e-altri-veicoli'          
+                'slug' => 'Auto-moto-e-altri-veicoli',          
             ],
             [  
                 'name' => 'Ricambi e accessori per auto e moto',

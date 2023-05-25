@@ -1,9 +1,10 @@
+
 :root{
-    --primary: #FFFD00;
-    --secondary: #FF8900;
-    --accent: #F8F2CB;
+    --primary: #359bc7;
+    --secondary: #257b8b;
+    --accent: #d0f8ff;
     --blackCustom: #000000;
-    --whiteCustom: #FFFFFF;
+    --whiteCustom: rgb(250, 250, 250);
 }
 *{
     margin:0;
@@ -11,6 +12,9 @@
 
 .bg-prim{
     background-color: var(--primary);
+}
+.color-prim{
+    color: var(--primary);
 }
 
 .bg-second{
@@ -22,12 +26,15 @@
     background-image: linear-gradient(to right top, #fffd00, #ffe000, #ffc300, #ffa600, #ff8900);
 }
 
-.text-font{
+.maven-font{
     font-family: 'Maven Pro', sans-serif;
 }
 
-.title-font{
+.anton-font{
     font-family: 'Anton', sans-serif;
+}
+.monoton-font{
+    font-family: 'Monoton', cursive;
 }
 
 .title-section{
@@ -37,10 +44,43 @@
 }
 
 .title{
-    font-family: 'Monoton', cursive;
+    
     font-size: 60px;
     text-shadow: 10px 10px 200px rgb(65, 23, 23);
     /* animation: scorri 3s 2ms infinite; */
+}
+.bgNavbar{
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter:blur(10px);
+    border-radius: 15rem;
+    border: 1px solid var(--primary);
+    
+    
+}
+.badgeSearch{
+    border-radius: 15rem;
+}
+.btnCustom{
+    border-radius: 0 15px 15px 0;
+    border: none;
+}
+.btnCustom:hover{
+    color: var(--primary);
+}
+.searchCustom{
+    border-radius: 15px 0 0 15px;
+    
+
+    
+}
+.searchCustom:focus{
+    
+    box-shadow: none;
+}
+.bgHeader{
+    background-image: url("/public/media/bgHeader.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 /* @keyframes scorri {
     0% {
@@ -81,7 +121,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.navCustom{
+/* .navCustom{
 
     background-image: radial-gradient(rgba(245, 234, 234, 0), rgb(243, 227, 227)), url(/public/media/imgTitolo.jpg);
     background-position: center;
@@ -90,7 +130,7 @@ input::-webkit-inner-spin-button {
     
     
     
-}
+} */
 .navbar{
     display: flex;
     flex-direction: column;
@@ -99,3 +139,8 @@ input::-webkit-inner-spin-button {
     box-shadow: 10px 10px 15px rgba(128, 128, 128, 0.351);
 }
 
+@media screen and (max-width: 576px){
+    .bgNavbar{
+        border-radius: 0px;   
+    }
+}
