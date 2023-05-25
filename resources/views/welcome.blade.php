@@ -20,15 +20,21 @@
                     <img src="/media/logo_img.png" class="card-img-top p-5" alt="{{$add->name}}">
                     <div class="card-body">
                       <h5 class="card-title text-center">{{$add->title}}</h5>
-                      <hr>
+                      <a href="{{route('adds.category', $add->category)}}">
+                        
+                        Categoria: {{$add->category->name}}
+
+                      </a>
                       <p class="card-text">{{$add->place}}</p>
                       <p class="card-text">{{$add->price}} €</p>
-                      <p class="card-text">{{$add->description}}</p>
                     </div>
                     <div class="d-flex justify-content-center pb-2">
                         <a href="{{route('add.show', compact('add'))}}" class="btn btn-dark w-50 m-0">Dettaglio articolo</a>
                     </div>
-                    
+                    <div class="card-footer">
+                        <p>Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
+                        <p>Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
+                      </div>   
                 </div>
             </div>
 

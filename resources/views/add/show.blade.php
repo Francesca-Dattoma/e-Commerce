@@ -11,12 +11,23 @@
             </div>
             <div class="col-12 col-md-6">
                 <h2 display-3>{{$add->title}}</h2>
+                <a href="{{route('adds.category', $add->category)}}">
+                        
+                    Categoria: {{$add->category->name}}
+
+                </a>
                 <hr>
                 <h4>{{$add->price}} €</h4>
                 <hr>
                 <p class="my-3">{{$add->description}}</p>
+                <hr>
+                <div class="mt-5">
+                    <p>Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
+                    <p>Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
+                </div>
             </div>
 
+            
 
         </div>
     </div>
