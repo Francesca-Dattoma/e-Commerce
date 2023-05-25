@@ -25,6 +25,9 @@
             </div>
 
             @endforelse
+        
+            {{ $adds->links() }}
+
         </div>
     </div>
     

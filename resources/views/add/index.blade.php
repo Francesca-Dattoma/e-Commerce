@@ -33,6 +33,15 @@
                     <img src="/media/logo_img.png" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$add->title}}</h5>
+                      <p class="card-text"> 
+
+                        <a href="{{route('adds.category', compact('category'))}}">
+                        
+                            Categoria: {{$add->category->name}}
+
+                        </a>
+                    
+                      </p>
                       <p class="card-text">{{$add->place}}</p>
                       <p class="card-text">{{$add->price}} €</p>
                       <p class="card-text">{{$add->description}}</p>
@@ -41,7 +50,7 @@
                 </div>
             </div>
 
-            {{ $adds->links() }}
+           
 
             @empty 
 
@@ -53,6 +62,8 @@
             </div>
 
             @endforelse
+
+            {{ $adds->links() }}
 
         </div>
     </div>
