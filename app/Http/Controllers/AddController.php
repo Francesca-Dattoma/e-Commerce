@@ -13,7 +13,7 @@ class AddController extends Controller
      */
     public function index()
     {   
-        $adds=Add::all();
+        $adds=Add::paginate(9);
         $sortedCategories = Category::orderBy('name')->get();
         return view('add.index', compact('adds','sortedCategories')); 
     }

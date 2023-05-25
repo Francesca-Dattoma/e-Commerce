@@ -41,6 +41,8 @@
                 </div>
             </div>
 
+            {{ $adds->links() }}
+
             @empty 
 
             <div class="col-12">
