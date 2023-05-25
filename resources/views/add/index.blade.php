@@ -60,7 +60,7 @@
 
             <div class="col-12">
 
-                <p class="h1">Non sono presenti annunci per questa categoria</p>
+                <p class="h1">Non sono presenti annunci</p>
                 <p class="h1">Pubblicane uno: <a class="btn btn-success" href="{{route('add.create')}}">Nuovo Annuncio</a></p>
 
             </div>

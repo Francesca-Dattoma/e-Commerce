@@ -17,6 +17,7 @@ use App\Http\Controllers\RevisorController;
 */
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+Route::get('/search/add', [PublicController::class, 'searchAdds'])->name('adds.search');
 // Route::get('/insert-add', [PublicController::class, 'insert_add'])->middleware('auth')->name('insert_add');
 Route::get('/add/create', [AddController::class, 'create'])->middleware('auth')->name('add.create');
 

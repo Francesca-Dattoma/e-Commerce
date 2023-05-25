@@ -141,6 +141,10 @@
           </ul>
           @endauth
         </li>
+        <form action="{{route('adds.search')}}" method="GET" class="d-flex" role="search">
+          <input name="searched" class="form-control me-2" type="search" placeholder="Ricerca" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
       </ul>
     </div>
       
