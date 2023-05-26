@@ -32,9 +32,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" row bg-secondary bg-gradient h6 ">
-                                    <p class="muted">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
-                                    <p class="muted">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
+                                <div class=" row bg-secondary bg-gradient h6 rounded justify-content-center h-100">
+                                    <p class="muted mb-0 pt-3">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
+                                    <p class="muted mb-0 pb-3">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
                                 </div>
                             </div>
                         </div>
