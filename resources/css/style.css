@@ -1,4 +1,15 @@
-
+@font-face {
+    font-family: 'Monoton';
+    src: url("/public/media/fonts/Monoton-Regular.ttf");
+}
+@font-face {
+    font-family: 'Anton';
+    src: url("/public/media/fonts/Anton-Regular.ttf");
+}
+@font-face {
+    font-family: 'Maven Pro';
+    src: url("/public/media/fonts/MavenPro-Regular.ttf");
+}
 :root{
     --primary: #359bc7;
     --secondary: #257b8b;
@@ -27,14 +38,14 @@
 }
 
 .maven-font{
-    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Maven Pro';
 }
 
 .anton-font{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Anton';
 }
 .monoton-font{
-    font-family: 'Monoton', cursive;
+    font-family: 'Monoton';
 }
 
 .title-section{
@@ -112,10 +123,14 @@
     
     
 /* } */
-.prova{
+/* .prova{
     display: none;
+} */
+.welcomeMain{
+    height: 40vh;
+    /* object-fit: cover; */
+    
 }
-
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -144,5 +159,12 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 576px){
     .bgNavbar{
         border-radius: 0px;   
+    }
+}
+@media screen and (max-width:767px){
+    .welcomeMain{
+        height: 100vh;
+        /* object-fit: cover; */
+        
     }
 }

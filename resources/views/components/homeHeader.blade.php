@@ -1,11 +1,17 @@
-<div class="bodyHeaderHome container-fluid">
+<div class="bodyHeaderHome container-fluid d-flex justify-content-center align-items-center">
     
-    <p id='head1' class='homeHeader text-white monoton-font'>YOeS</p>
-    <p id='head2' class='homeHeader text-white anton-font'>Your</p>
-    <p id='head3' class='homeHeader text-white anton-font'>Own</p>
-    <p id='head4' class='homeHeader text-white anton-font'>eShop</p>
-    <p id='head5' class='homeHeader text-white monoton-font'>YOeS</p>
-    <button class="buttonHomeHeader">Continue</button>
+    <p id='head1' class='homeHeader text-white monoton-font display-2'>YOeS</p>
+    <p id='head2' class='homeHeader text-white anton-font display-3'>Your</p>
+    <p id='head3' class='homeHeader text-white anton-font display-3'>Own</p>
+    <p id='head4' class='homeHeader text-white anton-font display-3'>eShop</p>
+    <div id='head5'>
+        <p class='homeHeader text-white monoton-font display-2'>YOeS</p>
+
+        <p class='homeHeader2 text-white anton-font h4 text-center mt-5 pt-5'>“Your Own eShop”</p>
+
+    </div>
+    <a class="buttonHomeHeader nav-link text-center" href="{{route('add.index')}}">Annunci</a>
+
       <div class='light x1'></div>
       <div class='light x2'></div>
       <div class='light x3'></div>
