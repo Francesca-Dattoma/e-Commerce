@@ -67,7 +67,21 @@
 
             @endforelse
 
-            {{ $adds->links() }}
+            <nav class="d-flex justify-content-end mt-4 ">
+                <ul class="pagination gap-2 ">
+                    <li class="page-item {{ $adds->previousPageUrl() ? '' : 'disabled' }} ">
+                        <a class="page-link border-0" href="{{ $adds->previousPageUrl() ?? '#' }} ">Previous</a>
+                    </li>
+                    @for ($i = 1; $i <= $adds->lastPage(); $i++)
+                        <li class="page-item {{ $adds->currentPage() == $i ? 'active' : '' }}">
+                            <a class="page-link border-0" href="{{ $adds->url($i) }}">{{ $i }}</a>
+                        </li>
+                    @endfor
+                    <li class="page-item {{ $adds->nextPageUrl() ? '' : 'disabled' }}">
+                        <a class="page-link border-0" href="{{ $adds->nextPageUrl() ?? '#' }}">Next</a>
+                    </li>
+                </ul>
+            </nav>
 
         </div>
     </div>
