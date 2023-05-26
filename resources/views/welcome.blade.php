@@ -20,7 +20,7 @@
                             <div class="container rounded  ">
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-lg-6 d-flex justify-content-center p-0">
-                                        <img src="https://picsum.photos/1000" height="300" class="rounded m-1" alt="{{$add->name}}">
+                                        <img src="https://picsum.photos/1000" height="300" class="rounded m-1 mb-3" alt="{{$add->name}}">
                                     </div>
                                     <div class="col-12 col-lg-5 d-flex justify-content-around align-items-start flex-column">
                                         <h3 class=" display-6 fw-bold anton-font">{{$add->title}}</h3>
@@ -32,7 +32,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" row bg-secondary bg-gradient h6">
+                                <div class=" row bg-secondary bg-gradient h6 ">
                                     <p class="muted">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
                                     <p class="muted">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
                                 </div>
