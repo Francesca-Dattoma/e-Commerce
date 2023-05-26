@@ -55,8 +55,12 @@
    
    
     <li class="nav-item dropdown list-unstyled ms-4">
+      
       <a class="nav-link dropdown-toggle color-prim" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Area personale">
-        @auth  <i class="fa-solid fa-user-check text-primary fa-2x"> </i> {{Auth::user()->username}} @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
+        @auth  
+          <i class="fa-solid fa-user-check text-primary fa-2x"></i>
+          <span class="mx-1 text-dark">{{Auth::user()->name}}</span> 
+        @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
       </a>
       <!-- Dropdown menu -->
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -81,7 +85,7 @@
           <hr class="dropdown-divider" />
         </li>
         <li class="text-center mb-2">
-          <a class="text-decoration-none text-danger  w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
+          <a class="text-decoration-none text-danger btn fw-bold w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
           <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
         </li>
         @endauth
