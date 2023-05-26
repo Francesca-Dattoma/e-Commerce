@@ -21,34 +21,8 @@
         </li>
 
         <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            @auth {{Auth::user()->username}} @else Utente @endauth
-          </a>
-          <!-- Dropdown menu -->
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            @auth
-            @endauth
-            @auth
-            <li>
-              <a class="dropdown-item" href="{{route('add.create')}}">Inserisci Annuncio</a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li class="text-center mb-2">
-              <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
-              <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
-            </li>
-            @endauth
-            @guest
-            <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
-            <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
-            @endguest
-            
-          </ul>
-        </li>
-        
+      
+          <!-- Dropdown menu -->    
       </ul> 
   
 
@@ -64,7 +38,7 @@
       </div>
 
       {{-- bottoni diventa revisore o annunci da revisionare --}}
-      @guest
+      {{-- @guest
       <li class="nav-item list-unstyled">
         <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
       </li>
@@ -74,29 +48,27 @@
           <a href="{{route('become.revisor')}}" class="btn btn-dark text-white nav-link">Diventa Revisore</a>
         </li>
         @endif
-      @endguest
-     
-      @auth
-      @if(Auth::user()->is_revisor)
-      
-      <li class="text-center my-2 nav-item text-decoration-none list-unstyled">
-        <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark position-relative">Revisione Annunci
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
-            <span class="visually-hidden">Messaggi non letti</span>
-          </span>
-        </a>
-      </li>
-      @endif
-      @endauth
+      @endguest --}}
     </div>
     <li class="nav-item dropdown list-unstyled ms-4">
       <a class="nav-link dropdown-toggle color-prim" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Area personale">
-        @auth <i class="fa-solid fa-user color-prim"></i> {{Auth::user()->username}} @else <i class="fa-solid fa-user color-prim fa-2x"></i> @endauth
+        @auth <i class="fa-solid fa-user-check text-primary fa-2x"></i> {{Auth::user()->username}}</i>  @else <i class="fa-solid fa-user text-dark fa-2x "> @endauth
       </a>
       <!-- Dropdown menu -->
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        @auth
-        @endauth
+       
+            @auth
+            @if(Auth::user()->is_revisor)
+            
+            <li class="text-center my-2 nav-item text-decoration-none list-unstyled">
+              <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark position-relative">Revisione Annunci
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
+                  <span class="visually-hidden">Messaggi non letti</span>
+                </span>
+              </a>
+            </li>
+            @endif
+            @endauth
         @auth
         <li>
           <a class="dropdown-item" href="{{route('add.create')}}">Inserisci Annuncio</a>

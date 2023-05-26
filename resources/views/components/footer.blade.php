@@ -20,6 +20,20 @@
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Road</a></li>
           {{-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li> --}}
+        
+          {{-- @guest
+          <li class="nav-item list-unstyled">
+            <a href="{{route('become.revisor')}}" class=" text-white">Diventa Revisore</a>
+          </li>
+          @else   --}}
+          @auth
+            {{-- @if(!Auth::user()->is_revisor) --}}
+            <li class="nav-item">
+              <a href="{{route('become.revisor')}}" class=" text-white nav-link">Diventa Revisore</a>
+            </li>
+            {{-- @endif --}}
+          @endauth
+
         </ul>
       </div>
 
@@ -42,6 +56,7 @@
             <label for="newsletter1" class="visually-hidden">Email address</label>
             <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
             <button class="btn btn-primary" type="button">Subscribe</button>
+            
           </div>
         </form>
       </div>
