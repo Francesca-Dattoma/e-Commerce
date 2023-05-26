@@ -37,8 +37,8 @@
 
       </div>
 
-      {{-- bottoni diventa revisore o annunci da revisionare --}}
-      {{-- @guest
+      
+       @guest
       <li class="nav-item list-unstyled">
         <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
       </li>
@@ -48,11 +48,15 @@
           <a href="{{route('become.revisor')}}" class="btn btn-dark text-white nav-link">Diventa Revisore</a>
         </li>
         @endif
-      @endguest --}}
+      @endguest 
+    
     </div>
+   
+   
+   
     <li class="nav-item dropdown list-unstyled ms-4">
       <a class="nav-link dropdown-toggle color-prim" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Area personale">
-        @auth <i class="fa-solid fa-user-check text-primary fa-2x"></i> {{Auth::user()->username}}</i>  @else <i class="fa-solid fa-user text-dark fa-2x "> @endauth
+        @auth  <i class="fa-solid fa-user-check text-primary fa-2x"> </i> {{Auth::user()->username}} @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
       </a>
       <!-- Dropdown menu -->
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
