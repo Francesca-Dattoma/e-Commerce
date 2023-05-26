@@ -4,7 +4,7 @@
   <div class="container-fluid">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand monoton-font" href="{{route('homepage')}}">YOeS</a>
+    <a class="navbar-brand  monoton-font" href="{{route('homepage')}}">YOeS</a>
 
     <!-- Toggle button -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,12 +40,12 @@
       
        @guest
       <li class="nav-item list-unstyled">
-        <a href="{{route('become.revisor')}}" class="btn btn-dark text-white">Diventa Revisore</a>
+        <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark">Diventa Revisore</a>
       </li>
       @else 
         @if(!Auth::user()->is_revisor)
         <li class="nav-item">
-          <a href="{{route('become.revisor')}}" class="btn btn-dark text-white nav-link">Diventa Revisore</a>
+          <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark nav-link">Diventa Revisore</a>
         </li>
         @endif
       @endguest 
@@ -65,7 +65,7 @@
             @if(Auth::user()->is_revisor)
             
             <li class="text-center my-2 nav-item text-decoration-none list-unstyled">
-              <a href="{{route('revisor.index')}}" aria-current="page" class="btn btn-dark position-relative">Revisione Annunci
+              <a href="{{route('revisor.index')}}" aria-current="page" class="position-relative text-decoration-none text-dark">Revisione Annunci
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
                   <span class="visually-hidden">Messaggi non letti</span>
                 </span>
@@ -75,13 +75,13 @@
             @endauth
         @auth
         <li>
-          <a class="dropdown-item" href="{{route('add.create')}}">Inserisci Annuncio</a>
+          <a class="dropdown-item text-decoration-none text-dark fw-bold " href="{{route('add.create')}}">Inserisci Annuncio</a>
         </li>
         <li>
           <hr class="dropdown-divider" />
         </li>
         <li class="text-center mb-2">
-          <a class="btn btn-danger w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
+          <a class="text-decoration-none text-danger  w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
           <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
         </li>
         @endauth
