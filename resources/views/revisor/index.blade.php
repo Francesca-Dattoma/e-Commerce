@@ -70,5 +70,10 @@
             </div>
         </div>
     @endif
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 d-flex justify-content-center mt-5">
+            <a href="{{route('add.index')}}" class="btn btn-lg btnCustomPage bg-prim bg-gradient h6 rounded text-center anton-font mb-3 shadow">Torna agli annunci</a>
+        </div>
+    </div>
 
 </x-layout>

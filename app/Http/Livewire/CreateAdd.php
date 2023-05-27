@@ -24,8 +24,8 @@ class CreateAdd extends Component
 
     public $category;
     protected $rules =[
-        'title'=>'required|min:3',
-        'place'=>'required|min:3',
+        'title'=>'required|min:3|max:100',
+        'place'=>'required|min:3|max:50',
         'price'=>'required|numeric',
         'description'=>'required|min:10',
         'category'=>'required|different:Placeholder', 
@@ -36,6 +36,7 @@ class CreateAdd extends Component
         'required'=>'Il campo :attribute è obbligatorio',
         'min'=>'Il campo :attribute è troppo corto',
         'numeric'=>'Il campo :attribute richiede un numero',
+        'max'=>'Il campo :attribute è troppo lungo'
          
     ];
 
@@ -49,7 +50,7 @@ class CreateAdd extends Component
 
             'title'=>$this->title,
             'place'=>$this->place,
-            'price'=>$this->price,
+            'price'=>$this->price,2,
             'description'=>$this->description,       
 
         ]);

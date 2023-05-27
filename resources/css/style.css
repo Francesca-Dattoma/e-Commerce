@@ -80,10 +80,7 @@
     color: var(--primary);
 }
 .searchCustom{
-    border-radius: 15px 0 0 15px;
-    
-
-    
+    border-radius: 15px 0 0 15px;   
 }
 .searchCustom:focus{
     
@@ -130,9 +127,9 @@
     
     
 /* } */
-/* .prova{
+.filtroCategorie{
     display: none;
-} */
+}
 .welcomeMain{
     height: 40vh;
     /* object-fit: cover; */
@@ -162,7 +159,7 @@ input::-webkit-inner-spin-button {
 .articleIndexCard{
    
     transition: .2s;
-    height: 500px;
+    height: 480px;
 }
 .articleIndexCard:hover{
     /* width: 300px;
@@ -172,6 +169,20 @@ input::-webkit-inner-spin-button {
 	box-shadow: 0px 0px 5px 10px var(--primary) !important;
     scale:1.02;
     
+}
+
+.btnCustomPage{
+    border-radius: 0 15px 15px 0;
+    border:3px solid var(--primary);
+    transition: .3s;
+    
+}
+.btnCustomPage:hover{
+    color: var(--primary);
+    border:3px solid var(--primary);
+}
+.btnCustomPage:active{
+    transform: translateY(3px);
 }
 
 

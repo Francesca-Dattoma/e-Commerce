@@ -23,8 +23,21 @@
                                         <img src="https://picsum.photos/1000" height="300" class="rounded m-1 p-1" alt="{{$add->title}}">
                                     </div>
                                     <div class="col-12 col-lg-5 d-flex justify-content-around align-items-start flex-column">
-                                        <h3 class=" display-6 fw-bold anton-font">{{$add->title}}</h3>
-                                        <a href="{{route('adds.category', $add->category)}}" class="nav-link text-dark anton-font">{{$add->category->name}}</a>
+                                        <h3 class=" display-6 fw-bold anton-font">
+                                            @if(strlen($add->title) > 50) 
+                                    
+                                            {{substr($add->title, 0, 25)}} <br> {{substr($add->title,26,23)}}...
+                                    
+                                        @elseif(strlen($add->title) <= 50 && strlen($add->title)>25)
+                                            
+                                            {{substr($add->title, 0, 25)}} <br> {{substr($add->title, 26)}}
+                                        @else
+    
+                                            {{ $add->title }}
+    
+                                        @endif
+                                        </h3>
+                                        <a href="{{route('adds.category', $add->category)}}" class="text-decoration-none anton-font">{{$add->category->name}}</a>
                                         <p class="maven-font "><i class="fa-solid fa-city"></i> {{$add->place}}</p>
                                         <p class="anton-font h1 ">{{$add->price}} €</p>
                                         <div class="d-flex justify-content-center pb-2">

@@ -23,7 +23,9 @@
 </head>
 <body>
     <x-navbar />
-    <x-header title="{{$title}}" />
+    <x-header title="{{ htmlspecialchars_decode($title)}}" />
+    
+    
     <div class="min-vh-100">
         
         {{$slot}}

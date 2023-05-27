@@ -1,25 +1,24 @@
 <x-layout title="Annunci">
 
-    <div class="container">
+    <div class="container shadow p-5 my-5 rounded">
         <div class="row">
             <div class="d-flex justify-content-end">
-                <a class="text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    Filtri
+                <a class="text-decoration-none anton-font h5 pt-4" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    Filtri 
                 </a>
-                  
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filtri</h5>
+                        <h5 class="offcanvas-title anton-font text-decoration-none" id="offcanvasExampleLabel">Filtri</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <div>
-                            <button onclick="document.querySelector('#categoriesList').classList.toggle('prova');">Categorie</button>
+                            <button class="btn btnCustomPage bg-prim bg-gradient h6 rounded text-center anton-font mb-3 shadow" onclick="document.querySelector('#categoriesList').classList.toggle('filtroCategorie');">Categorie</button>
                         </div>
-                        <div id='categoriesList' class="prova">
+                        <div id='categoriesList' class="filtroCategorie">
                             <hr>
                             @foreach($sortedCategories as $sortedCategory)
-                                <a class="btn d-flex justify-content-start text-start" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a>
+                                <a class="btn btn-outline-dark anton-font d-flex justify-content-start text-start mb-2" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a>
                             @endforeach
                         </div>
                         <hr>
@@ -27,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            <hr>
             @forelse ($adds as $add)
                 <div class="col-12 col-md-3 mt-2">
                     <div class="p-2 m-1 rounded articleIndexCard d-flex flex-column shadow">
@@ -66,6 +66,7 @@
                                     <p class="small muted">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
                                 </div>                       --}}
                             </div>
+                            <p class="maven-font py-1"><i class="fa-solid fa-city"></i> {{$add->place}}</p>
                         </a>
                         {{-- <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a> --}}
                     </div>
@@ -83,23 +84,45 @@
                 </div>
 
             @endforelse
+            
 
-            <nav class="d-flex justify-content-end mt-4 ">
-                <ul class="pagination gap-2 ">
-                    <li class="page-item {{ $adds->previousPageUrl() ? '' : 'disabled' }} ">
-                        <a class="page-link border-0" href="{{ $adds->previousPageUrl() ?? '#' }} ">Previous</a>
-                    </li>
-                    @for ($i = 1; $i <= $adds->lastPage(); $i++)
-                        <li class="page-item {{ $adds->currentPage() == $i ? 'active' : '' }}">
-                            <a class="page-link border-0" href="{{ $adds->url($i) }}">{{ $i }}</a>
-                        </li>
-                    @endfor
-                    <li class="page-item {{ $adds->nextPageUrl() ? '' : 'disabled' }}">
-                        <a class="page-link border-0" href="{{ $adds->nextPageUrl() ?? '#' }}">Next</a>
-                    </li>
-                </ul>
-            </nav>
 
+
+            @if($adds->lastPage()>1)
+                <nav class="d-flex justify-content-end mt-4 ">
+                    <ul class="pagination gap-2 ">
+                        @if($adds->currentPage() > 2)
+                            <li class="page-item">
+                                <a class="page-link border-0 maven-font" href="{{ $adds->url(1) }}">Prima pagina</a>
+                            </li>
+                        @endif
+            
+                        @if($adds->previousPageUrl())
+                            <li class="page-item {{ $adds->previousPageUrl() ? '' : 'disabled' }} ">
+                                <a class="page-link border-0 maven-font" href="{{ $adds->previousPageUrl() ?? '#' }} "><<</a>
+                            </li>
+                        @endif
+            
+                        @foreach ($adds->getUrlRange(max($adds->currentPage() - 1, 1), min($adds->currentPage() + 1, $adds->lastPage())) as $page => $url)
+                            <li class="page-item {{ $adds->currentPage() == $page ? 'active' : '' }}">
+                                <a class="page-link border-0 maven-font" href="{{ $url }}">{{ $page }}</a>
+                            </li>
+                        @endforeach
+            
+                        @if($adds->nextPageUrl())
+                            <li class="page-item {{ $adds->nextPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link border-0 maven-font" href="{{ $adds->nextPageUrl() ?? '#' }}">>></a>
+                            </li>
+                        @endif
+            
+                        @if($adds->currentPage() < ($adds->lastPage()-1))
+                            <li class="page-item">
+                                <a class="page-link border-0 maven-font" href="{{ $adds->url($adds->lastPage()) }}">Ultima pagina</a>
+                            </li>
+                        @endif
+                    </ul>
+                </nav>
+            @endif
         </div>
     </div>
     

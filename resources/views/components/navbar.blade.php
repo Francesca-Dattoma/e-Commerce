@@ -55,7 +55,10 @@
         <a class="nav-link dropdown-toggle color-prim" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Area personale">
           @auth  
             <i class="fa-solid fa-user-check text-primary fa-2x"></i>
-            <span class="mx-1 text-dark">{{Auth::user()->name}}</span> 
+            @if(Auth::user()->is_revisor)
+              <i class="fa-solid fa-registered text-primary fa-2x"></i>
+              @endif
+            <span class="mx-1 text-dark">{{Auth::user()->username}}</span> 
           @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
         </a>
         <!-- Dropdown menu -->
@@ -65,7 +68,7 @@
               @if(Auth::user()->is_revisor)
               
               <li class="text-center my-2 nav-item text-decoration-none list-unstyled">
-                <a href="{{route('revisor.index')}}" aria-current="page" class="position-relative text-decoration-none text-dark">Revisione Annunci
+                <a href="{{route('revisor.index')}}" aria-current="page" class="position-relative text-decoration-none">Revisione Annunci
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
                     <span class="visually-hidden">Messaggi non letti</span>
                   </span>
@@ -75,19 +78,19 @@
               @endauth
           @auth
           <li>
-            <a class="dropdown-item text-decoration-none text-dark fw-bold " href="{{route('add.create')}}">Inserisci Annuncio</a>
+            <a class="dropdown-item text-decoration-none text-dark maven-font " href="{{route('add.create')}}">Inserisci Annuncio</a>
           </li>
           <li>
             <hr class="dropdown-divider" />
           </li>
           <li class="text-center mb-2">
-            <a class="text-decoration-none text-danger btn fw-bold w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
+            <a class="text-decoration-none maven-font btn fw-bold w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
             <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
           </li>
           @endauth
           @guest
-          <li><a class="dropdown-item fw-bold text-dark" href="{{route('register')}}">Registrati</a></li>
-          <li><a class="dropdown-item fw-bold text-dark" href="{{route('login')}}">Accedi</a></li>
+          <li><a class="dropdown-item maven-font text-dark" href="{{route('register')}}">Registrati</a></li>
+          <li><a class="dropdown-item maven-font text-dark" href="{{route('login')}}">Accedi</a></li>
           @endguest
           
         </ul>
