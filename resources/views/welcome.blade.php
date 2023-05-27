@@ -19,8 +19,8 @@
                         <div class="swiper-slide">
                             <div class="container rounded  ">
                                 <div class="row justify-content-center">
-                                    <div class="col-12 col-lg-6 d-flex justify-content-center p-0">
-                                        <img src="https://picsum.photos/1000" height="300" class="rounded m-1 mb-3" alt="{{$add->name}}">
+                                    <div class="col-12 col-lg-6 d-flex justify-content-center ">
+                                        <img src="https://picsum.photos/1000" height="300" class="rounded m-1 p-1" alt="{{$add->title}}">
                                     </div>
                                     <div class="col-12 col-lg-5 d-flex justify-content-around align-items-start flex-column">
                                         <h3 class=" display-6 fw-bold anton-font">{{$add->title}}</h3>

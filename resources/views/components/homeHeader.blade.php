@@ -5,7 +5,7 @@
     <p id='head3' class='homeHeader text-white anton-font display-3'>Own</p>
     <p id='head4' class='homeHeader text-white anton-font display-3'>eShop</p>
     <div id='head5'>
-        <p class='homeHeader text-white monoton-font display-2'>YOeS</p>
+        <h1 class='homeHeader text-white monoton-font display-2'>YOeS</h1>
 
         <p class='homeHeader2 text-white anton-font h4 text-center mt-5 pt-5'>“Your Own eShop”</p>
 

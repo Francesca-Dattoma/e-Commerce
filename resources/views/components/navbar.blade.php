@@ -1,5 +1,5 @@
    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bgNavbar w-100 w-md-75 container mt-md-4 badge">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bgNavbar container-md mt-md-4 badge">
   <!-- Container wrapper -->
   <div class="container-fluid">
 

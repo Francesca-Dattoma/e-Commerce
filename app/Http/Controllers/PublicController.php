@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
    public function homepage(){
-      $adds=Add::orderBy('created_at', 'DESC')->paginate(6);
+      $adds=Add::where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(6);
       
       return view('welcome',compact('adds'));
    }
