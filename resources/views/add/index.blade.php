@@ -2,6 +2,11 @@
 
     <div class="container shadow p-5 my-5 rounded">
         <div class="row">
+
+
+
+
+            {{-- Offcanvas --}}
             <div class="d-flex justify-content-end">
                 <a class="text-decoration-none anton-font h5 pt-4" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     Filtri 
@@ -26,6 +31,10 @@
                     </div>
                 </div>
             </div>
+            {{-- Fine Offcanvas --}}
+
+
+            
             <hr>
             @forelse ($adds as $add)
                 <div class="col-12 col-md-3 mt-2">

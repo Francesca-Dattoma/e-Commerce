@@ -33,8 +33,8 @@
 }
 
 .bg-accent{
-    /* background-color: var(--accent); */
-    background-image: linear-gradient(to right top, #fffd00, #ffe000, #ffc300, #ffa600, #ff8900);
+    background-color: var(--accent);
+    
 }
 
 .maven-font{

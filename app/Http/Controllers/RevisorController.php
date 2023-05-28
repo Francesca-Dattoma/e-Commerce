@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
+    public function __construct(){
+        $this->middleware('verified');
+    }
     public function index(){
 
         $add_to_check = Add::where('is_accepted', null)->orderby('updated_at','DESC')->first();

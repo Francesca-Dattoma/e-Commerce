@@ -11,6 +11,10 @@ class AddController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct(){
+        $this->middleware('verified')->only('create');
+    }
     public function index()
     {   
         $adds=Add::where('is_accepted', true)->paginate(12); 
@@ -21,8 +25,6 @@ class AddController extends Controller
     public function categoryIndex(Category $sortedCategory){
         
         $adds=Add::where('is_accepted', true)->where('category_id',$sortedCategory->id)->orderBy('created_at', 'DESC')->paginate(9);
-        // $count=$adds->count();
-        // if($count)
 
         return view('add.categoryindex', compact('adds','sortedCategory'));
 
@@ -51,8 +53,9 @@ class AddController extends Controller
      * Display the specified resource.
      */
     public function show(Add $add)
-    {
-        return view('add.show', compact('add'));
+    {   
+        $relatedAdds=Add::where('is_accepted', true)->where('category_id',$add->category_id)->where('id','!=',$add->id)->orderBy('created_at', 'DESC')->paginate(5);
+        return view('add.show', compact('add','relatedAdds'));
     }
 
     /**

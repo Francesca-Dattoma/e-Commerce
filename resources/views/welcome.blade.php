@@ -5,7 +5,7 @@
     </div>
     @endif
     @if (session()->has('message'))
-        <div class="alert alert-success my-3">
+        <div class="alert alert-success my-3 anton-font mb-5">
             {{session('message')}}
         </div>
     @endif
