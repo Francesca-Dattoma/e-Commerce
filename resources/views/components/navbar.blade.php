@@ -69,11 +69,14 @@
       <li class="nav-item dropdown list-unstyled ms-4">
         
         <a class="nav-link dropdown-toggle color-prim" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Area personale">
-          @auth  
-            <i class="fa-solid fa-user-check text-primary fa-2x"></i>
-            @if(Auth::user()->is_revisor)
-              <i class="fa-solid fa-registered text-primary fa-2x"></i>
-              @endif
+          @auth 
+            @if(!Auth::user()->is_revisor && Auth::user()->email_verified_at) 
+              <i class="fa-solid fa-user-check text-primary fa-2x"></i>
+              @elseif(Auth::user()->is_revisor && Auth::user()->email_verified_at)
+                <i class="fa-solid fa-registered text-primary fa-2x"></i>
+              @elseif(!Auth::user()->email_verified_at)
+                <i class="fa-solid fa-user text-primary fa-2x "></i>
+            @endif
             <span class="mx-1 text-dark">@if(Auth::user()->username){{Auth::user()->username}}@else{{Auth::user()->name}}@endif</span> 
           @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
         </a>
