@@ -13,6 +13,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
+        Table::truncate()
         DB::table('categories')->insert([
             [  
                 'name' => 'Auto, moto e altri veicoli',
