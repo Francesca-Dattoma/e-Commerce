@@ -9,10 +9,22 @@
             {{session('warning')}}
         </div>
     @endif
-    
-    <h2 class="display-2 text-center">
-        {{$add_to_check ? "Ecco l'annuncio da revisionare" : "Non ci sono annunci da revisionare"}}
-    </h2>
+    @if({{$add_to_check}})
+        <h2 class="display-2 text-center">"Ecco l'annuncio da revisionare"</h2>
+         @else
+            <h2 class="display-2 text-center">"Ecco l'annuncio da revisionare"</h2>
+            <div class="d-flex justify-content-center">
+                <form action="{{route('revisor.addBack')}}" method="POST">
+                        
+                    @csrf
+                    @method('PATCH')
+
+                    <button type="submit" class="btn btn-secondary shadow text-white">Annulla ultima revisione</button>
+
+                </form>
+            </div>
+    @endif
+        
 
     @if($add_to_check)
         <div class="container">
