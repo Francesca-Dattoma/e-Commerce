@@ -27,10 +27,21 @@
     
     
     <div class="min-vh-100">
+        @if (session()->has('message'))
+            <div class="alert alert-success my-3 anton-font mb-5">
+                {{session('message')}}
+            </div>
+        @endif
+
+        @if (session()->has('warning'))
+            <div class="alert alert-warning my-3">
+                {{session('warning')}}
+            </div>
+        @endif
         
         {{$slot}}
-
     </div>
+
     <x-footer />
     @livewireScripts
 </body>

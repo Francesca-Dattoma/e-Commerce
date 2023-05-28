@@ -1,14 +1,5 @@
 <x-layout title="Revisiona">
-    @if (session()->has('message'))
-        <div class="alert alert-success my-3">
-            {{session('message')}}
-        </div>
-    @endif
-    @if (session()->has('warning'))
-        <div class="alert alert-warning my-3">
-            {{session('warning')}}
-        </div>
-    @endif
+
     @if($add_to_check)
         <h2 class="anton-font display-4 text-center">Ecco l'annuncio da revisionare:</h2>
          @else

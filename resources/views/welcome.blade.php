@@ -9,6 +9,12 @@
             {{session('message')}}
         </div>
     @endif
+    @if (session()->has('warning'))
+        <div class="alert alert-warning my-3">
+            {{session('warning')}}
+        </div>
+    @endif
+    
     @if($adds)
     
         <h2 class="anton-font display-4 text-center">Gli ultimi annunci inseriti:</h2>
