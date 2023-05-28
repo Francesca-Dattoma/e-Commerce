@@ -54,7 +54,7 @@ class AddController extends Controller
      */
     public function show(Add $add)
     {   
-        $relatedAdds=Add::where('is_accepted', true)->where('category_id',$add->category_id)->where('id','!=',$add->id)->orderBy('created_at', 'DESC')->paginate(5);
+        $relatedAdds=Add::where('is_accepted', true)->where('category_id',$add->category_id)->where('id','!=',$add->id)->orderBy('created_at', 'DESC')->paginate(4);
         return view('add.show', compact('add','relatedAdds'));
     }
 

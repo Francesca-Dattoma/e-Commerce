@@ -59,52 +59,52 @@
 <div class="container my-5">
         <h2 class="anton-font display-4" >Annunci correlati:</h2>  
         <div class="row rounded shadow p-4 mb-3 justify-content-evenly">
-
             @foreach ($relatedAdds as $add)
-                <div class="col-12 col-md-3 mt-2">
-                    <div class="p-2 m-1 rounded articleIndexCard d-flex flex-column shadow">
-                        <a href="{{route('add.show', compact('add'))}}" class="text-decoration-none ">
-                            <img src="https://picsum.photos/1000" width="180" class="card-img-top rounded" alt="{{$add->title}}">
-                            <div class="card-body d-flex flex-column justifu-content-evenly">
-                                <h5 class="card-title text-center py-2 fw-bold anton-font text-dark">
-            
-                                    @if(strlen($add->title) > 50) 
-                                    
-                                        {{substr($add->title, 0, 25)}} <br> {{substr($add->title,26,23)}}...
-                                
-                                    @elseif(strlen($add->title) <= 50 && strlen($add->title)>25)
+                @if($relatedAdds->currentPage() == 1)
+                    <div class="col-12 col-md-3 mt-2">
+                        <div class="p-2 m-1 rounded articleIndexCard d-flex flex-column shadow">
+                            <a href="{{route('add.show', compact('add'))}}" class="text-decoration-none ">
+                                <img src="https://picsum.photos/1000" width="180" class="card-img-top rounded" alt="{{$add->title}}">
+                                <div class="card-body d-flex flex-column justifu-content-evenly">
+                                    <h5 class="card-title text-center py-2 fw-bold anton-font text-dark">
+                
+                                        @if(strlen($add->title) > 50) 
                                         
-                                        {{substr($add->title, 0, 25)}} <br> {{substr($add->title, 26)}}
-                                    @else
-            
-                                        {{ $add->title }}
-            
-                                    @endif
-            
-                                </h5>
-                                
-                                <p class="card-text text-center"> 
-            
-                                    <a href="{{route('adds.category', $add->category)}}" class="text-decoration-none anton-font">
+                                            {{substr($add->title, 0, 25)}} <br> {{substr($add->title,26,23)}}...
                                     
-                                        Categoria: {{$add->category->name}}
-            
-                                    </a>
+                                        @elseif(strlen($add->title) <= 50 && strlen($add->title)>25)
+                                            
+                                            {{substr($add->title, 0, 25)}} <br> {{substr($add->title, 26)}}
+                                        @else
+                
+                                            {{ $add->title }}
+                
+                                        @endif
+                
+                                    </h5>
+                                    
+                                    <p class="card-text text-center"> 
+                
+                                        <a href="{{route('adds.category', $add->category)}}" class="text-decoration-none anton-font">
+                                        
+                                            Categoria: {{$add->category->name}}
+                
+                                        </a>
+                                    
+                                    </p>
                                 
-                                </p>
+                                    <p class="card-text text-center anton-font h1">{{$add->price}} €</p>
+                                
+                                </div>
+                                <p class="maven-font py-1"><i class="fa-solid fa-city"></i> {{$add->place}}</p>
+                            </a>
                             
-                                <p class="card-text text-center anton-font h1">{{$add->price}} €</p>
-                            
-                            </div>
-                            <p class="maven-font py-1"><i class="fa-solid fa-city"></i> {{$add->place}}</p>
-                        </a>
-                        
+                        </div>
                     </div>
-                </div>
-        
+            @endif
             @endforeach
         </div>
-        @if(count($relatedAdds)>4)
+        @if($relatedAdds->lastPage()>1)
             <div class="row">
 
                 <a class="btn btn-lg btnCustomPage bg-prim bg-gradient h6 rounded text-center anton-font mb-3 shadow" href="{{route('adds.category', $add->category)}}">Vedi altri articoli della categoria "{{$add->category->name}}"</a>
