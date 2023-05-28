@@ -40,7 +40,7 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', 'Annuncio rifiutato con successo');
     }
     public function becomeRevisor(){
-        Mail::to('admin@yoes.it')->send(new BecomeRevisor());
+        Mail::to('admin@yoes.it')->send(new BecomeRevisor(Auth::user()));
         return redirect()->back()->with('message','La tua candidatura è stata inviata');
     }
     public function makeRevisor(User $user){     

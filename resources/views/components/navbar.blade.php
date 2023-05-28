@@ -44,11 +44,13 @@
       </li>
       @else 
         @if(!Auth::user()->is_revisor)
-        <li class="nav-item">
+        <li class="nav-item list-unstyled">
           <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark nav-link">Diventa Revisore</a>
         </li>
         @endif
       @endguest 
+
+      
       
       <li class="nav-item dropdown list-unstyled ms-4">
         

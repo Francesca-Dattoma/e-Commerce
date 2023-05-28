@@ -38,7 +38,6 @@ class Add extends Model
             'id' => $this->id,
             'title' => $this->title,
             'place' => $this->place,
-            'price' => $this->price,
             'description' => $this->description,
             'category' => $category,            
 
