@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
     
         $categories=([
             [  
-                'name' => 'Auto, moto e altri veicoli',
+                'name' => 'Auto, pippo moto e altri veicoli',
                 'slug' => 'Auto-moto-e-altri-veicoli',          
             ],
             [  

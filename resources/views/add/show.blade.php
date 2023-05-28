@@ -34,9 +34,10 @@
                 <hr>
                 <h4 class=" anton-font display-4">{{$add->price}} €</h4>
                 <hr>
+                <h6 class="anton-font">Descrizione:</h6>
                 <p class="my-3 maven-font">{{$add->description}}</p>
                 <hr>
-                <div class="d-flex bg-secondary bg-gradient h6 rounded justify-content-center flex-column align-items-center">
+                <div class="d-flex bg-accent bg-gradient h6 rounded justify-content-center flex-column align-items-center">
                     <p class="muted mb-0 pt-3">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
                     <br>
                     <p class="muted mb-0 pb-3">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>

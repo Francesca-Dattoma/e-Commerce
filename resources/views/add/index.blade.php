@@ -27,7 +27,7 @@
                             @endforeach
                         </div>
                         <hr>
-                        {{-- <a href="" class="btn btn-danger" onclick="document.querySelector(selected='true');">Applica filtri</a> --}}
+                        
                     </div>
                 </div>
             </div>
@@ -68,16 +68,13 @@
                                     </a>
                                 
                                 </p>
-                                {{-- <p class="card-text">{{$add->place}}</p> --}}
+                                
                                 <p class="card-text text-center anton-font h1">{{$add->price}} €</p>
-                                {{-- <div class="card-footer">
-                                    <p class="small muted">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
-                                    <p class="small muted">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
-                                </div>                       --}}
+                                
                             </div>
                             <p class="maven-font py-1"><i class="fa-solid fa-city"></i> {{$add->place}}</p>
                         </a>
-                        {{-- <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a> --}}
+                        
                     </div>
                 </div>
 

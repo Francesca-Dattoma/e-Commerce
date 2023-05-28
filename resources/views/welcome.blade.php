@@ -11,7 +11,7 @@
     @endif
     @if($adds)
     
-        <h2 class="anton-font display-4 ms-5">Gli ultimi annunci inseriti:</h2>
+        <h2 class="anton-font display-4 text-center">Gli ultimi annunci inseriti:</h2>
         <div class="my-5">
             <div class="swiper mySwiper rounded shadow container welcomeMain">
                 <div class="swiper-wrapper">
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" row bg-secondary bg-gradient h6 rounded justify-content-center h-100">
+                                <div class=" row bg-accent bg-gradient h6 rounded justify-content-center h-100">
                                     <p class="muted mb-0 pt-3">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
                                     <p class="muted mb-0 pb-3">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
                                 </div>

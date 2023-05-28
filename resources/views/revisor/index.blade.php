@@ -10,9 +10,9 @@
         </div>
     @endif
     @if($add_to_check)
-        <h2 class="anton-font display-4 ms-5">Ecco l'annuncio da revisionare:</h2>
+        <h2 class="anton-font display-4 text-center">Ecco l'annuncio da revisionare:</h2>
          @else
-            <h2 class="anton-font display-4 ms-5 text-center my-5">Non ci sono annunci da revisionare</h2>
+            <h2 class="anton-font display-4 text-center my-5">Non ci sono annunci da revisionare</h2>
             <div class="d-flex justify-content-center">
                 <form action="{{route('revisor.addBack')}}" method="POST">
                         
@@ -33,9 +33,9 @@
                 <div class="col-12 col-md-6">
                     <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add_to_check->title}}">
                     <div class="d-flex justify-content-evenly">
-                        <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add_to_check->title}}">
-                        <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add_to_check->title}}">
-                        <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add_to_check->title}}">
+                        <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
+                        <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
+                        <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
@@ -63,7 +63,7 @@
                     <hr>
                     <h4 class=" anton-font display-4">{{$add_to_check->price}} €</h4>
                     <hr>
-                    <h6 class="anton-font">Descrisione:</h6>
+                    <h6 class="anton-font">Descrizione:</h6>
                     <p class="my-3 maven-font">{{$add_to_check->description}}</p>
                     <hr>
                     <div class="d-flex bg-accent bg-gradient h6 rounded justify-content-center flex-column align-items-center">
@@ -77,34 +77,34 @@
     
             </div>
             <hr class="mt-5">
-            <div class="row mt-3 mb-3 justify-content-between w-100">
-                <div class="col-12 col-md-1 d-flex justify-content-center">
+            <div class="row mt-3 mb-3 justify-content-evenly w-100">
+                <div class="col-12 col-md-1 d-flex justify-content-evenly">
                     <form action="{{route('revisor.addAccepted', ['add'=>$add_to_check])}}" method="POST">
                     
                         @csrf
                         @method('PATCH')
     
-                        <button type="submit" class="btn btn-success shadow">Accetta</button>
+                        <button type="submit" class="btn btn-success shadow m-1">Accetta</button>
     
                     </form>
                 </div>
-                <div class="col-12 col-md-3 d-flex justify-content-center">
+                <div class="col-12 col-md-3 d-flex justify-content-evenly">
                     <form action="{{route('revisor.addBack')}}" method="POST">
                     
                         @csrf
                         @method('PATCH')
     
-                        <button type="submit" class="btn btn-secondary shadow text-white">Annulla ultima revisione</button>
+                        <button type="submit" class="btn btn-secondary shadow text-white m-1">Annulla ultima revisione</button>
     
                     </form>
                 </div>
-                <div class="col-12 col-md-1 d-flex justify-content-center">
+                <div class="col-12 col-md-1 d-flex justify-content-evenly">
                     <form action="{{route('revisor.addRefused', ['add'=>$add_to_check])}}" method="POST">
                     
                         @csrf
                         @method('PATCH')
     
-                        <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
+                        <button type="submit" class="btn btn-danger shadow m-1">Rifiuta</button>
     
                     </form>
                 </div>

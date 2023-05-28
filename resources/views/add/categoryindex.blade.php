@@ -33,15 +33,14 @@
                                     </a>
                                 
                                 </p>
-                                {{-- <p class="card-text">{{$add->place}}</p> --}}
+                                
                                 <div class="card-footer">
                                     <p class="card-text text-center anton-font h1">{{$add->price}} €</p>
-                                    {{-- <p class="small muted">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
-                                    <p class="small muted">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p> --}}
+                                    
                                 </div> 
                                 <p class="maven-font py-3"><i class="fa-solid fa-city"></i> {{$add->place}}</p>                     
                             </div>
-                            {{-- <a href="{{route('add.show', compact('add'))}}" class="btn btn-danger">Dettaglio articolo</a> --}}
+                            
                         </div>
                     </a>
                 </div>

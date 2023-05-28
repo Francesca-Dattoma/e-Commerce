@@ -16,13 +16,27 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <!-- Link -->
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link" href="{{route('add.index')}}">Annunci</a>
+        </li> --}}
+
+
+        {{-- Dropdown Categorie --}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Annunci
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
+            <li><a class="dropdown-item fw-bold" href="{{route('add.index')}}">Tutti gli annunci</a></li>
+            @foreach($sortedCategories as $sortedCategory)
+              <li><hr class="dropdown-divider"></li>
+              
+              <li><a class="dropdown-item" href="">{{$sortedCategory->name}}</a></li>
+            @endforeach
+          </ul>
         </li>
 
-        <!-- Dropdown -->
-      
-          <!-- Dropdown menu -->    
+            
       </ul> 
   
 
@@ -60,7 +74,7 @@
             @if(Auth::user()->is_revisor)
               <i class="fa-solid fa-registered text-primary fa-2x"></i>
               @endif
-            <span class="mx-1 text-dark">{{Auth::user()->username}}</span> 
+            <span class="mx-1 text-dark">@if(Auth::user()->username){{Auth::user()->username}}@else{{Auth::user()->name}}@endif</span> 
           @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
         </a>
         <!-- Dropdown menu -->
