@@ -31,7 +31,7 @@
             @foreach($sortedCategories as $sortedCategory)
               <li><hr class="dropdown-divider"></li>
               
-              <li><a class="dropdown-item" href="">{{$sortedCategory->name}}</a></li>
+              <li><a class="dropdown-item" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a></li>
             @endforeach
           </ul>
         </li>
