@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 
 class CategorySeeder extends Seeder
 {
@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Table::truncate()
+        DB::table('categories')->truncate();
         DB::table('categories')->insert([
             [  
                 'name' => 'Auto, moto e altri veicoli',
