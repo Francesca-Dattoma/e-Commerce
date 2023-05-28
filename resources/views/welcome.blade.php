@@ -12,7 +12,7 @@
     @if($adds)
     
         <h2 class="anton-font display-4 ms-5">Gli ultimi annunci inseriti:</h2>
-        <div class="my-5 ">
+        <div class="my-5">
             <div class="swiper mySwiper rounded shadow container welcomeMain">
                 <div class="swiper-wrapper">
                     @foreach($adds as $add)
