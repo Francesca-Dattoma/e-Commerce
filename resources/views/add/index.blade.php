@@ -95,6 +95,7 @@
 
 
             @if($adds->lastPage()>1)
+            
                 <nav class="d-flex justify-content-end mt-4 ">
                     <ul class="pagination gap-2 ">
                         @if($adds->currentPage() > 2)
