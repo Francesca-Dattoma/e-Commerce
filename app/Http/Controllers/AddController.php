@@ -17,14 +17,14 @@ class AddController extends Controller
     }
     public function index()
     {   
-        $adds=Add::where('is_accepted', true)->paginate(12); 
+        $adds=Add::where('is_accepted', true)->paginate(8); 
         $sortedCategories = Category::orderBy('name')->get();
         return view('add.index', compact('adds','sortedCategories')); 
     }
 
     public function categoryIndex(Category $sortedCategory){
         
-        $adds=Add::where('is_accepted', true)->where('category_id',$sortedCategory->id)->orderBy('created_at', 'DESC')->paginate(9);
+        $adds=Add::where('is_accepted', true)->where('category_id',$sortedCategory->id)->orderBy('created_at', 'DESC')->paginate(8);
 
         return view('add.categoryindex', compact('adds','sortedCategory'));
 

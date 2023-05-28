@@ -16,7 +16,7 @@ class PublicController extends Controller
 
    public function searchAdds(Request $request){
 
-      $adds=Add::search($request->searched)->where('is_accepted', true)->paginate(9);
+      $adds=Add::search($request->searched)->where('is_accepted', true)->paginate(8);
 
       $sortedCategories = Category::orderBy('name')->get();
 
