@@ -23,7 +23,6 @@
                               <p class="maven-font">La password deve essere di almeno 8 caratteri e contenere almeno un:</p>
                               <ul>
                                 <li class="maven-font">Un carattere maiuscolo</li>
-                                <li class="maven-font">Un carattere minuscolo</li>
                                 <li class="maven-font">Un numero</li>
                                 <li class="maven-font">Un carattere speciale</li>
                               </ul>
