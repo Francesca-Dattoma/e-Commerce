@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Image;
 use App\Models\Category;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Laravel\Scout\Searchable;
 
 class Add extends Model
 {
@@ -64,6 +65,13 @@ class Add extends Model
         $this->save();
         return true; 
     }
+
+    public function images(){
+
+        return $this->hasMany(Image::class);
+
+    }
+
    
 }
 

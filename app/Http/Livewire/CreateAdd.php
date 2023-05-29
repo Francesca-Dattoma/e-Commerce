@@ -19,6 +19,8 @@ class CreateAdd extends Component
     public $price;
     public $description;
     public $sortedCategories;
+    public $temporary_images;
+    public $images = [];
     
 
 
@@ -29,6 +31,8 @@ class CreateAdd extends Component
         'price'=>'required|numeric',
         'description'=>'required|min:10',
         'category'=>'required|different:Placeholder', 
+        'images.*'=> 'image|max:1024',
+        'temporary_images.*'=> 'image|max:1024',
         
     ];
 
@@ -36,8 +40,13 @@ class CreateAdd extends Component
         'required'=>'Il campo :attribute è obbligatorio',
         'min'=>'Il campo :attribute è troppo corto',
         'numeric'=>'Il campo :attribute richiede un numero',
-        'max'=>'Il campo :attribute è troppo lungo'
-         
+        'max'=>'Il campo :attribute è troppo lungo',
+        'temporary_images.required' => 'L\'immagine è richiesta',
+        'temporary_images.*.image' => 'I file devono essere immagini',
+        'temporary_images.*.max' => 'L\'immagine dev\'essere massimo di 1mb',
+        'images.image' => 'Il file dev\'essere un\'immagine',
+        'images.max' => 'Il file dev\'essere un\'immagine di 1mb'
+        
     ];
 
     public function updated($propertyName){
