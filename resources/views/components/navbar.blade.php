@@ -27,11 +27,11 @@
             Annunci
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
-            <li><a class="dropdown-item fw-bold" href="{{route('add.index')}}">Tutti gli annunci</a></li>
+            <li><small><a class="dropdown-item fw-bold" href="{{route('add.index')}}">Tutti gli annunci</a></small></li>
             @foreach($sortedCategories as $sortedCategory)
-              <li><hr class="dropdown-divider"></li>
+              {{-- <li><hr class="dropdown-divider"></li> --}}
               
-              <li><a class="dropdown-item" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a></li>
+              <li><small><a class="dropdown-item" href="{{route('adds.category', compact('sortedCategory'))}}">{{$sortedCategory->name}}</a></small></li>
             @endforeach
           </ul>
         </li>
