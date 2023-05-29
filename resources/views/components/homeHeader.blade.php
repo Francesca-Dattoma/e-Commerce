@@ -10,7 +10,7 @@
         <p class='homeHeader2 text-white anton-font h4 text-center mt-5 pt-5'>“Your Own eShop”</p>
 
     </div>
-    <a class="buttonHomeHeader nav-link text-center" href="{{route('add.index')}}">Annunci</a>
+    <a class="buttonHomeHeader nav-link text-center" href="{{route('add.index')}}">{{__('ui.allAnnouncements')}}</a>
 
       <div class='light x1'></div>
       <div class='light x2'></div>

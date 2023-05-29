@@ -5,6 +5,6 @@
             
         </div>
         @if(!(request()->routeIs('add.index')))
-        <a class="buttonHomeHeader nav-link text-center" href="{{route('add.index')}}">Annunci</a>
+        <a class="buttonHomeHeader nav-link text-center" href="{{route('add.index')}}">{{__('ui.allAnnouncements')}}</a>
         @endif
     </div>

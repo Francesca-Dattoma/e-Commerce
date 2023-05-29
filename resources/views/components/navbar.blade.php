@@ -24,7 +24,7 @@
         {{-- Dropdown Categorie --}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Annunci
+            {{__('ui.allAnnouncements')}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
             <li><small><a class="dropdown-item fw-bold" href="{{route('add.index')}}">Tutti gli annunci</a></small></li>
@@ -43,7 +43,7 @@
       <!-- Search -->
       <div class="input-group d-flex justify-content-center">
         <form action="{{route('adds.search')}}" method="GET" class="w-auto" id="search">
-          <input name="searched" type="search" class="bg-white form-control border-0 searchCustom" placeholder="Ricerca" aria-label="Search">
+          <input name="searched" type="search" class="bg-white form-control border-0 searchCustom" placeholder="{{__('ui.search')}}" aria-label="Search">
         </form>
         <button class="btn bg-white btnCustom" type="submit" onclick="event.preventDefault();document.querySelector('#search').submit();" >
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -51,15 +51,22 @@
 
       </div>
 
+      <li class="list-unstyled">
+        <x-_locale lang="it" />
+        <x-_locale lang="en" />
+        <x-_locale lang="fr" />
+        <x-_locale lang="es" />
+      </li>
+
       
        @guest
       <li class="nav-item list-unstyled">
-        <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark">Diventa Revisore</a>
+        <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark">{{__('ui.revisor')}}</a>
       </li>
       @else 
         @if(!Auth::user()->is_revisor)
         <li class="nav-item list-unstyled">
-          <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark nav-link">Diventa Revisore</a>
+          <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark nav-link">{{__('ui.revisor')}}</a>
         </li>
         @endif
       @endguest 
@@ -87,7 +94,7 @@
               @if(Auth::user()->is_revisor)
               
               <li class="text-center my-2 nav-item text-decoration-none list-unstyled">
-                <a href="{{route('revisor.index')}}" aria-current="page" class="position-relative text-decoration-none">Revisione Annunci
+                <a href="{{route('revisor.index')}}" aria-current="page" class="position-relative text-decoration-none">{{__('ui.reviseAdd')}}
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Add::toBeRevisionedCount()}}
                     <span class="visually-hidden">Messaggi non letti</span>
                   </span>
@@ -97,26 +104,21 @@
               @endauth
           @auth
           <li>
-            <a class="dropdown-item text-decoration-none text-dark maven-font " href="{{route('add.create')}}">Inserisci Annuncio</a>
+            <a class="dropdown-item text-decoration-none text-dark maven-font " href="{{route('add.create')}}">{{__('ui.insertAdd')}}</a>
           </li>
           <li>
             <hr class="dropdown-divider" />
           </li>
           <li class="text-center mb-2">
-            <a class="text-decoration-none maven-font btn fw-bold w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Esci</a>
+            <a class="text-decoration-none maven-font btn fw-bold w-75" onclick="event.preventDefault();document.querySelector('#logout').submit();">Logout</a>
             <form class="d-none" action="{{route('logout')}}" method="POST" id="logout">@csrf</form>
           </li>
           @endauth
           @guest
-          <li><a class="dropdown-item maven-font text-dark" href="{{route('register')}}">Registrati</a></li>
-          <li><a class="dropdown-item maven-font text-dark" href="{{route('login')}}">Accedi</a></li>
+          <li><a class="dropdown-item maven-font text-dark" href="{{route('register')}}">{{__('ui.register')}}</a></li>
+          <li><a class="dropdown-item maven-font text-dark" href="{{route('login')}}">Login</a></li>
           @endguest
 
-          <li>
-              <x-_locale lang="it" />
-              <x-_locale lang="en" />
-              <x-_locale lang="fr" />
-          </li>
           
         </ul>
       </li>

@@ -100,7 +100,7 @@
                     <ul class="pagination gap-2 ">
                         @if($adds->currentPage() > 2)
                             <li class="page-item">
-                                <a class="page-link border-0 maven-font" href="{{ $adds->url(1) }}">Prima pagina</a>
+                                <a class="page-link border-0 maven-font" href="{{ $adds->url(1) }}">{{__('ui.firstPage')}}</a>
                             </li>
                         @endif
             
@@ -124,7 +124,7 @@
             
                         @if($adds->currentPage() < ($adds->lastPage()-1))
                             <li class="page-item">
-                                <a class="page-link border-0 maven-font" href="{{ $adds->url($adds->lastPage()) }}">Ultima pagina</a>
+                                <a class="page-link border-0 maven-font" href="{{ $adds->url($adds->lastPage()) }}">{{__('ui.lastPage')}}</a>
                             </li>
                         @endif
                     </ul>
