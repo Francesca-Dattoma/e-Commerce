@@ -56,9 +56,6 @@
                 @enderror
             </div>
     
-            <button type="submit" class="btn btn-lg btn-dark mb-3 anton-font h5">Inserisci annuncio</button><br>
-    
-
             <div class="mb-3">
                 <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img"/>
                 @error('temporary_images.*')
@@ -72,7 +69,7 @@
                         <div class="row border-4 border-info rounded shadow py-4">
                         @foreach($images as $key=>$image)
                             <div class="col my-3">
-                                <div class="img-preview mx-auto shadow rounded" style="background-image: url({{$image->temporaryUrl()}})"></div>
+                                <div class="img-preview mx-auto shadow rounded" style="background-image: url({{$image->temporaryUrl()}});"></div>
                                 <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
 
 
@@ -83,8 +80,12 @@
                     </div>
                 </div>
             @endif  
+
+            <button type="submit" class="btn btn-lg btn-dark mb-3 anton-font h5">Inserisci annuncio</button><br>
+    
+
             
-            <button type="submit" class="btn btn-primary my-4 shadow px-4 py-2" >Crea</button>
+            {{-- <button type="submit" class="btn btn-primary my-4 shadow px-4 py-2" >Crea</button> --}}
 
 
 

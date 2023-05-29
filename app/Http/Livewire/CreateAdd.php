@@ -21,6 +21,7 @@ class CreateAdd extends Component
     public $sortedCategories;
     public $temporary_images;
     public $images = [];
+    public $image;
     
 
 
@@ -49,11 +50,36 @@ class CreateAdd extends Component
         
     ];
 
+    public function updatedTemporaryImages(){
+        if($this->validate([
+            'temporary_images.*'=>'image|max:1024',
+        ])){
+            foreach($this->temporary_images as $image){
+                $this->images[] = $image;
+            }
+        }
+    }
+
+    public function removeImage($key){
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
+    }
+
     public function updated($propertyName){
         $this->validateOnly($propertyName);
     }
+
     public function store(){
         $this->validate();
+
+        $this->add = Category::find($this->category)->adds()->create($this->validate());
+        if(count($this->images)){
+            foreach($this->images as $image){
+                $this->add->images()->create(['path'=>$image->store('images', 'public')]);
+            }
+        }
+
         $category= Category::find($this->category);
         $add=$category->adds()->create([
 
