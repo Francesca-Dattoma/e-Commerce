@@ -5,11 +5,7 @@
         
         <form wire:submit.prevent="store">
             
-            @if (session()->has('message'))
-                <div class="alert alert-success my-3 anton-font mb-5">
-                    {{session('message')}}
-                </div>
-            @endif
+        
             @csrf
     
             <div class="mb-3">
