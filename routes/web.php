@@ -18,8 +18,10 @@ use App\Http\Controllers\RevisorController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/search/add', [PublicController::class, 'searchAdds'])->name('adds.search');
-// Route::get('/insert-add', [PublicController::class, 'insert_add'])->middleware('auth')->name('insert_add');
+Route::post('/language/{lang}', [PublicController::class,'setLanguage'])->name('setLocale');
+
 Route::get('/add/create', [AddController::class, 'create'])->middleware('auth')->name('add.create');
+
 
 Route::get('/add/index', [AddController::class, 'index'])->name('add.index');
 Route::get('/add/index/{sortedCategory}',[AddController::class,'categoryIndex'])->name('adds.category');

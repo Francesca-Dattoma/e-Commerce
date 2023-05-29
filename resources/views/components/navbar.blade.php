@@ -111,6 +111,12 @@
           <li><a class="dropdown-item maven-font text-dark" href="{{route('register')}}">Registrati</a></li>
           <li><a class="dropdown-item maven-font text-dark" href="{{route('login')}}">Accedi</a></li>
           @endguest
+
+          <li>
+              <x-_locale lang="it" />
+              <x-_locale lang="en" />
+              <x-_locale lang="fr" />
+          </li>
           
         </ul>
       </li>

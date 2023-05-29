@@ -23,5 +23,9 @@ class PublicController extends Controller
       return view('add.index', compact('adds', 'sortedCategories'));
 
    }
+   public function setLanguage($lang){
+      session()->put('locale',$lang);
+      return redirect()->back();
+   }
    
 }
