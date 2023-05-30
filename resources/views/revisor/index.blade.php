@@ -26,7 +26,7 @@
                         @if(count($add_to_check->images))
                             <div class="carousel-inner">
                                 @foreach($add_to_check->images as $image)
-                                    <div class="carousel-item @if($loop->first)active @endif">
+                                    <div class="carousel-item d-flex align-items-center @if($loop->first)active @endif">
                                         <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="{{$add_to_check->title}}">
                                     </div>
 

@@ -51,12 +51,27 @@
 
       </div>
 
-      <li class="list-unstyled">
-        <x-_locale lang="it" />
-        <x-_locale lang="en" />
-        <x-_locale lang="fr" />
-        <x-_locale lang="es" />
-      </li>
+      <div class="dropdown nav-item">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-earth-africa fa-2x text-primary"></i>
+        </button>
+        <ul class="dropdown-menu bandierine">
+          <li class="list-unstyled dropdown-item">
+            <a href=""> <x-_locale lang="it" /> Italiano </a>
+           
+          </li>
+          <li class="list-unstyled dropdown-item">
+            <x-_locale lang="en" /><span>English</span>
+          </li>
+          <li class="list-unstyled dropdown-item">
+            <x-_locale lang="fr" /><span>Français</span>
+          </li>
+          <li class="list-unstyled dropdown-item">
+            <x-_locale lang="es" /><span>Español</span>
+          </li>
+        </ul>
+      </div>
+
 
       
        @guest

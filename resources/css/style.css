@@ -32,6 +32,10 @@
     background-color: var(--secondary);
 }
 
+.color-second{
+    color: var(--secondary);
+}
+
 .bg-accent{
     background-color: var(--accent);
     
@@ -209,4 +213,9 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     height: 250px;
     padding: 20px;
+}
+
+.bandierine{
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter:blur(10px);
 }
