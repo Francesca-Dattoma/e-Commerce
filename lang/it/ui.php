@@ -5,7 +5,7 @@
         'revisor'=>'Diventa Revisore',
         'register'=>'Registrati',
         'filters'=>'Filtri',
-        'lastAnnouncement'=>'Ultimi annunci',
+        'lastAnnouncements'=>'Ultimi annunci',
         'lastPage' =>'Ultima Pagina',
         'firstPage' =>'Prima Pagina',
         'insertAdd' => 'Inserisci annuncio',

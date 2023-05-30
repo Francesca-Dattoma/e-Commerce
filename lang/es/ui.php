@@ -5,7 +5,7 @@
         'revisor'=>'Convertirse en Auditor',
         'register'=>'Regístrese',
         'filters'=>'Filtros',
-        'lastAnnouncement'=>'Últimos anuncios publicados',
+        'lastAnnouncements'=>'Últimos anuncios publicados',
         'lastPage' =>'última página',
         'firstPage' =>'primera página',
         'insertAdd' => 'Poner anuncios',

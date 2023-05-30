@@ -29,7 +29,7 @@
           @auth
             {{-- @if(!Auth::user()->is_revisor) --}}
             <li class="nav-item">
-              <a href="{{route('become.revisor')}}" class="nav-link p-0 text-muted">Diventa Revisore</a>
+              <a href="{{route('become.revisor')}}" class="nav-link p-0 text-muted">{{__('ui.revisor')}}</a>
             </li>
             {{-- @endif --}}
           @endauth
