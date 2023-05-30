@@ -1,4 +1,4 @@
-<x-layout title="Annunci">
+<x-layout title="{{__('ui.allAnnouncements')}}">
 
     <div class="container shadow p-5 my-5 rounded">
         <div class="row">
@@ -9,11 +9,11 @@
             {{-- Offcanvas --}}
             <div class="d-flex justify-content-end">
                 <a class="text-decoration-none anton-font h5 pt-4" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    Filtri 
+                    {{__('ui.filters')}}
                 </a>
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title anton-font text-decoration-none" id="offcanvasExampleLabel">Filtri</h5>
+                        <h5 class="offcanvas-title anton-font text-decoration-none" id="offcanvasExampleLabel">{{__('ui.filters')}}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -40,9 +40,12 @@
                 <div class="col-12 col-md-3 mt-2">
                     <div class="p-2 m-1 rounded articleIndexCard d-flex flex-column shadow">
                             <div class="card-custom">
-                                <a href="{{route('add.show', compact('add'))}}" class="text-decoration-none ">
+                                <div class="pt-5">
+                                    <a href="{{route('add.show', compact('add'))}}" class="text-decoration-none ">
                             
-                                    <img src="{{!$add->images()->get()->isEmpty() ? Storage::url($add->images()->first()->path) : '/media/black.png'}}" class="card-img-top img-fluid rounded" alt="{{$add->title}}">
+                                        <img src="{{!$add->images()->get()->isEmpty() ? $add->images()->first()->getUrl(200,200) : '/favicon.ico'}}" class="card-img-top size rounded" alt="{{$add->title}}">
+    
+                                </div>
     
                             </div>
                             <div class="card-body d-flex flex-column justify-content-evenly">
