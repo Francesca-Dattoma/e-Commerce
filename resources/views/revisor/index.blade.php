@@ -35,7 +35,7 @@
                         @else
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="https://picsum.photos/600" class="d-block w-100 h-100" alt="Immagine di default">
+                                        <img src="/media/black.png" class="d-block w-100 h-100" alt="Immagine di default">
                                     </div>
                                 
                                 </div>

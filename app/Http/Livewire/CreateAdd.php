@@ -7,8 +7,11 @@ use App\Models\Add;
 use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
+
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\File;
+
 
 
 class CreateAdd extends Component
@@ -84,7 +87,7 @@ class CreateAdd extends Component
             foreach($this->images as $image){
                 // $this->add->images()->create(['path'=>$image->store('images', 'public')]);
                 $newFileName = "adds/{$this->add->id}";
-                $newImage = $this->add->images()->create(['path'=>$image->store(newFileName, 'public')]);
+                $newImage = $this->add->images()->create(['path'=>$image->store($newFileName, 'public')]);
             
                 dispatch(new ResizeImage($newImage->path, 400, 300));
 
