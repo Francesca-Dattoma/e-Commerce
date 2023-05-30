@@ -39,9 +39,13 @@
             @forelse ($adds as $add)
                 <div class="col-12 col-md-3 mt-2">
                     <div class="p-2 m-1 rounded articleIndexCard d-flex flex-column shadow">
-                        <a href="{{route('add.show', compact('add'))}}" class="text-decoration-none ">
-                            <img src="https://picsum.photos/1000" width="180" class="card-img-top rounded" alt="{{$add->title}}">
-                            <div class="card-body d-flex flex-column justifu-content-evenly">
+                            <div class="card-custom">
+                                <a href="{{route('add.show', compact('add'))}}" class="text-decoration-none ">
+                            
+                                    <img src="{{!$add->images()->get()->isEmpty() ? Storage::url($add->images()->first()->path) : '/media/black.png'}}" class="card-img-top img-fluid rounded" alt="{{$add->title}}">
+    
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-evenly">
                                 <h5 class="card-title text-center py-2 fw-bold anton-font text-dark">
 
                                     @if(strlen($add->title) > 50) 

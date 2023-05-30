@@ -23,6 +23,8 @@ class CreateAdd extends Component
     public $images = [];
     public $image;
     public $add;
+    public $user_id;
+    public $form_id;
     
 
 
@@ -35,6 +37,7 @@ class CreateAdd extends Component
         'category'=>'required|different:Placeholder', 
         'images.*'=> 'image|max:1024',
         'temporary_images.*'=> 'image|max:1024',
+        'user_id'=>'required'
         
     ];
 
@@ -72,6 +75,7 @@ class CreateAdd extends Component
     }
 
     public function store(){
+        $this->user_id=Auth::user()->id;
         $this->validate();
        
         $this->add = Category::find($this->category)->adds()->create($this->validate());
@@ -81,17 +85,17 @@ class CreateAdd extends Component
             }
         }
 
-        $category= Category::find($this->category);
-        $add=$category->adds()->create([
+        // $category= Category::find($this->category);
+        // $add=$category->adds()->create([
 
-            'title'=>$this->title,
-            'place'=>$this->place,
-            'price'=>$this->price,2,
-            'description'=>$this->description,       
+        //     'title'=>$this->title,
+        //     'place'=>$this->place,
+        //     'price'=>$this->price,2,
+        //     'description'=>$this->description,       
 
-        ]);
-        Auth::user()->adds()->save($add);
-        session()->flash('message', 'Annuncio correttamente inserito.');
+        // ]);
+        // Auth::user()->adds()->save($add);
+        session()->flash('message', 'Annuncio correttamente inserito. Verrà revisionato da uno nostro collaboratore, attendi il messaggio di conferma.');
         $this->cleanForm();
 
     }
