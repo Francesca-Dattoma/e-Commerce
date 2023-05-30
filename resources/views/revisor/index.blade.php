@@ -23,7 +23,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                        @if($add_to_check->images)
+                        @if(count($add_to_check->images))
                             <div class="carousel-inner">
                                 @foreach($add_to_check->images as $image)
                                     <div class="carousel-item @if($loop->first)active @endif">
@@ -35,7 +35,7 @@
                         @else
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="/media/black.png" class="d-block w-100 h-100" alt="Immagine di default">
+                                        <img src="https://picsum.photos/600" class="d-block w-100 h-100" alt="Immagine di default">
                                     </div>
                                 
                                 </div>

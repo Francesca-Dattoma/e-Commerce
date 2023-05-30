@@ -2,11 +2,32 @@
     <div class="container mt-5 p-4 shadow rounded">
         <div class="row justify-content-center w-100">
             <div class="col-12 col-md-6">
-                <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add->title}}">
-                <div class="d-flex justify-content-evenly">
-                    <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
-                    <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
-                    <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    @if($add->images)
+                        <div class="carousel-inner">
+                            @foreach($add->images as $image)
+                                <div class="carousel-item @if($loop->first)active @endif">
+                                    <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="{{$add->title}}">
+                                </div>
+
+                            @endforeach
+                        </div>
+                    @else
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://picsum.photos/600" class="d-block w-100 h-100" alt="Immagine di default">
+                                </div>
+                            
+                            </div>
+                    @endif
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
                 </div>
             </div>
             <div class="col-12 col-md-6">
