@@ -6,6 +6,7 @@ use Auth;
 use App\Models\Add;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 
@@ -81,8 +82,17 @@ class CreateAdd extends Component
         $this->add = Category::find($this->category)->adds()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image){
-                $this->add->images()->create(['path'=>$image->store('images', 'public')]);
+                // $this->add->images()->create(['path'=>$image->store('images', 'public')]);
+                $newFileName = "adds/{$this->add->id}";
+                $newImage = $this->add->images()->create(['path'=>$image->store(newFileName, 'public')]);
+            
+                dispatch(new ResizeImage($newImage->path, 400, 300));
+
             }
+
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
+
+
         }
 
         // $category= Category::find($this->category);
