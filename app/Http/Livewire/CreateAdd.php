@@ -22,6 +22,7 @@ class CreateAdd extends Component
     public $temporary_images;
     public $images = [];
     public $image;
+    public $add;
     
 
 
@@ -72,7 +73,7 @@ class CreateAdd extends Component
 
     public function store(){
         $this->validate();
-
+       
         $this->add = Category::find($this->category)->adds()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image){
@@ -101,6 +102,10 @@ class CreateAdd extends Component
         $this->price='';
         $this->description='';
         $this->category='';
+        $this->image='';
+        $this->images= [];
+        $this->temporary_images = [];
+        $this->form_id = rand();
     }
 
     public function render()

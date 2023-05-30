@@ -29,3 +29,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .img-preview{
+    height: 300px;
+    width: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }

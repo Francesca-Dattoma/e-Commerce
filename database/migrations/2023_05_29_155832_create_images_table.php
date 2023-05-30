@@ -18,8 +18,8 @@ return new class extends Migration
             $table->id();
 
 
-            $table->unsignedBigInteger('adds_id')->nullable();
-            $table->foreign('adds_id')->references('id')->on('adds')->onDelete('cascade');
+            $table->unsignedBigInteger('add_id')->nullable();
+            $table->foreign('add_id')->references('id')->on('adds')->onDelete('cascade');
 
             $table->string('path')->nullable();
 
