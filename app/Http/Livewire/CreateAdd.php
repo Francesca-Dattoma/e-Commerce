@@ -89,7 +89,7 @@ class CreateAdd extends Component
                 $newFileName = "adds/{$this->add->id}";
                 $newImage = $this->add->images()->create(['path'=>$image->store($newFileName, 'public')]);
             
-                dispatch(new ResizeImage($newImage->path, 400, 300));
+                dispatch(new ResizeImage($newImage->path, 200, 200));
 
             }
 

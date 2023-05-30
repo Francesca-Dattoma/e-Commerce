@@ -26,7 +26,7 @@
                             <div class="container rounded  ">
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-lg-6 d-flex justify-content-center ">
-                                        <img src="{{!$add->images()->get()->isEmpty() ? $add->images()->first()->getUrl(400,300) : '/media/black.png'}}" height="300" class="rounded m-1 p-1" alt="{{$add->title}}">
+                                        <img src="{{!$add->images()->get()->isEmpty() ? $add->images()->first()->getUrl(200,200) : '/media/black.png'}}" height="300" class="rounded m-1 p-1" alt="{{$add->title}}">
                                     </div>
                                     <div class="col-12 col-lg-5 d-flex justify-content-around align-items-start flex-column">
                                         <h3 class=" display-6 fw-bold anton-font">

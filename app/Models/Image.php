@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Add;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Image extends Model
@@ -32,7 +33,7 @@ class Image extends Model
 
         $path = dirname($filePath);
         $fileName = basename($filePath);
-        $file = "{$path}/crop_{$w}x{$h}_{$filename}";
+        $file = "{$path}/crop_{$w}x{$h}_{$fileName}";
 
         return Storage::url($file);
 
