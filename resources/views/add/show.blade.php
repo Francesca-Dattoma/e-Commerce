@@ -2,8 +2,49 @@
     <div class="container mt-5 p-4 shadow rounded">
         <div class="row justify-content-center w-100">
             <div class="col-12 col-md-6">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    @if($add->images)
+                <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add->title}}">
+                <div class="d-flex justify-content-evenly">
+                    <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                    <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                    <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                </div>
+            {{-- </div> --}}
+        {{-- <div class="row justify-content-center w-100">
+            <div class="col-12 col-md-6">
+                <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add->title}}">
+                        <div class="d-flex justify-content-evenly">
+                            <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                            <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                            <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                        </div> --}}
+                {{-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="col-12 col-md-6"> --}}
+
+
+                        {{-- <div class="gallery">
+                            <div class="large">
+                               <img src="{{$add->images()->first()->getUrl(200,200)}}">
+                            </div>
+                          
+                            <div class="thumb">
+                                @foreach($add->images as $image)
+                                <div class="carousel-item @if($loop->first)active @endif">
+                                    <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="{{$add->title}}">
+                                </div>
+
+                                @endforeach
+                            </div>
+                         </div> --}}
+
+
+                        {{-- <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add->title}}">
+                        <div class="d-flex justify-content-evenly">
+                            <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                            <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                            <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
+                        </div>
+                    </div> --}}
+                    {{-- @if($add->images)
                         <div class="carousel-inner">
                             @foreach($add->images as $image)
                                 <div class="carousel-item @if($loop->first)active @endif">
@@ -19,7 +60,7 @@
                                 </div>
                             
                             </div>
-                    @endif
+                    @endif --}}
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -29,7 +70,7 @@
                         <span class="visually-hidden">Next</span>
                       </button>
                 </div>
-            </div>
+            {{-- </div> --}}
             <div class="col-12 col-md-6">
                 <h2 class="display-3 py-2 fw-bold anton-font text-dark" >
                     @if(strlen($add->title) > 50) 

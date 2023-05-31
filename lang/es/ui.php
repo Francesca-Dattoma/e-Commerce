@@ -10,6 +10,7 @@
         'firstPage' =>'primera página',
         'insertAdd' => 'Poner anuncios',
         'reviseAdd' => 'Revisa anuncio',
+        'language' => 'Idiomas'
     ];
 
 

@@ -62,6 +62,7 @@
             </div>
     
             <div class="mb-3">
+                <label for="temporary_images"  class="form-label anton-font h5">Immagini</label>
                 <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img"/>
                 @error('temporary_images.*')
                     <p class="text-danger mt-2">{{$message}}</p>

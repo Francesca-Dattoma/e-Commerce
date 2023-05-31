@@ -26,7 +26,7 @@
     <x-header title="{{ htmlspecialchars_decode($title)}}" />
     
     
-    <div class="min-vh-100">
+    <div >
         @if (session()->has('message'))
             <div class="alert alert-success my-3 anton-font mb-5">
                 {{session('message')}}

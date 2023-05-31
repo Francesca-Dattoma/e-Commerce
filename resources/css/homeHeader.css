@@ -1,7 +1,7 @@
 .bodyHeaderHome {
     position: relative;
     margin: 0;
-    height: 50vh;
+    height: 500px;
     font-weight: 100;
     background-image: url("/public/media/bgHeader.jpg");
     background-size: cover;
@@ -27,7 +27,7 @@
   font-size: 2em;
   border-radius: 5px;
   opacity: .5;
-  top: 30vh;
+  top: 300px;
   bottom: 0px;
   left: 0px;
   right: 0px;

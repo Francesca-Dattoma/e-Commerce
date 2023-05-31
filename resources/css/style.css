@@ -194,10 +194,21 @@ input::-webkit-inner-spin-button {
     
     box-shadow: 10px 10px 15px rgba(128, 128, 128, 0.351);
 } */
-
+.drop{
+    display:none;
+}
+.drop2{
+    display: flex;
+}
 @media screen and (max-width: 767px){
     .bgNavbar{
         border-radius: 0px; 
+    }
+    .drop{
+        display: flex;
+    }
+    .drop2{
+        display: none;
     }
 }
 @media screen and (max-width:767px){

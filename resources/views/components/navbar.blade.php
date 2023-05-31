@@ -50,13 +50,27 @@
         </button>
 
       </div>
-      <div class="nav-item drop"></div>
-      <li class="list-unstyled">
-        <x-_locale lang="it" />
-        <x-_locale lang="en" />
-        <x-_locale lang="fr" />
-        <x-_locale lang="es" />
-      </li>
+      <div class="nav-item drop">
+        <li class="list-unstyled">
+          <x-_locale lang="it" />
+          <x-_locale lang="en" />
+          <x-_locale lang="fr" />
+          <x-_locale lang="es" />
+        </li>
+      </div>
+      
+        <li class="nav-item dropdown list-unstyled drop2 text-dark">
+          <a class="nav-item nav-link dropdown-toggle pb-0" id="languages" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{__('ui.language')}}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="languages">
+            <li><x-_locale lang="it" /></li>
+            <li><x-_locale lang="en" /></li>
+            <li><x-_locale lang="fr" /></li>
+            <li><x-_locale lang="es" /></li>
+          </ul>
+        </li>
+      
 
       
        @guest
