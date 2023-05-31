@@ -10,6 +10,7 @@ use App\Jobs\ResizeImage;
 
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
+use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\File;
 
 
@@ -91,12 +92,24 @@ class CreateAdd extends Component
             
                 dispatch(new ResizeImage($newImage->path, 200, 200));
 
+               
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
+            
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
 
 
         }
+
+
+        
+
+
+
+
+
+
 
         // $category= Category::find($this->category);
         // $add=$category->adds()->create([

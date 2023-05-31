@@ -21,7 +21,7 @@
      
         <div class="container mt-5 p-4 shadow rounded">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         @if(count($add_to_check->images))
                             <div class="carousel-inner">
@@ -57,7 +57,7 @@
                         <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
                     </div> --}}
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-3">
                     <h2 class="display-3 py-2 fw-bold anton-font text-dark" >
                         @if(strlen($add_to_check->title) > 50) 
                                         
@@ -91,6 +91,53 @@
                         <p class="muted mb-0 pb-3">Pubblicato da: {{$add_to_check->user->name ?? 'Utente Cancellato'}}</p>
                     </div>
                 </div>
+
+                <div class="col-12 col-md-3">
+                    @if($add_to_check->images)
+
+                        @foreach($add_to_check->images as $image)
+
+                        <h5 class="mt-3">Tags</h5>
+
+                        
+                        {{-- <div class="p-2">
+
+                            @if($image->labels)
+
+                                @foreach($image->labels as $label)
+
+                                    <p class="d-inline"> #{{$label}} </p>
+                            
+                                @endforeach
+                                
+                            @endif    
+
+                        </div> --}}
+
+                            <div class="card-body">
+                                <h5>Revisione immagini</h5>
+                                <p>Adulti : <span class="{{$image->adult}}"></span></p>
+                                <p>Satira : <span class="{{$image->spoof}}"></span></p>
+                                <p>Medicina : <span class="{{$image->medicine}}"></span></p>
+                                <p>Violenza: <span class="{{$image->violence}}"></span></p>
+                                <p>Nudità : <span class="{{$image->racy}}"></span></p>
+                            </div>
+                
+                        @endforeach
+                      @else
+                       <h5>Non ci sono immagini da revisionare</h5>
+                    
+                    
+                    
+                    @endif
+               
+               
+               
+                </div>
+
+
+
+
     
                 
     
