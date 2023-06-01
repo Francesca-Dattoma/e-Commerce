@@ -2,15 +2,16 @@
 
 namespace App\Http\Livewire;
 
-use App\Jobs\GoogleVisionLabelImage;
 use Auth;
 use App\Models\Add;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
+use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\File;
 
@@ -91,12 +92,14 @@ class CreateAdd extends Component
                 $newFileName = "adds/{$this->add->id}";
                 $newImage = $this->add->images()->create(['path'=>$image->store($newFileName, 'public')]);
             
-                dispatch(new ResizeImage($newImage->path, 200, 200));
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 200, 200),
+                   
+                    new GoogleVisionSafeSearch($newImage->id),
+                    
+                    new GoogleVisionLabelImage($newImage->id),
+                ])->dispatch($newImage->id);
 
-               
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
-                
-                dispatch(new GoogleVisionLabelImage($newImage->id));
             }
 
 

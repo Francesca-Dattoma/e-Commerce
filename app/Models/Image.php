@@ -19,8 +19,6 @@ class Image extends Model
 
         return $this->belongsTo(Add::class);
 
-
-
     }
 
     public static function getUrlByFilePath($filePath, $w= null, $h = null){
@@ -28,7 +26,6 @@ class Image extends Model
         if(!$w && !$h){
 
             return Storage::url($filePath);
-
 
         }
 
