@@ -2,7 +2,7 @@
     <div class="container mt-5 p-4 shadow rounded">
         <div class="row justify-content-center w-100">
             <div class="col-12 col-md-6">
-                <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add->title}}">
+                <img src="{{!$add->images()->get()->isEmpty() ? $add->images()->first()->getUrl(200,200) : '/favicon.ico'}}" height="300" class="rounded m-1 p-1" alt="{{$add->title}}" class="img-fluid my-2 rounded" alt="{{$add->title}}">
                 <div class="d-flex justify-content-evenly">
                     <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">
                     <img src="https://picsum.photos/120" class="img-fluid rounded" alt="{{$add->title}}">

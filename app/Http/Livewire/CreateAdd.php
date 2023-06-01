@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\GoogleVisionLabelImage;
 use Auth;
 use App\Models\Add;
 use Livewire\Component;
@@ -94,8 +95,10 @@ class CreateAdd extends Component
 
                
                 dispatch(new GoogleVisionSafeSearch($newImage->id));
-            
+                
+                dispatch(new GoogleVisionLabelImage($newImage->id));
             }
+
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
 

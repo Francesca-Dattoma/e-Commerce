@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Image extends Model
 {
+    
     use HasFactory;
 
 
     protected $fillable =['path'];
-
+    protected $casts=['labels'=>'array'];
     public function add(){
 
         return $this->belongsTo(Add::class);

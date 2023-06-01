@@ -22,26 +22,62 @@
         <div class="container mt-5 p-4 shadow rounded">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-4">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    {{-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"> --}}
                         @if(count($add_to_check->images))
-                            <div class="carousel-inner">
+                            {{-- <div class="carousel-inner"> --}}
                                 @foreach($add_to_check->images as $image)
-                                    <div class="carousel-item d-flex align-items-center @if($loop->first)active @endif">
-                                        <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="{{$add_to_check->title}}">
-                                    </div>
+                                    {{-- <div class="carousel-item d-flex align-items-center @if($loop->first)active @endif"> --}}
+                                        <img src="{{!$add_to_check->images()->get()->isEmpty() ? $add_to_check->images()->first()->getUrl(200,200) : '/favicon.ico'}}" height="300" class="rounded m-1 p-1" alt="{{$add_to_check->title}}" class="d-block w-100" alt="{{$add_to_check->title}}">
+                                    {{-- </div> --}}
+                                    @if($add_to_check->images)
 
+                                        
+
+
+                                        <h5 class="mt-3">Tags</h5>
+
+                                        
+                                        <div class="p-2">
+
+                                            @if($image->labels)
+
+                                                @foreach($image->labels as $label)
+
+                                                    <p class="d-inline"> #{{$label}} </p>
+                                            
+                                                @endforeach
+                                                
+                                            @endif    
+
+                                        </div>
+
+                                            <div class="card-body">
+                                                <h5>Revisione immagini</h5>
+                                                <p>Adulti : <span class="{{$image->adult}}"></span></p>
+                                                <p>Satira : <span class="{{$image->spoof}}"></span></p>
+                                                <p>Medicina : <span class="{{$image->medical}}"></span></p>
+                                                <p>Violenza: <span class="{{$image->violence}}"></span></p>
+                                                <p>Nudità : <span class="{{$image->racy}}"></span></p>
+                                            </div>
+                                
+                                        
+                                        @else
+                                            <h5>Non ci sono immagini da revisionare</h5>
+                                    
+                                    @endif
                                 @endforeach
-                            </div>
+
+                            {{-- </div> --}}
                         @else
-                                <div class="carousel-inner">
+                                {{-- <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="/favicon.ico" class="d-block w-100 h-100" alt="Immagine di default">
-                                    </div>
+                                    </div> --}}
                                 
                                 </div>
                         @endif
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Previous</span>
                         </button>
@@ -49,7 +85,7 @@
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Next</span>
                         </button>
-                      </div>
+                      </div> --}}
                     {{-- <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add_to_check->title}}">
                     <div class="d-flex justify-content-evenly">
                         <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
@@ -92,48 +128,12 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-3">
-                    @if($add_to_check->images)
-
-                        @foreach($add_to_check->images as $image)
-
-                        <h5 class="mt-3">Tags</h5>
-
-                        
-                        {{-- <div class="p-2">
-
-                            @if($image->labels)
-
-                                @foreach($image->labels as $label)
-
-                                    <p class="d-inline"> #{{$label}} </p>
-                            
-                                @endforeach
-                                
-                            @endif    
-
-                        </div> --}}
-
-                            <div class="card-body">
-                                <h5>Revisione immagini</h5>
-                                <p>Adulti : <span class="{{$image->adult}}"></span></p>
-                                <p>Satira : <span class="{{$image->spoof}}"></span></p>
-                                <p>Medicina : <span class="{{$image->medicine}}"></span></p>
-                                <p>Violenza: <span class="{{$image->violence}}"></span></p>
-                                <p>Nudità : <span class="{{$image->racy}}"></span></p>
-                            </div>
-                
-                        @endforeach
-                      @else
-                       <h5>Non ci sono immagini da revisionare</h5>
                     
                     
                     
-                    @endif
                
                
                
-                </div>
 
 
 
