@@ -19,6 +19,7 @@ use App\Http\Controllers\RevisorController;
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/search/add', [PublicController::class, 'searchAdds'])->name('adds.search');
 Route::post('/language/{lang}', [PublicController::class,'setLanguage'])->name('setLocale');
+Route::get('/staff',[PublicController::class,'staff'])->name('staff');
 
 Route::get('/add/create', [AddController::class, 'create'])->middleware('auth')->name('add.create');
 

@@ -35,6 +35,9 @@
             @endforeach
           </ul>
         </li>
+        <li class="nav-item">
+          <a href="{{route('staff')}}" class="nav-link">{{__('ui.staff')}}</a> 
+        </li>
 
             
       </ul> 

@@ -10,7 +10,8 @@
         'firstPage' =>'primera página',
         'insertAdd' => 'Poner anuncios',
         'reviseAdd' => 'Revisa anuncio',
-        'language' => 'Idiomas'
+        'language' => 'Idiomas',
+        'staff' => 'Quienes somos'
     ];
 
 

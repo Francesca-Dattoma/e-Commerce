@@ -10,7 +10,8 @@
         'firstPage' =>'First Page',
         'insertAdd' => 'Insert Ad',
         'reviseAdd' => 'Revise Ad',
-        'language' => 'Languages'
+        'language' => 'Languages',
+        'staff' => 'Who we are'
     ];
 
 

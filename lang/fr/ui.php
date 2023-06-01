@@ -10,7 +10,8 @@
         'firstPage' =>'Première page',
         'insertAdd' => 'Insérer l\'annonce',
         'reviseAdd' => 'Insertar anuncio',
-        'language' => 'Langues'
+        'language' => 'Langues',
+        'staff' => 'Qui nous sommes'
     ];
 
 
