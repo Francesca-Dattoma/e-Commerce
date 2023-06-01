@@ -46,7 +46,7 @@
       <!-- Search -->
       <div class="input-group d-flex justify-content-center">
         <form action="{{route('adds.search')}}" method="GET" class="w-auto" id="search">
-          <input name="searched" type="search" class="bg-white form-control border-0 searchCustom" placeholder="{{__('ui.search')}}" aria-label="Search">
+          <input name="query" type="text" class="bg-white form-control border-0 searchCustom" placeholder="{{__('ui.search')}}" aria-label="Search">
         </form>
         <button class="btn bg-white btnCustom" type="submit" onclick="event.preventDefault();document.querySelector('#search').submit();" >
           <i class="fa-solid fa-magnifying-glass"></i>
