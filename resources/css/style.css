@@ -272,7 +272,7 @@ input::-webkit-inner-spin-button {
 	letter-spacing: .5px;
 }
 .gallery .thumb{
-	width:  100%;
+	width:  50px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(100px, auto));
 	grid-column-gap: 5px;

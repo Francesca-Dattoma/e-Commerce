@@ -2,19 +2,24 @@
     <div class="container mt-5 p-4 shadow rounded">
         <div class="row justify-content-center w-100">
             <div class="col-12 col-md-6">
- 
+                
                 <div class="gallery">
                     <div class="large">
-                       <img src="{{Storage::url($add->images()->first()->path)}}">
-                       <p class="caption">
-                          <span>Some words for the first image</span>
-                       </p>
+                        @if(count($add->images))
+                            <img src="{{Storage::url($add->images()->first()->path)}}" alt="{{$add->title}}">
+                            @else
+                                <img src="/media/logo_img.png" alt="Questo annuncio non ha immagini">
+                       @endif
                     </div>
   
                     <div class="thumb">
-                        @foreach($add->images as $image)
-                            <img src="{{Storage::url($image->path)}}" alt="{{$add->title}}">   
-                        @endforeach 
+                        @if(count($add->images))
+                            @foreach($add->images as $image)
+                                <img src="{{Storage::url($image->path)}}" alt="{{$add->title}}">   
+                            @endforeach 
+                            @else
+                                <img src="/media/logo_img.png" alt="Questo annuncio non ha immagini"> 
+                        @endif
                     </div>
                  </div>
                 </div>
@@ -45,9 +50,6 @@
                 <hr>
                 <h4 class=" anton-font display-4">{{$add->price}} €</h4>
                 <hr>
-                <h6 class="anton-font">Descrizione:</h6>
-                <p class="my-3 maven-font">{{$add->description}}</p>
-                <hr>
                 <div class="d-flex bg-accent bg-gradient h6 rounded justify-content-center flex-column align-items-center">
                     <p class="muted mb-0 pt-3">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
                     <br>
@@ -55,7 +57,11 @@
                 </div>
             </div>
 
-            
+        <div class="row">
+            <h6 class="anton-font">Descrizione:</h6>
+            <p class="my-3 maven-font">{{$add->description}}</p>
+        
+        </div>    
 
         </div>
         <div class="row w-100 justify-content-center">
