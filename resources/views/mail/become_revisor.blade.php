@@ -33,6 +33,13 @@
         .montserrat-font{
             font-family: 'Montserrat', sans-serif;
         }
+
+        .bg-blue{
+            background-color: #182b3a;
+            background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%);
+
+
+        }
     </style>
 
 </head>
@@ -66,17 +73,19 @@
 
             <div class="col-12 d-flex justify-content-center">
                
-                        <div class="card shadow bg-info bg-opacity-25" style="width: 18rem;">
+                        <div class="card shadow bg-blue" style="width: 18rem;">
                             <div class="card-body">
                                 <h3 class="card-title montserrat-font text-center fw-bold">{{$user->name}}</h3>
                         
-                                    <p class="card-text montserrat-font fw-bold mt-4">Dati Utente: </p>
-                                        <p class="card-text montserrat-font">username: {{$user->username}} </p>
-                                        <p class="card-text montserrat-font"> email: {{$user->email}} </p>
+                                    <p class="card-text montserrat-font fw-bold mt-4">DATI UTENTE: </p>
+                                        <p class="card-text montserrat-font fw-bold">Username:</p>
+                                        <p class="card-text montserrat-font">{{$user->username}} </p>
+                                        <p class="card-text montserrat-font fw-bold"> Email: </p>
+                                        <p class="card-text montserrat-font"> {{$user->email}} </p>
 
                                         <div class="d-flex justify-content-center">
 
-                                            <a class="btn btn-primary" href="{{route('make.revisor',compact('user'))}}">Rendi l'utente un revisore</a> 
+                                            <a class="btn btn-outline-primary text-white" href="{{route('make.revisor',compact('user'))}}">Rendi l'utente un revisore</a> 
                                         </div>
                             </div>
                         </div>

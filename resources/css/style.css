@@ -292,10 +292,17 @@ input::-webkit-inner-spin-button {
 
 
 .tornaSu{
-
+    background-color: transparent;
+    border-bottom: none;
     
     align-items:center ;
 
     margin-bottom: 0px !important;
     font-size: 20px !important ;
+}
+
+.bg-footer{
+    background-color: #182b3a;
+    background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%);
+
 }

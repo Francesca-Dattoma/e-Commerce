@@ -17,7 +17,7 @@
     
     @if($adds)
     
-        <h2 class="anton-font display-4 text-center my-3">{{__('ui.lastAnnouncements')}}</h2>
+        <h2 class="anton-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
         <div class="my-5">
             <div class="swiper mySwiper rounded shadow container welcomeMain">
                 <div class="swiper-wrapper">
@@ -82,22 +82,32 @@
         </div>
         @endif
 
-        <div class="container my-3">
+        <div class="container my-3 p-5">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                                <i class="fa-solid fa-lightbulb text-center fa-2x text-primary mb-2"></i>
+                                <h4>Scegli una categoria </h4>
+                                <p>Puoi scegliere tra 5678899 categorie</p>
+                               
                             </div>
                             <div class="col-6">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                                <i class="fa-solid fa-money-bill-1-wave text-center fa-2x text-primary mb-2"></i>
+                                <h4>Aggiungi il prezzo e una descrizione</h4>
+                                <p>Descrivi al meglio il tuo articolo, aggiungendo il prezzo finale</p>
+                                
                             </div>
-                            <div class="col-6">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                            <div class="col-6 pt-3">
+                                <i class="fa-solid fa-images text-center fa-2x text-primary mb-2"></i>
+                                <h4>Carica le foto</h4> 
+                                <p>Carica 6590489' foto per mostrare il tuo articolo</p>                              
                             </div>
-                            <div class="col-6">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                            <div class="col-6 pt-3">
+                                <i class="fa-solid fa-square-check text-center fa-2x text-primary mb-2"></i>
+                                <h4>Inserisci il tuo annuncio</h4>
+                                <p>Quando hai terminato di compilare il form, premi invio!</p>
                             </div>
                         </div>
                     </div>                    
@@ -107,7 +117,7 @@
                     <div class="myCard">
                         <div class="innerCard">
                             <div class="frontSide">
-                                <p class="title">Hai un annuncio da inserire?</p>
+                                <p class="title maven-font">Hai un annuncio <br>da inserire?</p>
                             </div>
                             <a href="{{route('add.create')}}" class="backSide title text-decoration-none text-white">
                                 <p>INSERISCI ANNUNCIO</p>

@@ -1,8 +1,8 @@
-<footer class="bg-dark text-white ">
+<footer class="bg-footer text-white ">
   
   <div  class="d-flex justify-content-center tornaSu ">
-      <a href="#"  class="w-100 text-center btn btn-dark">
-        Torna Su
+      <a href="#"  class="w-100 text-center bg-transparent pt-3">
+        <i class="fa-solid fa-chevron-up fa-beat fa-2x text-white"></i>
       </a>
   </div>
 
@@ -11,8 +11,8 @@
       <div class="col-6 col-md-4 mb-3 text-center">
         <h5>Section</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="{{route('homepage')}}" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="{{route('add.index')}}" class="nav-link p-0 text-muted">Annunci</a></li>
+          <li class="nav-item mb-2"><a href="{{route('homepage')}}" class="nav-link p-0 text-dark fw-bold">Home</a></li>
+          <li class="nav-item mb-2"><a href="{{route('add.index')}}" class="nav-link p-0 text-dark fw-bold">Annunci</a></li>
          
         </ul>
       </div>
@@ -21,8 +21,8 @@
         <h5>Contact Us</h5>
         <ul class="nav flex-column">
     
-          <li class="nav-item mb-2"><a href="{{route('login')}}" class="nav-link p-0 text-muted">Login</a></li>
-          <li class="nav-item mb-2"><a href="{{route('register')}}" class="nav-link p-0 text-muted">Registrati</a></li>
+          <li class="nav-item mb-2"><a href="{{route('login')}}" class="nav-link p-0 text-dark fw-bold">Login</a></li>
+          <li class="nav-item mb-2"><a href="{{route('register')}}" class="nav-link p-0 text-dark fw-bold">Registrati</a></li>
         
           {{-- @guest
           <li class="nav-item list-unstyled">
@@ -32,7 +32,7 @@
           @auth
             {{-- @if(!Auth::user()->is_revisor) --}}
             <li class="nav-item">
-              <a href="{{route('become.revisor')}}" class="nav-link p-0 text-muted">{{__('ui.revisor')}}</a>
+              <a href="{{route('become.revisor')}}" class="nav-link p-0  text-decoration-none text-dark fw-bold">{{__('ui.revisor')}}</a>
             </li>
             {{-- @endif --}}
           @endauth
@@ -42,8 +42,8 @@
 
       <div class="col-6 col-md-4 mb-3 text-center">
         <h5>About Us</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="{{route('staff')}}" class="nav-link p-0 text-muted">Chi siamo</a></li>
+        <ul class="nav flex-column ">
+          <li class="nav-item mb-2"><a href="{{route('staff')}}" class="nav-link p-0 text-dark fw-bold">Chi siamo</a></li>
           
         </ul>
       </div>
