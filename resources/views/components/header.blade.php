@@ -1,5 +1,5 @@
 
-    <div class="d-flex justify-content-center align-items-center title-section bgHeader bodyHeaderHome">
+    <div class="d-flex justify-content-center align-items-center title-section bgHeader bodyHeaderHome ">
         <div class="col-12 text-center">
             <h1 class="text-white anton-font display-3 headerConfig ">{{ htmlspecialchars_decode($title)}}</h1>
             

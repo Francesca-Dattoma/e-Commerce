@@ -289,3 +289,13 @@ input::-webkit-inner-spin-button {
 .gallery .thumb img.selected{
 	border:  2px solid #57f38e;
 }
+
+
+.tornaSu{
+
+    
+    align-items:center ;
+
+    margin-bottom: 0px !important;
+    font-size: 20px !important ;
+}

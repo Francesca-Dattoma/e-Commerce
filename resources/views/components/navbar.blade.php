@@ -1,5 +1,5 @@
    <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-light fixed-top bgNavbar container-md mt-md-4 badge">
+<nav  class="navbar navbar-expand-md navbar-light fixed-top bgNavbar container-md mt-md-4 badge">
   <!-- Container wrapper -->
   <div class="container-fluid">
 
@@ -44,7 +44,7 @@
   
 
       <!-- Search -->
-      <div class="input-group d-flex justify-content-center">
+      <div  class="input-group d-flex justify-content-center">
         <form action="{{route('adds.search')}}" method="GET" class="w-auto" id="search">
           <input name="query" type="text" class="bg-white form-control border-0 searchCustom" placeholder="{{__('ui.search')}}" aria-label="Search">
         </form>
