@@ -82,5 +82,41 @@
         </div>
         @endif
 
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                            </div>
+                            <div class="col-6">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                            </div>
+                            <div class="col-6">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                            </div>
+                            <div class="col-6">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, fuga eius velit, possimus, nihil dicta minima deleniti quam non sunt enim est dolore in suscipit? Distinctio quae error laboriosam dolorum!</p>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                    <div class="myCard">
+                        <div class="innerCard">
+                            <div class="frontSide">
+                                <p class="title">Hai un annuncio da inserire?</p>
+                            </div>
+                            <a href="{{route('add.create')}}" class="backSide title text-decoration-none text-white">
+                                <p>INSERISCI ANNUNCIO</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 </x-layoutWelcome>
