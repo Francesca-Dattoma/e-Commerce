@@ -15,12 +15,12 @@
                     <div class="text-container d-flex flex-column justify-content-evenly">
                       <h3>Fabio Costa</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
-                      <div>
-                        Motto
+                      <div class="mt-2">
+                        <p class="fst-italic">“Se escludiamo l'impossibile, ciò che resta del quanto probabile è pur sempre possibile.”</p>
                     </div>
                     <div class="my-2">
-                        <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
-                        <a href=""><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
+                        <a href="https://www.linkedin.com/in/fabio-costa-web-developer/"><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
+                        <a href="https://github.com/Hackademy-72/yoes_gruppo01_presto"><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
                     </div>
                   </div>
                 </div>
