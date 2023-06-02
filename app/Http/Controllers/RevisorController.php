@@ -48,7 +48,7 @@ class RevisorController extends Controller
     }
     public function makeRevisor(User $user){     
         Artisan::call('yoes:makeUserRevisor',["email"=>$user->email]); 
-        return redirect('/')->with('message',"L'utente ".$user->name." è diventato revisore");
+        return redirect('/')->with('message',"$user->name" . "sei diventato revisore");
         
     }
 }
