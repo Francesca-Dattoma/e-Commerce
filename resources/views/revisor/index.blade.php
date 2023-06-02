@@ -22,13 +22,16 @@
         <div class="container mt-5 p-4 shadow rounded">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-4">
-                    {{-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"> --}}
-                        @if(count($add_to_check->images))
-                            {{-- <div class="carousel-inner"> --}}
+                       
+                    @if(count($add_to_check->images))
+                        
                                 @foreach($add_to_check->images as $image)
-                                    {{-- <div class="carousel-item d-flex align-items-center @if($loop->first)active @endif"> --}}
-                                        <img src="{{!$add_to_check->images()->get()->isEmpty() ? $add_to_check->images()->first()->getUrl(200,200) : '/favicon.ico'}}" height="300" class="rounded m-1 p-1" alt="{{$add_to_check->title}}" class="d-block w-100" alt="{{$add_to_check->title}}">
-                                    {{-- </div> --}}
+                                 
+
+
+
+                                        <img src="{{!$add_to_check->images()->get()->isEmpty() ? Storage::url($image->path): '/media/logo_img.png'}}" height="300" class="rounded m-1 p-1" alt="{{$add_to_check->title}}" class="d-block w-100" alt="{{$add_to_check->title}}">
+                               
                                     @if($add_to_check->images)
 
                                         
@@ -59,39 +62,14 @@
                                                 <p>Violenza: <span class="{{$image->violence}}"></span></p>
                                                 <p>Nudità : <span class="{{$image->racy}}"></span></p>
                                             </div>
-                                
-                                        
+                              
                                         @else
-                                            <h5>Non ci sono immagini da revisionare</h5>
-                                    
+                                            <h5>Non ci sono immagini da revisionare</h5>  
                                     @endif
-                                @endforeach
-
-                            {{-- </div> --}}
-                        @else
-                                {{-- <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="/favicon.ico" class="d-block w-100 h-100" alt="Immagine di default">
-                                    </div> --}}
-                                
-                                </div>
+                                @endforeach                             
                         @endif
 
-                        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div> --}}
-                    {{-- <img src="https://picsum.photos/600" class="img-fluid my-2 rounded" alt="{{$add_to_check->title}}">
-                    <div class="d-flex justify-content-evenly">
-                        <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
-                        <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
-                        <img src="https://picsum.photos/100" class="img-fluid rounded" alt="{{$add_to_check->title}}">
-                    </div> --}}
+                   
                 </div>
                 <div class="col-12 col-md-3">
                     <h2 class="display-3 py-2 fw-bold anton-font text-dark" >
@@ -127,19 +105,7 @@
                         <p class="muted mb-0 pb-3">Pubblicato da: {{$add_to_check->user->name ?? 'Utente Cancellato'}}</p>
                     </div>
                 </div>
-
-                    
-                    
-                    
-               
-               
-               
-
-
-
-
-    
-                
+  
     
             </div>
             <hr class="mt-5">

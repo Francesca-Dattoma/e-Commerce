@@ -93,7 +93,7 @@ class CreateAdd extends Component
                 $newImage = $this->add->images()->create(['path'=>$image->store($newFileName, 'public')]);
             
                 RemoveFaces::withChain([
-                    new ResizeImage($newImage->path, 200, 200),
+                    new ResizeImage($newImage->path, 320, 320),
                    
                     new GoogleVisionSafeSearch($newImage->id),
                     

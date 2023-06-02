@@ -43,7 +43,7 @@
                                 <div class="pt-5">
                                     <a href="{{route('add.show', compact('add'))}}" class="text-decoration-none ">
                             
-                                        <img src="{{!$add->images()->get()->isEmpty() ? $add->images()->first()->getUrl(200,200) : '/favicon.ico'}}" class="card-img-top size rounded" alt="{{$add->title}}">
+                                        <img src="{{!$add->images()->get()->isEmpty() ? Storage::url($add->images()->first()->path) : '/media/logo_img.png'}}" class="card-img-top size rounded" alt="{{$add->title}}">
     
                                 </div>
     

@@ -1,5 +1,5 @@
 <div>
-    <h2 class="anton-font display-4">Crea il tuo annuncio!</h2>
+    <h2 class="anton-font display-4  my-2">Crea il tuo annuncio!</h2>
     <div class="container p-5 shadow rounded mt-5">
         @if (session()->has('message'))
             <div class="alert alert-success text-center">
@@ -74,11 +74,9 @@
                         <p>Anteprima foto</p>
                         <div class="row border-4 border-info rounded shadow py-4">
                         @foreach($images as $key=>$image)
-                            <div class="col my-3">
-                                <div class="img-preview mx-auto shadow rounded" style="background-image: url({{$image->temporaryUrl()}});"></div>
+                            <div class="col-12 col-md-6 col-lg-4 my-3">
+                                <div class="img-preview mx-auto  rounded py-0" style="background-image: url({{$image->temporaryUrl()}}); max-width:200px; "></div>
                                 <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
-
-
                             </div>     
                         @endforeach
 
@@ -87,7 +85,9 @@
                 </div>
             @endif  
 
-            <button type="submit" class="btn btn-lg btn-dark mb-3 anton-font h5">Inserisci annuncio</button><br>
+            <div class="d-flex justify-content-center" >
+                <button type="submit" class="btn btn-lg btn-dark mb-3 anton-font h5">Inserisci annuncio</button><br>
+            </div>
     
 
             

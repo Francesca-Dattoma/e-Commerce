@@ -27,7 +27,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-lg-6 d-flex justify-content-center ">
                                         {{-- <div class="size"> --}}
-                                            <img src="{{!$add->images()->get()->isEmpty() ? $add->images()->first()->getUrl(200,200) : '/favicon.ico'}}" height="300" class="rounded m-1 p-1" alt="{{$add->title}}">
+                                            <img src="{{!$add->images()->get()->isEmpty() ? Storage::url($add->images()->first()->path) : '/media/logo_img.png'}}" height="300" class="rounded m-1 p-1" alt="{{$add->title}}">
 
                                         {{-- </div> --}}
                                     </div>
