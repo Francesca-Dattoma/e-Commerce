@@ -2,7 +2,7 @@
     return [
         'allAnnouncements'=>'Annunci',
         'search'=>'Ricerca',
-        'revisor'=>'Diventa Revisore',
+        'revisor'=>'Lavora con noi',
         'register'=>'Registrati',
         'filters'=>'Filtri',
         'lastAnnouncements'=>'Ultimi annunci',
@@ -25,6 +25,14 @@
         'Anyitemtoadd'=>'Hai un annuncio da inserire?',
         'Additem'=> 'Aggiungi annuncio',
 
+         /*form inserisci annuncio*/ 
+        'createAdd'=>'crea il tuo annuncio',
+        'addtitle'=>'titolo annuncio',
+        'place'=>'città',
+        'price'=>'prezzo',
+        'description'=>'descrizione',
+        'photos'=>'immagini',
+        'insertAdd' => 'Insert Ad',
 
 
     ];

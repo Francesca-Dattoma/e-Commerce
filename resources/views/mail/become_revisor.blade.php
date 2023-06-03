@@ -35,10 +35,15 @@
         }
 
         .bg-blue{
-            background-color: #182b3a;
-            background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%);
+           background-image: url('https://cdn.pixabay.com/photo/2023/04/30/23/49/abstract-7961924_1280.jpg');
+           background-repeat: no-repeat;
+           background-size: cover;
 
+        }
 
+        .bg-card{
+            border: solid 1px cornflowerblue;
+            color: white;
         }
     </style>
 
@@ -65,15 +70,15 @@
         </div>
     </div>
 
-    <div class="container rounded  my-5 p-5">
+    <div class="container rounded bg-blue my-5 p-5">
 
         <div class="row justify-content-center">
-             <h3 class="display-3 monoton-font">Benvenuto Admin</h3>
-                    <h5 class="montserrat-font mb-5"> Hai una richiesta per diventare revisore da parte di un utente.</h5>
+             <h3 class="display-3 monoton-font text-center text-white">Benvenuto Admin</h3>
+                    <h5 class="montserrat-font mb-5 text-center text-white"> Hai una richiesta per diventare revisore da parte di un utente.</h5>
 
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-12 d-flex justify-content-center ">
                
-                        <div class="card shadow bg-blue" style="width: 18rem;">
+                        <div class="card shadow  bg-transparent bg-card">
                             <div class="card-body">
                                 <h3 class="card-title montserrat-font text-center fw-bold">{{$user->name}}</h3>
                         
@@ -85,7 +90,7 @@
 
                                         <div class="d-flex justify-content-center">
 
-                                            <a class="btn btn-outline-primary text-white" href="{{route('make.revisor',compact('user'))}}">Rendi l'utente un revisore</a> 
+                                            <a class="btn btn-outline-dark text-white" href="{{route('make.revisor',compact('user'))}}">Rendi l'utente un revisore</a> 
                                         </div>
                             </div>
                         </div>

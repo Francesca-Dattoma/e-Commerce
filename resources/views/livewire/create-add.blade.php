@@ -1,5 +1,5 @@
 <div>
-    <h2 class="anton-font display-4  my-2">Crea il tuo annuncio!</h2>
+    <h2 class="anton-font display-4 my-2">{{__('ui.createAdd')}}!</h2>
     <div class="container p-5 shadow rounded mt-5">
         @if (session()->has('message'))
             <div class="alert alert-success text-center">

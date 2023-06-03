@@ -13,7 +13,7 @@
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-lg-0">
 
         <!-- Link -->
         {{-- <li class="nav-item">
@@ -23,7 +23,7 @@
 
         {{-- Dropdown Categorie --}}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle anton-font fs-6 text-dark" href="#" id="dropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle anton-font text-dark" href="#" id="dropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.allAnnouncements')}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
@@ -37,7 +37,7 @@
         </li>
         <!--chi siamo-->
         <li class="nav-item">
-          <a href="{{route('staff')}}" class="nav-link anton-font fs-6 text-dark">{{__('ui.staff')}}</a> 
+          <a href="{{route('staff')}}" class="nav-link anton-font text-dark">{{__('ui.staff')}}</a> 
         </li>
 
             
@@ -64,7 +64,7 @@
       </div>
 
       <!--lingue-->
-        <li class="nav-item dropdown list-unstyled drop2 text-dark anton-font fs-6 m-3">
+        <li class="nav-item dropdown list-unstyled drop2 text-dark anton-font  m-3">
           <a class="nav-item nav-link dropdown-toggle pb-0" id="languages" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.language')}}
           </a>
@@ -80,12 +80,12 @@
       
        @guest
       <li class="nav-item list-unstyled">
-        <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark anton-font fs-6">{{__('ui.revisor')}}</a>
+        <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark anton-font ">{{__('ui.revisor')}}</a>
       </li>
       @else 
         @if(!Auth::user()->is_revisor)
         <li class="nav-item list-unstyled">
-          <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark nav-link anton-font fs-6">{{__('ui.revisor')}}</a>
+          <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark nav-link anton-font ">{{__('ui.revisor')}}</a>
         </li>
         @endif
       @endguest 
@@ -103,7 +103,7 @@
               @elseif(!Auth::user()->email_verified_at)
                 <i class="fa-solid fa-user text-primary fa-2x "></i>
             @endif
-            <span class="mx-1 text-dark anton-font fs-6">@if(Auth::user()->username){{Auth::user()->username}}@else{{Auth::user()->name}}@endif</span> 
+            <span class="mx-1 text-dark anton-font ">@if(Auth::user()->username){{Auth::user()->username}}@else{{Auth::user()->name}}@endif</span> 
           @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
         </a>
         <!-- Dropdown menu -->
