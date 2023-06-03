@@ -1,4 +1,4 @@
-<div class="bodyHeaderHome container-fluid d-flex justify-content-center align-items-center">
+<div class="bodyHeaderHome bodyHeaderHomeHeight container-fluid d-flex justify-content-center align-items-center">
     
     <p id='head1' class='homeHeader text-white monoton-font display-2'>YOeS</p>
     <p id='head2' class='homeHeader text-white anton-font display-3'>Your</p>
