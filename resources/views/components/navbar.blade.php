@@ -1,7 +1,7 @@
    <!-- Navbar -->
-<nav  class="navbar navbar-expand-md navbar-light fixed-top bgNavbar container-md mt-md-4 badge">
+<nav  class="navbar navbar-expand-md navbar-light fixed-top bgNavbar container-md  mt-md-4 py-0 badge">
   <!-- Container wrapper -->
-  <div class="container-fluid m-2">
+  <div class="container-fluid">
 
     <!-- Navbar brand -->
     <a class="navbar-brand  monoton-font" href="{{route('homepage')}}">YOeS</a>
@@ -23,7 +23,7 @@
 
         {{-- Dropdown Categorie --}}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle anton-font text-dark" href="#" id="dropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.allAnnouncements')}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
@@ -37,7 +37,7 @@
         </li>
         <!--chi siamo-->
         <li class="nav-item">
-          <a href="{{route('staff')}}" class="nav-link anton-font text-dark">{{__('ui.staff')}}</a> 
+          <a href="{{route('staff')}}" class="nav-link">{{__('ui.staff')}}</a> 
         </li>
 
             
@@ -64,11 +64,11 @@
       </div>
 
       <!--lingue-->
-        <li class="nav-item dropdown list-unstyled drop2 text-dark anton-font  m-3">
-          <a class="nav-item nav-link dropdown-toggle pb-0" id="languages" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown list-unstyled drop2 m-3">
+          <a class="nav-item nav-link dropdown-toggle pb-0 text-dark" id="languages" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.language')}}
           </a>
-          <ul class="dropdown-menu" aria-labelledby="languages">
+          <ul class="dropdown-menu bg-transparent border-0" aria-labelledby="languages">
             <li><x-_locale lang="it" /></li>
             <li><x-_locale lang="en" /></li>
             <li><x-_locale lang="fr" /></li>
@@ -80,12 +80,12 @@
       
        @guest
       <li class="nav-item list-unstyled">
-        <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark anton-font ">{{__('ui.revisor')}}</a>
+        <a href="{{route('become.revisor')}}" class="text-decoration-none">{{__('ui.revisor')}}</a>
       </li>
       @else 
         @if(!Auth::user()->is_revisor)
         <li class="nav-item list-unstyled">
-          <a href="{{route('become.revisor')}}" class="text-decoration-none text-dark nav-link anton-font ">{{__('ui.revisor')}}</a>
+          <a href="{{route('become.revisor')}}" class="text-decoration-none nav-link">{{__('ui.revisor')}}</a>
         </li>
         @endif
       @endguest 
@@ -103,7 +103,7 @@
               @elseif(!Auth::user()->email_verified_at)
                 <i class="fa-solid fa-user text-primary fa-2x "></i>
             @endif
-            <span class="mx-1 text-dark anton-font ">@if(Auth::user()->username){{Auth::user()->username}}@else{{Auth::user()->name}}@endif</span> 
+            <span class="mx-1 text-dark">@if(Auth::user()->username){{Auth::user()->username}}@else{{Auth::user()->name}}@endif</span> 
           @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
         </a>
         <!-- Dropdown menu -->

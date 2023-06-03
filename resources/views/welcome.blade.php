@@ -18,6 +18,7 @@
     @if($adds)
     
         <h2 class="maven-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
+        <h2 class="anton-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
         <div class="my-5">
             <div class="swiper mySwiper rounded shadow container welcomeMain">
                 <div class="swiper-wrapper">
@@ -82,8 +83,8 @@
         </div>
         @endif
 
-        <div class="container-fluid ">
-            <div class="row  mx-3 p-5">
+        <div class="container ">
+            <div class="row ">
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
