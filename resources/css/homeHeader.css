@@ -1,7 +1,6 @@
-.bodyHeaderHome {
+.bodyHeaderHome{
     position: relative;
     margin: 0;
-    height: 500px;
     font-weight: 100;
     background-image: url("/public/media/bgHeader.jpg");
     background-size: cover;
@@ -14,6 +13,10 @@
     -moz-animation: fadeIn 1 1s ease-out;
     -o-animation: fadeIn 1 1s ease-out;
     animation: fadeIn 1 1s ease-out;
+  }
+  .bodyHeaderHomeHeight{
+    
+    height: 500px;
 }
 
 .buttonHomeHeader{
@@ -354,7 +357,7 @@
 }
 @media screen and (max-width:767px) {
 
-  .bodyHeaderHome{
+  .bodyHeaderHomeHeight{
     height: 100vh;
   }
   .buttonHomeHeader{
