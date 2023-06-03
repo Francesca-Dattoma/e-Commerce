@@ -200,25 +200,10 @@ input::-webkit-inner-spin-button {
 .drop2{
     display: flex;
 }
-@media screen and (max-width: 767px){
-    .bgNavbar{
-        border-radius: 0px; 
-    }
-    .drop{
-        display: flex;
-        justify-content: center;
-    }
-    .drop2{
-        display: none;
-    }
-}
-@media screen and (max-width:767px){
-    .welcomeMain{
-        height: 100vh;
-        /* object-fit: cover; */
-        
-    }
-}
+
+
+
+
 .card-custom{
     display: flex;
     align-items: center;
@@ -309,9 +294,39 @@ input::-webkit-inner-spin-button {
 }
 .scale-c{
     scale: 1.5;
+    height: 250px;
+    width: 250px;
 }
 .margine{
     margin-top: 100px;
     margin-bottom: 100px;
 
 }
+
+
+
+@media screen and (max-width: 767px){
+    .bgNavbar{
+        border-radius: 0px; 
+    }
+    .drop{
+        display: flex;
+        justify-content: center;
+    }
+    .drop2{
+        display: none;
+    }
+    .welcomeMain{
+        height: 100vh;
+        /* object-fit: cover; */
+        
+    }
+
+
+    .scale-c{
+        scale: 1;
+    }
+
+
+}
+

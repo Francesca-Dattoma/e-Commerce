@@ -24,7 +24,20 @@
         'Whenyouhavefinishedfillingouttheformpresssubmit'=>'Lorsque vous avez terminé de remplir le formulaire, cliquez sur "Soumets" !',
         'Anyitemtoadd'=>'Avez-vous un article à placer ?',
         'Additem'=>"Ajoutez l'article",
-        'work'=>'Travailler avec nous'
+        'work'=>'Travailler avec nous',
+
+
+        'createAdd'=>'Créez votre annonce',
+        'addtitle'=>'Titre de l\'annonce',
+        'place'=>'Ville',
+        'price'=>'Prix',
+        'description'=>'Description',
+        'photos'=>'Images',
+        'work'=>'Travailler avec nous',
+        'preview'=>'Aperçu',
+        'categories'=>'Catégories'
+
+
 
     ];
 

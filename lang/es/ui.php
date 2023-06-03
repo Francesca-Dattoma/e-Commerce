@@ -24,9 +24,19 @@
         'Whenyouhavefinishedfillingouttheformpresssubmit'=>'Cuando has terminado de rellenar el formulario, pulsa "envia"!',
         'Anyitemtoadd'=>'¿Desea publicar un anuncio?',
         'Additem'=>'Carga tu anuncio',
-        'work'=>'Trabaja con nosotros'
+        'work'=>'Trabaja con nosotros',
 
 
+
+        'createAdd'=>'Crea tu anuncio',
+        'addtitle'=>'Título del anuncio',
+        'place'=>'Ciudad',
+        'price'=>'Precio',
+        'description'=>'Descripción',
+        'photos'=>'Fotos',
+        'work'=>'Trabaja con nosotros',
+        'preview'=>'Vista previa',
+        'categories'=>'Categorías'
     ];
 
 

@@ -18,7 +18,7 @@
                     </div>
                     <div class="offcanvas-body">
                         <div>
-                            <button class="btn btnCustomPage bg-prim bg-gradient h6 rounded text-center anton-font mb-3 shadow" onclick="document.querySelector('#categoriesList').classList.toggle('filtroCategorie');">Categorie</button>
+                            <button class="btn btnCustomPage bg-prim bg-gradient h6 rounded text-center anton-font mb-3 shadow" onclick="document.querySelector('#categoriesList').classList.toggle('filtroCategorie');">{{__('ui.categories')}}</button>
                         </div>
                         <div id='categoriesList' class="filtroCategorie">
                             <hr>

@@ -38,7 +38,7 @@
                       <h3>Manuel Tedeschi</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
                       <div>
-                        Motto
+                        <p class="fst-italic">“”</p>
                     </div>
                     <div class="my-2">
                         <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
@@ -82,7 +82,7 @@
                       <h3>Francesco Fiorito</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
                       <div>
-                        Motto
+                        <p class="fst-italic">“”</p>
                     </div>
                     <div class="my-2">
                         <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
@@ -104,7 +104,7 @@
                       <h3>Roberto Morreale</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
                       <div>
-                        Motto
+                        <p class="fst-italic">“”</p>
                     </div>
                     <div class="my-2">
                         <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
@@ -126,7 +126,7 @@
                       <h3>Gaetano Cerbone</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
                       <div>
-                        Motto
+                        <p class="fst-italic">“Ogni cap è nu tribunal”</p>
                     </div>
                     <div class="my-2">
                         <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>

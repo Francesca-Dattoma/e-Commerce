@@ -5,7 +5,10 @@
 
     <div class="container rounded shadow margine">
         <div class="row ">
-            <div class="col-6 d-flex align-items-center flex-column justify-content-center p-3">
+            <div class="col-12 col-md-6 d-flex justify-content-center p-3">
+                <img src="/media/lavoraConNoi.png" class="scale-c"  alt="lavora con noi">
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center flex-column justify-content-center p-3">
                 <h3>Vuoi entrare a far parte dello Staff YOeS?</h3>
                 <h5 class="mt-3">Diventa il nostro Revisore di annunci</h5>
                 <p>Candidati</p>
@@ -21,9 +24,6 @@
                         @endif
                 @endguest 
 
-            </div>
-            <div class="col-6 d-flex justify-content-center p-3">
-                <img src="/media/lavoraConNoi.png" class="scale-c" height="250" alt="lavora con noi">
             </div>
         </div>
     </div>

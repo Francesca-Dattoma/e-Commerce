@@ -35,7 +35,8 @@
         'price'=>'Price',
         'description'=>'Description',
         'photos'=>'Photos',
-
+        'preview'=>'Preview',
+        'categories'=>'Categories'
 
 
     ];

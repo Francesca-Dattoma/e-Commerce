@@ -123,7 +123,7 @@
               @endauth
           @auth
           <li>
-            <a class="dropdown-item text-decoration-none text-dark maven-font " href="{{route('add.create')}}">{{__('ui.insertAdd')}}</a>
+            <a class="dropdown-item text-decoration-none text-dark maven-font text-center " href="{{route('add.create')}}">{{__('ui.insertAdd')}}</a>
           </li>
           <li>
             <hr class="dropdown-divider" />

@@ -32,7 +32,10 @@
         'price'=>'prezzo',
         'description'=>'descrizione',
         'photos'=>'immagini',
-        'work'=>'Lavora con noi'
+        'work'=>'Lavora con noi',
+        'preview'=>'Anteprima Immagine',
+        'categories'=>'Categorie'
+        
 
 
     ];
