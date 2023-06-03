@@ -17,7 +17,7 @@ class AddController extends Controller
     }
     public function index()
     {   
-        $adds=Add::where('is_accepted', true)->paginate(8); 
+        $adds=Add::where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(8); 
         $sortedCategories = Category::orderBy('name')->get();
         return view('add.index', compact('adds','sortedCategories')); 
     }

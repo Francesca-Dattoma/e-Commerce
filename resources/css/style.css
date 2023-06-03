@@ -206,6 +206,7 @@ input::-webkit-inner-spin-button {
     }
     .drop{
         display: flex;
+        justify-content: center;
     }
     .drop2{
         display: none;

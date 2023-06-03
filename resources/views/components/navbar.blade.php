@@ -26,7 +26,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="dropdownCategories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.allAnnouncements')}}
           </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
+          <ul class="dropdown-menu p-2" aria-labelledby="dropdownCategories">
             <li><small><a class="dropdown-item fw-bold" href="{{route('add.index')}}">Tutti gli annunci</a></small></li>
             @foreach($sortedCategories as $sortedCategory)
               {{-- <li><hr class="dropdown-divider"></li> --}}
@@ -36,7 +36,7 @@
           </ul>
         </li>
         <!--chi siamo-->
-        <li class="nav-item">
+        <li class="nav-item ">
           <a href="{{route('staff')}}" class="nav-link">{{__('ui.staff')}}</a> 
         </li>
 
@@ -46,16 +46,16 @@
 
       <!-- Search -->
       <div  class="input-group d-flex justify-content-center">
-        <form action="{{route('adds.search')}}" method="GET" class="w-auto" id="search">
+        <form action="{{route('adds.search')}}" method="GET" class="w-auto " id="search">
           <input name="query" type="text" class="bg-white form-control border-0 searchCustom" placeholder="{{__('ui.search')}}" aria-label="Search">
         </form>
-        <button class="btn bg-white btnCustom" type="submit" onclick="event.preventDefault();document.querySelector('#search').submit();" >
+        <button class="btn bg-white btnCustom " type="submit" onclick="event.preventDefault();document.querySelector('#search').submit();" >
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
       </div>
-      <div class="nav-item drop">
-        <li class="list-unstyled">
+      <div class="nav-item drop ">
+        <li class="list-unstyled ">
           <x-_locale lang="it" />
           <x-_locale lang="en" />
           <x-_locale lang="fr" />
@@ -65,10 +65,10 @@
 
       <!--lingue-->
         <li class="nav-item dropdown list-unstyled drop2 m-3">
-          <a class="nav-item nav-link dropdown-toggle pb-0 text-dark" id="languages" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-item nav-link dropdown-toggle  p-2 text-dark" id="languages" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.language')}}
           </a>
-          <ul class="dropdown-menu bg-transparent border-0" aria-labelledby="languages">
+          <ul class="dropdown-menu bg-transparent border-0 p-2" aria-labelledby="languages">
             <li><x-_locale lang="it" /></li>
             <li><x-_locale lang="en" /></li>
             <li><x-_locale lang="fr" /></li>
@@ -80,12 +80,12 @@
       
        @guest
       <li class="nav-item list-unstyled text-dark">
-        <a href="{{route('lavoraConNoi')}}" class="text-decoration-none nav-link">{{__('ui.work')}}</a>
+        <a href="{{route('lavoraConNoi')}}" class="text-decoration-none nav-link p-2">{{__('ui.work')}}</a>
       </li>
       @else 
         @if(!Auth::user()->is_revisor)
         <li class="nav-item list-unstyled text-dark">
-          <a href="{{route('lavoraConNoi')}}" class="text-decoration-none nav-link">{{__('ui.work')}}</a>
+          <a href="{{route('lavoraConNoi')}}" class="text-decoration-none nav-link p-2">{{__('ui.work')}}</a>
         </li>
         @endif
       @endguest 
@@ -97,14 +97,14 @@
         <a class="nav-link dropdown-toggle color-prim" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Area personale">
           @auth 
             @if(!Auth::user()->is_revisor && Auth::user()->email_verified_at) 
-              <i class="fa-solid fa-user-check text-primary fa-2x"></i>
+              <i class="fa-solid fa-user-check text-primary fa-2x p-2"></i>
               @elseif(Auth::user()->is_revisor && Auth::user()->email_verified_at)
-                <i class="fa-solid fa-registered text-primary fa-2x"></i>
+                <i class="fa-solid fa-registered text-primary fa-2x p-2"></i>
               @elseif(!Auth::user()->email_verified_at)
-                <i class="fa-solid fa-user text-primary fa-2x "></i>
+                <i class="fa-solid fa-user text-primary fa-2x p-2"></i>
             @endif
             <span class="mx-1 text-dark">@if(Auth::user()->username){{Auth::user()->username}}@else{{Auth::user()->name}}@endif</span> 
-          @else <i class="fa-solid fa-user text-dark fa-2x "></i> @endauth
+          @else <i class="fa-solid fa-user text-dark fa-2x p-2"></i> @endauth
         </a>
         <!-- Dropdown menu -->
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
