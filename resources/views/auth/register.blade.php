@@ -1,63 +1,105 @@
-<x-layout title="Registrati" >
-    <div class="container-fluid mt-2">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 p-5">
-                <form action="{{route('register')}}" method="POST" class="p-5 shadow bg-light">
-                    @csrf
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                        <ul>
-                          @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                          @endforeach
-                        </ul>
-                        </div>
-                    @endif
-                        <div class="rounded bg-accent p-2 mb-3">
-                          <h6 class="anton-font">Regole di registrazione:</h6>
-                          <ul>
-                            <li><p class="maven-font">I campi contrassegnati da <sup class="color-prim">*</sup> sono obbligatori.</p></li>
-                            <li><p class="maven-font">Il campo Nome deve essere di almeno 6 caratteri.</p></li>
-                            <li><p class="maven-font">Il campo Username deve essere di almeno 6 caratteri.</p></li>
-                            <li>
-                              <p class="maven-font">La password deve essere di almeno 8 caratteri e contenere almeno un:</p>
-                              <ul>
-                                <li class="maven-font">Un carattere maiuscolo</li>
-                                <li class="maven-font">Un numero</li>
-                                <li class="maven-font">Un carattere speciale</li>
-                              </ul>
-                            
-                            
-                            </li>
-                          </ul>
+<x-layoutLoginRegister >  
 
+    <div class="section mt-5 pt-5">
+      <div class="container">
+        <div class="row full-height justify-content-center align-items-center">
+          <div class="col-12 text-center align-self-center pt-5">
+
+            {{-- Section with form --}}
+
+            
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              
+              <span ><h6 class="h6Login h4">Registrati</h6></span>
+              <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+              <label for="reg-log"></i></label>
+              <span class="h4"><h6 class="h6Login h4">Login</h6></span>
+              
+              {{-- Wrapper --}}
+              @if ($errors->any())
+                <div class="d-flex justify-content-center">
+                  <div class="alert alert-danger mt-4 w-100">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                          <li class="list-unstyled text-start"><p class="pLogin text-start">{{ $error }}</p></li>
+                        @endforeach
+                    </ul>
+                  </div>
+
+                </div>
+              @endif
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+
+                  {{-- Register --}}
+                  <form class="card-front" action="{{route('register')}}" method="POST">
+                    @csrf
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3 anton-font text-light h1">Sign Up</h4>
+                        <div class="form-group">	
+                          <input type="text" name="name" class="form-style" placeholder="Name">
+                          <i class="input-icon uil uil-user"></i>
+                          <p class="pLogin">Il campo Nome deve essere di almeno 6 caratteri</p>
                         </div>
-                        <div class="mb-3">
-                          <label for="name" class="form-label anton-font">Nome <sup class="color-prim">*</sup> </label>
-                          <input type="text"  name="name" class="form-control" id="name" >
+                        <div class="form-group mt-2">
+                          <input type="text" name="username" class="form-style" placeholder="Username">
+                          <i class="input-icon uil uil-user"></i>
+                          <p class="pLogin">Il campo Username deve essere di almeno 6 caratteri</p>
                         </div>
-                        <div class="mb-3">
-                            <label for="username" class="form-label anton-font">Username <sup class="color-prim">*</sup></label>
-                            <input type="text"  name="username" class="form-control" id="username" >
+                        <div class="form-group mt-2">
+                          <input type="email" name="email" class="form-style" placeholder="Email">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="password" name="password" class="form-style" placeholder="Password">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                          <p class="pLogin">Almeno 8 caratteri e contenere almeno un carattere maiuscolo,uno speciale e un numero</p>
+                            
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label anton-font">Email <sup class="color-prim">*</sup></label>
-                            <input type="text"  name="email" class="form-control" id="email" >
-                          </div>
-                        <div class="mb-3">
-                          <label for="password" class="form-label anton-font">Password <sup class="color-prim">*</sup></label>
-                          <input type="password" name="password" class="form-control" id="password">
+                        <div class="form-group mt-2">
+                          <input type="password" name="password_confirmation" class="form-style" placeholder="Conferma Password" >
+                          <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <div class="mb-3">
-                            <label for="password_confirmation" class="form-label anton-font">Conferma Password <sup class="color-prim">*</sup></label>
-                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
+                        <button type="submit" class="btnLogin mt-4 text-decoration-none">Registrati</button>
+                        {{-- <a href="#" class="btnLogin mt-4 text-decoration-none">submit</a> --}}
+                      </div>
+                    </div>
+                  </form>
+
+                  {{-- Login --}}
+
+                  <form action="{{route('login')}}" method="POST" class="card-back">
+                    @csrf
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3 anton-font text-light h1">Log In</h4>
+                        <div class="form-group">
+                          <input type="text" name="username" class="form-style" placeholder="Email/Username">
+                          <i class="input-icon uil uil-at"></i>
+                          <p class="pLogin">puoi inserire anche username</p>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="password" name="password" class="form-style" placeholder="Password">
+                          <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        
-                        <button type="submit" class="btn btnCustomPage bg-prim bg-gradient h6 rounded text-center anton-font mb-3 shadow">Registrati</button>
-                        <p class="fst-italic maven-font text-dark"><small>Sei già registrato? <a href="{{route('login')}}" class="color-prim text-decoration-none">Accedi</a>.</small></p>
-                </form>
-                    
+                        <button type="submit" class="btnLogin mt-4 text-decoration-none">Login</button>
+                        {{-- <p class="mb-0 mt-4 text-center pLogin"><a href="#0" class="link">Forgot your password?</a></p> --}}
+                      </div>
+                    </div>
+                  </form>                   
+
+                </div>
+              </div>
+          
+
+
             </div>
+
+
+          </div>
         </div>
+      </div>
     </div>
-</x-layout>
+
+</x-layoutLoginRegister>

@@ -106,31 +106,31 @@
                     <ul class="pagination gap-2 ">
                         @if($adds->currentPage() > 2)
                             <li class="page-item">
-                                <a class="page-link border-0 maven-font" href="{{ $adds->url(1) }}">{{__('ui.firstPage')}}</a>
+                                <a class="border-0 maven-font text-decoration-none" href="{{ $adds->url(1) }}">{{__('ui.firstPage')}}</a>
                             </li>
                         @endif
             
                         @if($adds->previousPageUrl())
                             <li class="page-item {{ $adds->previousPageUrl() ? '' : 'disabled' }} ">
-                                <a class="page-link border-0 maven-font" href="{{ $adds->previousPageUrl() ?? '#' }} "><<</a>
+                                <a class="border-0 maven-font text-decoration-none" href="{{ $adds->previousPageUrl() ?? '#' }} "><<</a>
                             </li>
                         @endif
             
                         @foreach ($adds->getUrlRange(max($adds->currentPage() - 1, 1), min($adds->currentPage() + 1, $adds->lastPage())) as $page => $url)
                             <li class="page-item {{ $adds->currentPage() == $page ? 'active' : '' }}">
-                                <a class="page-link border-0 maven-font" href="{{ $url }}">{{ $page }}</a>
+                                <a class="border-0 maven-font text-decoration-none" href="{{ $url }}">{{ $page }}</a>
                             </li>
                         @endforeach
             
                         @if($adds->nextPageUrl())
                             <li class="page-item {{ $adds->nextPageUrl() ? '' : 'disabled' }}">
-                                <a class="page-link border-0 maven-font" href="{{ $adds->nextPageUrl() ?? '#' }}">>></a>
+                                <a class="border-0 maven-font text-decoration-none" href="{{ $adds->nextPageUrl() ?? '#' }}">>></a>
                             </li>
                         @endif
             
                         @if($adds->currentPage() < ($adds->lastPage()-1))
                             <li class="page-item">
-                                <a class="page-link border-0 maven-font" href="{{ $adds->url($adds->lastPage()) }}">{{__('ui.lastPage')}}</a>
+                                <a class="border-0 maven-font text-decoration-none" href="{{ $adds->url($adds->lastPage()) }}">{{__('ui.lastPage')}}</a>
                             </li>
                         @endif
                     </ul>
