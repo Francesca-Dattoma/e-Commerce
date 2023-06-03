@@ -57,10 +57,10 @@
                       </div>
                     </div>
                     <div class="text-container d-flex flex-column justify-content-evenly">
-                      <h3>Francesca Romana Dattoma</h3>
+                      <h3 class="mt-3 ">Francesca Romana Dattoma</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
                       <div>
-                        Motto
+                       <p class="fst-italic "> “Fatti non foste a viver come bruti ma per seguir virtute e canoscenza”<p>
                     </div>
                     <div class="my-2">
                         <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>

@@ -1,11 +1,11 @@
 <?php
     return [
-        'allAnnouncements'=>'Announcements',
+        'allAnnouncements'=>'Items',
         'search'=>'Search',
         'revisor'=>'Become Revisor',
         'register'=>'Sign Up',
         'filters'=>'Filters',
-        'lastAnnouncements'=>'Last Inserted Annoucements',
+        'lastAnnouncements'=>'Last item updated',
         'lastPage' =>'Last Page',
         'firstPage' =>'First Page',
         'insertAdd' => 'Insert Ad',

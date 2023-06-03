@@ -11,8 +11,8 @@
       <div class="col-6 col-md-4 mb-3 text-center">
         <h5>Section</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="{{route('homepage')}}" class="nav-link p-0 text-dark fw-bold">Home</a></li>
-          <li class="nav-item mb-2"><a href="{{route('add.index')}}" class="nav-link p-0 text-dark fw-bold">Annunci</a></li>
+          <li class="nav-item mb-2"><a href="{{route('homepage')}}" class="nav-link p-0 text-dark  anton-font">Home</a></li>
+          <li class="nav-item mb-2"><a href="{{route('add.index')}}" class="nav-link p-0 text-dark  anton-font">Annunci</a></li>
          
         </ul>
       </div>
@@ -21,29 +21,36 @@
         <h5>Contact Us</h5>
         <ul class="nav flex-column">
     
-          <li class="nav-item mb-2"><a href="{{route('login')}}" class="nav-link p-0 text-dark fw-bold">Login</a></li>
-          <li class="nav-item mb-2"><a href="{{route('register')}}" class="nav-link p-0 text-dark fw-bold">Registrati</a></li>
+          <li class="nav-item mb-2"><a href="{{route('login')}}" class="nav-link p-0 text-dark anton-font">Login</a></li>
+          <li class="nav-item mb-2"><a href="{{route('register')}}" class="nav-link p-0 text-dark anton-font">Registrati</a></li>
         
           {{-- @guest
           <li class="nav-item list-unstyled">
             <a href="{{route('become.revisor')}}" class=" text-white">Diventa Revisore</a>
           </li>
           @else   --}}
-          @auth
+          {{-- @auth --}}
             {{-- @if(!Auth::user()->is_revisor) --}}
-            <li class="nav-item">
-              <a href="{{route('become.revisor')}}" class="nav-link p-0  text-decoration-none text-dark fw-bold">{{__('ui.revisor')}}</a>
-            </li>
+            {{-- <li class="nav-item">
+              <a href="{{route('become.revisor')}}" class="nav-link p-0  text-decoration-none text-dark anton-font">{{__('ui.revisor')}}</a>
+            </li> --}}
             {{-- @endif --}}
-          @endauth
+          {{-- @endauth --}}
 
         </ul>
       </div>
 
       <div class="col-6 col-md-4 mb-3 text-center">
-        <h5>About Us</h5>
+        <h5 >About Us</h5>
         <ul class="nav flex-column ">
-          <li class="nav-item mb-2"><a href="{{route('staff')}}" class="nav-link p-0 text-dark fw-bold">Chi siamo</a></li>
+          <li class="nav-item mb-2"><a href="{{route('staff')}}" class="nav-link p-0 text-dark anton-font">Chi siamo</a></li>
+          @auth
+          {{-- @if(!Auth::user()->is_revisor) --}}
+          <li class="nav-item">
+            <a href="{{route('become.revisor')}}" class="nav-link p-0 text-dark anton-font">{{__('ui.revisor')}}</a>
+          </li>
+          {{-- @endif --}}
+        @endauth
           
         </ul>
       </div>

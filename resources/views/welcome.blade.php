@@ -17,7 +17,7 @@
     
     @if($adds)
     
-        <h2 class="anton-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
+        <h2 class="monoton-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
         <div class="my-5">
             <div class="swiper mySwiper rounded shadow container welcomeMain">
                 <div class="swiper-wrapper">
@@ -54,9 +54,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" row bg-accent bg-gradient h6 rounded justify-content-center h-100">
-                                    <p class="muted mb-0 pt-3">Pubblicato il: {{$add->created_at->format('d/m/Y')}}</p>
-                                    <p class="muted mb-0 pb-3">Pubblicato da: {{$add->user->name ?? 'Utente Cancellato'}}</p>
+                                <div class=" row bg-accent bg-gradient h6 rounded justify-content-center h-100 mt-5">
+                                    <p class="muted mb-2 pt-3">{{__('ui.releasedon')}}: {{$add->created_at->format('d/m/Y')}}</p>
+                                    <p class="muted mb-2 pb-3">{{__('ui.releasedby')}}: {{$add->user->name ?? 'Utente Cancellato'}}</p>
                                 </div>
                             </div>
                         </div>
@@ -82,32 +82,32 @@
         </div>
         @endif
 
-        <div class="container my-3 p-5">
-            <div class="row">
+        <div class="container-fluid ">
+            <div class="row  mx-3 p-5">
                 <div class="col-12 col-md-6">
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
                                 <i class="fa-solid fa-lightbulb text-center fa-2x text-primary mb-2"></i>
-                                <h4>Scegli una categoria </h4>
-                                <p>Puoi scegliere tra 5678899 categorie</p>
+                                <h4 class="text-center anton-font">{{__('ui.choosethecategory')}}</h4>
+                                <p>{{__('ui.youcanchoosefrommorethantwentycategories')}}</p>
                                
                             </div>
                             <div class="col-6">
                                 <i class="fa-solid fa-money-bill-1-wave text-center fa-2x text-primary mb-2"></i>
-                                <h4>Aggiungi il prezzo e una descrizione</h4>
-                                <p>Descrivi al meglio il tuo articolo, aggiungendo il prezzo finale</p>
+                                <h4 class="text-center anton-font">{{__('ui.Addpriceanddescription')}}</h4>
+                                <p>{{__('ui.Describeyouritemandchoosethefinalprice')}}</p>
                                 
                             </div>
                             <div class="col-6 pt-3">
                                 <i class="fa-solid fa-images text-center fa-2x text-primary mb-2"></i>
-                                <h4>Carica le foto</h4> 
-                                <p>Carica 6590489' foto per mostrare il tuo articolo</p>                              
+                                <h4 class="text-center anton-font">{{__('ui.Uploadphotos')}}</h4> 
+                                <p>{{__('ui.Uploaduptosixphotostoshowyouritem')}}</p>                              
                             </div>
                             <div class="col-6 pt-3">
                                 <i class="fa-solid fa-square-check text-center fa-2x text-primary mb-2"></i>
-                                <h4>Inserisci il tuo annuncio</h4>
-                                <p>Quando hai terminato di compilare il form, premi invio!</p>
+                                <h4 class="text-center anton-font">{{__('ui.Saveyourad')}}</h4>
+                                <p>{{__('ui.Whenyouhavefinishedfillingouttheformpresssubmit')}}</p>
                             </div>
                         </div>
                     </div>                    
@@ -117,10 +117,10 @@
                     <div class="myCard">
                         <div class="innerCard">
                             <div class="frontSide">
-                                <p class="title maven-font">Hai un annuncio <br>da inserire?</p>
+                                <p class="title maven-font">{{__('ui.Anyitemtoadd')}}</p>
                             </div>
-                            <a href="{{route('add.create')}}" class="backSide title text-decoration-none text-white">
-                                <p>INSERISCI ANNUNCIO</p>
+                            <a href="{{route('add.create')}}" class="backSide title text-decoration-none text-white maven-font">
+                                <p>{{__('ui.Additem')}}</p>
                             </a>
                         </div>
                     </div>
