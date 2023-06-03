@@ -14,6 +14,7 @@
         'reviseAdd' => 'Revise Ad',
         'language' => 'Languages',
         'staff' => 'Who we are',
+        'work'=> 'Work with us',
 
         /*card della welcome*/
         'choosethecategory'=> 'Choose the category',
@@ -34,7 +35,7 @@
         'price'=>'Price',
         'description'=>'Description',
         'photos'=>'Photos',
-        'insertAdd' => 'Insert Ad',
+
 
 
     ];

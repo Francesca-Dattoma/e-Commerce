@@ -2,7 +2,7 @@
     return [
         'allAnnouncements'=>'Annunci',
         'search'=>'Ricerca',
-        'revisor'=>'Lavora con noi',
+        'revisor'=>'Diventa Revisore',
         'register'=>'Registrati',
         'filters'=>'Filtri',
         'lastAnnouncements'=>'Ultimi annunci',
@@ -32,7 +32,7 @@
         'price'=>'prezzo',
         'description'=>'descrizione',
         'photos'=>'immagini',
-        'insertAdd' => 'Insert Ad',
+        'work'=>'Lavora con noi'
 
 
     ];

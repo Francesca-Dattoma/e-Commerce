@@ -306,4 +306,11 @@ input::-webkit-inner-spin-button {
     background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%);
 
 }
+.scale-c{
+    scale: 1.5;
+}
+.margine{
+    margin-top: 100px;
+    margin-bottom: 100px;
 
+}

@@ -17,7 +17,7 @@
     
     @if($adds)
     
-        <h2 class="maven-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
+        
         <h2 class="anton-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
         <div class="my-5">
             <div class="swiper mySwiper rounded shadow container welcomeMain">

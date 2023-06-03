@@ -31,5 +31,8 @@ class PublicController extends Controller
    public function staff(){
       return view('staff');
    }
+   public function lavoraConNoi(){
+      return view('lavoraConNoi');
+   }
    
 }

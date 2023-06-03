@@ -79,13 +79,13 @@
 
       
        @guest
-      <li class="nav-item list-unstyled">
-        <a href="{{route('become.revisor')}}" class="text-decoration-none">{{__('ui.revisor')}}</a>
+      <li class="nav-item list-unstyled text-dark">
+        <a href="{{route('lavoraConNoi')}}" class="text-decoration-none nav-link">{{__('ui.work')}}</a>
       </li>
       @else 
         @if(!Auth::user()->is_revisor)
-        <li class="nav-item list-unstyled">
-          <a href="{{route('become.revisor')}}" class="text-decoration-none nav-link">{{__('ui.revisor')}}</a>
+        <li class="nav-item list-unstyled text-dark">
+          <a href="{{route('lavoraConNoi')}}" class="text-decoration-none nav-link">{{__('ui.work')}}</a>
         </li>
         @endif
       @endguest 

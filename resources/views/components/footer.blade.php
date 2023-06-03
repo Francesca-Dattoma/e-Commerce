@@ -47,7 +47,7 @@
           @auth
           {{-- @if(!Auth::user()->is_revisor) --}}
           <li class="nav-item">
-            <a href="{{route('become.revisor')}}" class="nav-link p-0 text-dark anton-font">{{__('ui.revisor')}}</a>
+            <a href="{{route('lavoraConNoi')}}" class="nav-link p-0 text-dark anton-font">{{__('ui.work')}}</a>
           </li>
           {{-- @endif --}}
         @endauth

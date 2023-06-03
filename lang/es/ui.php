@@ -23,7 +23,8 @@
         'Saveyourad'=>'Guarda su anuncio',
         'Whenyouhavefinishedfillingouttheformpresssubmit'=>'Cuando has terminado de rellenar el formulario, pulsa "envia"!',
         'Anyitemtoadd'=>'¿Desea publicar un anuncio?',
-        'Additem'=>'Carga tu anuncio'
+        'Additem'=>'Carga tu anuncio',
+        'work'=>'Trabaja con nosotros'
 
 
     ];

@@ -24,6 +24,7 @@
         'Whenyouhavefinishedfillingouttheformpresssubmit'=>'Lorsque vous avez terminé de remplir le formulaire, cliquez sur "Soumets" !',
         'Anyitemtoadd'=>'Avez-vous un article à placer ?',
         'Additem'=>"Ajoutez l'article",
+        'work'=>'Travailler avec nous'
 
     ];
 
