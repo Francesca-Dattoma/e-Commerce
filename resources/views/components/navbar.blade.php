@@ -13,7 +13,7 @@
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-lg-0">
+      <ul class="navbar-nav me-auto mb-md-0">
 
         <!-- Link -->
         {{-- <li class="nav-item">
@@ -46,7 +46,7 @@
 
       <!-- Search -->
       <div  class="input-group d-flex justify-content-center">
-        <form action="{{route('adds.search')}}" method="GET" class="w-auto " id="search">
+        <form action="{{route('adds.search')}}" method="GET" class=" " id="search">
           <input name="query" type="text" class="bg-white form-control border-0 searchCustom" placeholder="{{__('ui.search')}}" aria-label="Search">
         </form>
         <button class="btn bg-white btnCustom " type="submit" onclick="event.preventDefault();document.querySelector('#search').submit();" >

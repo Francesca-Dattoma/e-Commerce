@@ -84,7 +84,8 @@
     color: var(--primary);
 }
 .searchCustom{
-    border-radius: 15px 0 0 15px;   
+    border-radius: 15px 0 0 15px;  
+    
 }
 .searchCustom:focus{
     
@@ -330,3 +331,9 @@ input::-webkit-inner-spin-button {
 
 }
 
+@media screen and (max-width: 991px) {
+    .searchCustom{
+  
+        width: 150px; 
+    }
+}
