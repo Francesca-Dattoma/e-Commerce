@@ -52,7 +52,7 @@ class ResizeImage implements ShouldQueue
                         ->watermarkHeight(50, Manipulations::UNIT_PERCENT)
                         ->watermarkWidth(50, Manipulations::UNIT_PERCENT)
                         ->watermarkPosition(Manipulations::POSITION_CENTER)
-                        ->watermarkOpacity(25)
+                        ->watermarkOpacity(30)
                         ->save($srcPath);
 
     }
