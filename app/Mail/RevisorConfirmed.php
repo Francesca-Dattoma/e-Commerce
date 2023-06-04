@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class BecomeRevisor extends Mailable
+class RevisorConfirmed extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,9 +30,9 @@ class BecomeRevisor extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-           from: new Address('jobsinfo-noreply@yoes.it','YOeS'),
-           subject: "L'utente richiede di diventare revisore",
-        );
+            from: new Address('noreply@yoes.it','YOeS'),
+            subject: "Sei entrato nello staff YOeS!",
+         );
     }
 
     /**
@@ -41,7 +41,7 @@ class BecomeRevisor extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.become_revisor',
+            view: 'mail.revisor_confirmed',
         );
     }
 

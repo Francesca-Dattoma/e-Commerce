@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Add;
 
+use Exception;
 use App\Models\User;
 use App\Mail\BecomeRevisor;
 use Illuminate\Http\Request;
+use App\Mail\RevisorConfirmed;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Artisan;
@@ -43,12 +45,24 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', 'Annuncio rifiutato con successo');
     }
     public function becomeRevisor(){
-        Mail::to('admin@yoes.it')->send(new BecomeRevisor(Auth::user()));
+        
+        try{
+            Mail::to('admin@yoes.it')->send(new BecomeRevisor(Auth::user()));
+        }catch(Exception $error){
+            return redirect()->back()->with('errorMail',"Ci spiace, qualcosa non è andato a buon fine, riprova tra qualche minuto!");
+        }
+        
         return redirect()->back()->with('message','La tua candidatura è stata inviata');
     }
     public function makeRevisor(User $user){     
-        Artisan::call('yoes:makeUserRevisor',["email"=>$user->email]); 
-        return redirect('/')->with('message',"$user->name" . "sei diventato revisore");
+        Artisan::call('yoes:makeUserRevisor',["email"=>$user->email]);
+        try{
+            // dd($user->email);
+            Mail::to($user->email)->send(new RevisorConfirmed($user));
+        }catch(Exception $error){
+            return redirect('/')->with('errorMail',"Ci spiace, qualcosa non è andato a buon fine, riprova tra qualche minuto!");
+        }
+        return redirect('/')->with('message',"$user->name" . " è diventato un revisore");
         
     }
 }

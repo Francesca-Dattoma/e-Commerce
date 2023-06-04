@@ -14,6 +14,11 @@
             {{session('warning')}}
         </div>
     @endif
+    @if (session()->has('errorMail'))
+    <div class="alert alert-danger my-3 anton-font mb-5">
+        {{session('errorMail')}}
+    </div>
+@endif
     
     @if($adds)
     
