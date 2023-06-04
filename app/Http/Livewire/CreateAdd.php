@@ -127,7 +127,7 @@ class CreateAdd extends Component
 
         // ]);
         // Auth::user()->adds()->save($add);
-        session()->flash('message', 'Annuncio correttamente inserito. Verrà revisionato da uno nostro collaboratore, attendi il messaggio di conferma.');
+        session()->flash('message', 'Annuncio correttamente inserito. Prima di essere inserito. verrà revisionato da uno nostro collaboratore.');
         $this->cleanForm();
 
     }

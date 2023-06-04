@@ -58,7 +58,7 @@
                                     @csrf
                                     <div class="center-wrap">
                                         <div class="section text-center">
-                                            <h4 class="mb-4 pb-3 anton-font text-light h1">Sign Up</h4>
+                                            <h4 class="mb-4 pb-3 anton-font text-light h1">Registrati</h4>
                                             <div class="form-group">	
                                                 <input type="text" name="name" class="form-style" placeholder="Name">
                                                 <i class="input-icon uil uil-user"></i>

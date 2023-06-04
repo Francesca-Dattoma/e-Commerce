@@ -12,7 +12,7 @@
                        @endif
                     </div>
   
-                    <div class="thumb">
+                    <div class="thumb d-flex">
                         @if(count($add->images))
                             @foreach($add->images as $image)
                                 <img src="{{Storage::url($image->path)}}" alt="{{$add->title}}">   
