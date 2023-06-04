@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-12 col-md-3">
                     <h2 class="display-3 py-2 fw-bold anton-font text-dark" >
-                        @if(strlen($add_to_check->title) > 50) 
+                        {{-- @if(strlen($add_to_check->title) > 50) 
                                         
                             {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title,25,25)}} <br> {{substr($add_to_check->title, 50, 25)}} <br> {{substr($add_to_check->title, 75, 25)}}
                 
@@ -81,11 +81,11 @@
                             
                             {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title, 25)}}
     
-                        @else
+                        @else --}}
     
                             {{ $add_to_check->title }}
     
-                        @endif
+                        {{-- @endif --}}
                     </h2>
                     <a href="{{route('adds.category', $add_to_check->category)}}" class="text-decoration-none anton-font">
                         
