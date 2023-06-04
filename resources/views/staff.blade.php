@@ -41,8 +41,8 @@
                         <p class="fst-italic">“Think Different”</p>
                     </div>
                     <div class="my-2">
-                        <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2">linkedin.com/in/manuel-tedeschi-junior-developer</i></a>
-                        <a href=""><i class="fa-brands fa-github fa-2x color-prim mx-2">https://github.com/9Manuel6?tab=repositories</i></a>
+                        <a href="linkedin.com/in/manuel-tedeschi-junior-developer"><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
+                        <a href="https://github.com/9Manuel6?tab=repositories"><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
                     </div>
                   </div>
                 </div>
