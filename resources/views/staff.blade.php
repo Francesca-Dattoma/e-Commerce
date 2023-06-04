@@ -104,11 +104,11 @@
                       <h3>Roberto Morreale</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
                       <div>
-                        <p class="fst-italic">“”</p>
+                        <p class="fst-italic">“Non importa quanto brillante sia la tua mente o la tua strategia, se stai giocando una partita da solo, perderai sempre contro una squadra”</p>
                     </div>
                     <div class="my-2">
-                        <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
-                        <a href=""><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
+                        <a href="https://www.linkedin.com/in/roberto-morreale-junior-developer/"><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
+                        <a href="https://github.com/RoMo990"><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
                     </div>
                   </div>
                 </div>
