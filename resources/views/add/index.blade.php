@@ -91,10 +91,13 @@
 
                 <div class="col-12">
 
-                    <p class="h1">Non sono presenti annunci</p>
-                    <p class="h1">Pubblicane uno: <a class="btn btn-success" href="{{route('add.create')}}">Nuovo Annuncio</a></p>
-
-                </div>
+                    <p class="h1 text-center">Non sono presenti annunci.</p>
+                    <p class="h1 text-center">Pubblicane uno:</p>
+                    <div class="col-12 d-flex justify-content-center mt-5">
+                        <a href="{{route('add.create')}}" class="btn btn-lg btnCustomPage bg-prim bg-gradient h6 rounded text-center anton-font mb-3 shadow">Nuovo Annuncio</a>
+                    </div>
+                    
+                </div> 
 
             @endforelse
             

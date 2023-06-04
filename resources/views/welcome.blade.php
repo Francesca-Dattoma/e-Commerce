@@ -20,9 +20,8 @@
     </div>
 @endif
     
-    @if($adds)
+    @if(count($adds))
     
-        
         <h2 class="anton-font display-4 text-center my-3 mt-5">{{__('ui.lastAnnouncements')}}</h2>
         <div class="my-5">
             <div class="swiper mySwiper rounded shadow container welcomeMain">
@@ -79,14 +78,14 @@
                 </div>
             </div>
         </div>
-    @else
-        <div class="container">
-    
-            <p class="h1">Non sono presenti annunci, clicca qui per pubblicare un annuncio:</p>
-            <a class="btn bg-second" href="{{route('add.create')}}">Nuovo Annuncio</a>
-    
-        </div>
-        @endif
+        {{-- @else
+            <div class="container">
+        
+                <p class="h1">Non sono presenti annunci, clicca qui per pubblicare un annuncio:</p>
+                <a class="btn bg-second" href="{{route('add.create')}}">Nuovo Annuncio</a>
+        
+            </div> --}}
+    @endif
 
         <div class="container my-2 p-4">
             <div class="row ">
