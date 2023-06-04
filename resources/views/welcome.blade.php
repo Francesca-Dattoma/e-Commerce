@@ -38,16 +38,17 @@
                                     </div>
                                     <div class="col-12 col-lg-5 d-flex justify-content-around align-items-start flex-column">
                                         <h3 class=" display-6 fw-bold anton-font">
-                                            @if(strlen($add->title) > 50) 
-                                    
-                                            {{substr($add->title, 0, 25)}} <br> {{substr($add->title,26,23)}}...
-                                    
-                                        @elseif(strlen($add->title) <= 50 && strlen($add->title)>25)
-                                            
-                                            {{substr($add->title, 0, 25)}} <br> {{substr($add->title, 26)}}
-                                        @else
+                                        @if(strlen($add_to_check->title) > 50) 
+                                        
+                                            {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title,25,25)}} <br> {{substr($add_to_check->title, 50, 25)}} <br> {{substr($add_to_check->title, 75, 25)}}
+                
+                                            @elseif(strlen($add_to_check->title) <= 50 && strlen($add_to_check->title)>25)
+                            
+                                                {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title, 25)}}
     
-                                            {{ $add->title }}
+                                            @else
+    
+                                                {{ $add_to_check->title }}
     
                                         @endif
                                         </h3>

@@ -75,11 +75,11 @@
                     <h2 class="display-3 py-2 fw-bold anton-font text-dark" >
                         @if(strlen($add_to_check->title) > 50) 
                                         
-                            {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title,26,25)}} <br> {{substr($add_to_check->title, 51, 25)}} <br> {{substr($add_to_check->title, 76, 25)}}
+                            {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title,25,25)}} <br> {{substr($add_to_check->title, 50, 25)}} <br> {{substr($add_to_check->title, 75, 25)}}
                 
                         @elseif(strlen($add_to_check->title) <= 50 && strlen($add_to_check->title)>25)
                             
-                            {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title, 26)}}
+                            {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title, 25)}}
     
                         @else
     

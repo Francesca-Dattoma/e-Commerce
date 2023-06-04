@@ -51,17 +51,18 @@
                             <div class="card-body d-flex flex-column justify-content-evenly">
                                 <h5 class="card-title text-center py-2 fw-bold anton-font text-dark">
 
-                                    @if(strlen($add->title) > 50) 
-                                    
-                                        {{substr($add->title, 0, 25)}} <br> {{substr($add->title,26,23)}}...
-                                
-                                    @elseif(strlen($add->title) <= 50 && strlen($add->title)>25)
+                                    @if(strlen($add_to_check->title) > 50) 
                                         
-                                        {{substr($add->title, 0, 25)}} <br> {{substr($add->title, 26)}}
-                                    @else
-
-                                        {{ $add->title }}
-
+                                        {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title,25,25)}} <br> {{substr($add_to_check->title, 50, 25)}} <br> {{substr($add_to_check->title, 75, 25)}}
+                
+                                        @elseif(strlen($add_to_check->title) <= 50 && strlen($add_to_check->title)>25)
+                            
+                                            {{substr($add_to_check->title, 0, 25)}} <br> {{substr($add_to_check->title, 25)}}
+    
+                                        @else
+    
+                                            {{ $add_to_check->title }}
+    
                                     @endif
 
                                 </h5>
