@@ -82,11 +82,11 @@
                       <h3>Francesco Fiorito</h3>
                       <h6 class="fst-italic text-secondary">Full Stack developer</h6>
                       <div>
-                        <p class="fst-italic">“”</p>
+                        <p class="fst-italic">“A volte vinci, a volte impari”</p>
                     </div>
                     <div class="my-2">
-                        <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
-                        <a href=""><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
+                        <a href="https://github.com/Francesco-Fiorito"><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
                     </div>
                   </div>
                 </div>
