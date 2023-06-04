@@ -1,0 +1,22 @@
+.td{
+    padding:0;
+    Margin:0;
+    padding-right:33px;
+}
+.td-linkedin{
+    padding:0;
+    Margin:0;
+}
+.anchorSocial{
+    mso-line-height-rule:exactly;
+    text-decoration:underline;
+    color:#CCCCCC;
+    font-size:12px;
+}
+.imgSocial{
+    display:block;
+    font-size:18px;
+    border:0;
+    outline:none;
+    text-decoration:none;
+}
