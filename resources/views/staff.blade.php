@@ -129,8 +129,8 @@
                         <p class="fst-italic">“Ogni cap è nu tribunal”</p>
                     </div>
                     <div class="my-2">
-                        <a href=""><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
-                        <a href=""><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
+                        <a href="https://www.linkedin.com/in/gaetano-cerbone-junior-full-stack-developer/"><i class="fa-brands fa-linkedin fa-2x color-prim mx-2"></i></a>
+                        <a href="https://github.com/"><i class="fa-brands fa-github fa-2x color-prim mx-2"></i></a>
                     </div>
                   </div>
                 </div>
