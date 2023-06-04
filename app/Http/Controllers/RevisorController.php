@@ -55,13 +55,13 @@ class RevisorController extends Controller
         return redirect()->back()->with('message','La tua candidatura è stata inviata');
     }
     public function makeRevisor(User $user){     
-        Artisan::call('yoes:makeUserRevisor',["email"=>$user->email]);
         try{
             // dd($user->email);
             Mail::to($user->email)->send(new RevisorConfirmed($user));
         }catch(Exception $error){
             return redirect('/')->with('errorMail',"Ci spiace, qualcosa non è andato a buon fine, riprova tra qualche minuto!");
         }
+        Artisan::call('yoes:makeUserRevisor',["email"=>$user->email]);
         return redirect('/')->with('message',"$user->name" . " è diventato un revisore");
         
     }
