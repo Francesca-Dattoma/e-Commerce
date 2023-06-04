@@ -11,7 +11,7 @@
     src: url("/public/media/fonts/MavenPro-Regular.ttf");
 }
 :root{
-    --primary: rgb(53, 155, 199);
+    --primary: #359bc7;
     --secondary: #257b8b;
     --accent: #d0f8ff;
     --blackCustom: #000000;
