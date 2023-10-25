@@ -57,7 +57,7 @@
     </div>
     <div class="row justify-content-center">
       
-      <h5 class="text-center" >Seguici sui nostri social:</h5>
+      <h5 class="text-center" >Follow Us:</h5>
       
       <div class="col-10 d-flex justify-content-evenly bg-white rounded badged shadow">
           <tr>
